@@ -1,0 +1,23 @@
+---
+import type { HTMLTag } from 'astro/types'
+
+import Link from './Link.astro'
+
+export interface Props {
+  as?: HTMLTag
+  class?: string
+}
+
+const { as: CustomTag = 'footer', class: extraClass } = Astro.props
+
+const contactUrl = 'https://erian.dev'
+const contactUrlClass = 'inline-block hover:underline'
+const externalUrl = 'https://www.frontendmentor.io/challenges'
+const externalUrlClass = 'inline-block font-semibold hover:underline'
+---
+
+<CustomTag class={extraClass}>
+  Challenge by
+  <Link external to={externalUrl} class={contactUrlClass} style={{ color: '#3E54A3' }}>Frontend Mentor</Link>. Coded by
+  <Link external to={contactUrl} class={externalUrlClass} style={{ color: '#02ABB1' }}>eriandev</Link>.
+</CustomTag>

@@ -1,0 +1,46 @@
+---
+import Link from 'shared/components/Link.astro'
+import Picture from 'shared/components/Picture.astro'
+
+import Tech from '@/components/Tech.astro'
+import LevelTag from '@/components/LevelTag.astro'
+
+interface Props {
+  title: string
+  link: string
+  level: number
+  image: string
+  techs: string[]
+}
+
+const { image: source, level, link, title, techs } = Astro.props
+
+const techsGridAlign = 'grid grid-rows-2 gap-y-3'
+const techsFlexAlign = 'flex flex-wrap items-center justify-between'
+const levelSearchLink = `https://www.frontendmentor.io/challenges?difficulty=${level}&sort=difficulty%7Casc`
+const cardShadowClass =
+  'before:pointer-events-none before:absolute before:top-0 before:z-10 before:h-24 before:w-full before:rounded-t-2xl before:bg-[linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0))] before:content-[""]'
+---
+
+<article class:list={['relative overflow-hidden rounded-2xl border border-gray-300 bg-white', cardShadowClass]}>
+  <Link to={link} class="block overflow-hidden">
+    <Picture {source} alt={title} width={384} height={266} class="transition-colorize rounded-t-2xl" />
+  </Link>
+
+  <section class="p-6 sm:px-4 md:px-6 xl:p-10">
+    <article class="mb-2 line-clamp-2 sm:h-16 md:mb-8">
+      <Link to={link} class="text-xl hover:underline md:text-2xl">
+        <h3>{title}</h3>
+      </Link>
+    </article>
+
+    <article class:list={[techs.length > 3 ? techsGridAlign : techsFlexAlign, 'rounded-b-2xl']}>
+      <div class="flex gap-x-1.5 md:gap-x-2.5">
+        {techs.map((tech) => <Tech name={tech} />)}
+      </div>
+      <Link external to={levelSearchLink} class="justify-self-end">
+        <LevelTag {level} />
+      </Link>
+    </article>
+  </section>
+</article>

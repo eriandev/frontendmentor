@@ -1,0 +1,33 @@
+---
+import Icon from 'shared/components/Icon.astro'
+
+interface Props {
+  title: string
+  amount: string
+  variation: number
+  social: 'facebook' | 'twitter' | 'instagram' | 'youtube'
+}
+
+const { amount, social, title, variation } = Astro.props
+
+const isUp = variation >= 0
+---
+
+<article
+  class="transition-standard flex flex-col rounded-lg bg-light-gray-blue py-6 text-lg font-bold text-desa-blue dark:bg-dark-desa-blue"
+>
+  <div class="flex flex-wrap items-center justify-between px-6 py-3">
+    <h5>{title}</h5>
+    <Icon name={'icon-' + social} size={20} />
+  </div>
+
+  <div class="flex flex-wrap justify-between px-6 py-3">
+    <span class="flex items-end text-5xl leading-none text-dark-blue dark:text-white">{amount}</span>
+    <div class="flex items-end">
+      <p class:list={{ 'text-lime-green': isUp, 'text-bright-red': !isUp }}>
+        <Icon name={'icon-' + (isUp ? 'up' : 'down')} size={8} class="inline" />
+        {Math.abs(variation)}%
+      </p>
+    </div>
+  </div>
+</article>

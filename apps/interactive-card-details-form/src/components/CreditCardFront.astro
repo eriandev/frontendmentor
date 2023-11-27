@@ -1,0 +1,27 @@
+---
+import Icon from 'shared/components/Icon.astro'
+
+interface Props {
+  class?: string
+}
+
+const { class: customCssClasses } = Astro.props
+---
+
+<article
+  class:list={[
+    'grid h-40 w-[286px] grid-rows-[max-content] content-between rounded-lg bg-card-front bg-center px-5 py-[18px] text-white shadow-2xl lg:h-60 lg:w-[448px] lg:px-8 lg:py-[30px]',
+    customCssClasses
+  ]}
+>
+  <Icon name="card-logo" class="h-8 w-14 lg:h-12 lg:w-[88px]" />
+  <div class="grid grid-rows-[max-content] gap-4 tracking-widest lg:gap-6">
+    <span id="card-number" class="block w-full text-center text-lg font-medium lg:text-3xl">0000 0000 0000 0000</span>
+    <div class="flex justify-between text-[10px] font-thin lg:text-xs">
+      <span id="cardholder-name" class="uppercase">Jane Appleseed</span>
+      <div>
+        <span id="exp-mm-date">00</span>/<span id="exp-yy-date">00</span>
+      </div>
+    </div>
+  </div>
+</article>

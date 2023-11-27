@@ -1,0 +1,33 @@
+---
+import MetaTags from 'shared/components/MetaTags.astro'
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <MetaTags slug="social-media-dashboard-with-theme-switcher" themeColor="#1F212E" />
+
+    <style>
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('/frontendmentor/social-media-dashboard-with-theme-switcher/fonts/inter-400.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url('/frontendmentor/social-media-dashboard-with-theme-switcher/fonts/inter-700.woff2') format('woff2');
+      }
+    </style>
+  </head>
+
+  <body
+    class="transition-standard min-h-screen bg-white font-inter dark:bg-top-dark-blue lg:flex lg:flex-col lg:content-between"
+  >
+    <slot />
+  </body>
+</html>

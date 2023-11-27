@@ -1,0 +1,67 @@
+---
+import MetaTags from 'shared/components/MetaTags.astro'
+import Atributtion from 'shared/components/Atributtion.astro'
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <MetaTags slug="ip-address-tracker" themeColor="#4B60BB" />
+
+    <link
+      rel="preload"
+      as="style"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin
+    />
+
+    <style>
+      @font-face {
+        font-family: 'Rubik';
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: url('/frontendmentor/ip-address-tracker/fonts/rubik-400.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Rubik';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('/frontendmentor/ip-address-tracker/fonts/rubik-500.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Rubik';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url('/frontendmentor/ip-address-tracker/fonts/rubik-700.woff2') format('woff2');
+      }
+    </style>
+
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin></script>
+
+    <script src="@/scripts/declareRefs.ts"></script>
+    <script src="@/scripts/validation.ts"></script>
+    <script src="@/scripts/formAction.ts"></script>
+  </head>
+
+  <body class="min-h-screen bg-dark-gray font-rubik">
+    <slot />
+
+    <Atributtion
+      class="fixed bottom-0 left-0 right-0 z-[999] mx-auto w-max bg-white bg-opacity-80 p-1 text-[0.625rem]"
+    />
+  </body>
+</html>

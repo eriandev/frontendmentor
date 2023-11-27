@@ -1,0 +1,13 @@
+---
+interface Props {
+  name: string
+}
+
+const { name } = Astro.props
+
+const textColor = 'text-' + name
+---
+
+<span class={`font-bold uppercase ${textColor} md:text-lg`}>
+  {name}
+</span>

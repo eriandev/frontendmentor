@@ -1,0 +1,43 @@
+---
+import MetaTags from 'shared/components/MetaTags.astro'
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <MetaTags slug="interactive-card-details-form" themeColor="#600594" />
+
+    <style>
+      @font-face {
+        font-family: 'Space Grotesk';
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: url('/frontendmentor/interactive-card-details-form/fonts/space-grotesk-300.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Space Grotesk';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('/frontendmentor/interactive-card-details-form/fonts/space-grotesk-400.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Space Grotesk';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url('/frontendmentor/interactive-card-details-form/fonts/space-grotesk-500.woff2') format('woff2');
+      }
+    </style>
+
+    <script src="@/scripts/declareRefs.ts"></script>
+    <script src="@/scripts/updateCards.ts"></script>
+    <script src="@/scripts/validateInputs.ts"></script>
+    <script src="@/scripts/formHandler.ts"></script>
+  </head>
+
+  <body class="min-h-screen font-space-grotesk">
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,41 @@
+---
+import { Picture as AstroPicture, type ImgAttributes } from 'astro:assets'
+import placeholderImage from '../assets/placeholder.webp'
+
+interface Props extends ImgAttributes {
+  alt: string
+  width: number
+  height: number
+  source: string
+  lazy?: boolean
+}
+
+const { source, alt, width, height, decoding, fetchpriority, lazy = false, class: extraClass } = Astro.props
+const loading = lazy ? 'lazy' : 'eager'
+
+let src: ImageMetadata
+
+try {
+  const { ok } = await fetch(source, { method: 'HEAD' })
+
+  if (!ok) throw Error()
+
+  // @ts-expect-error library type
+  src = source
+} catch (error) {
+  console.error('Unable to obtain image', source)
+  src = placeholderImage
+}
+---
+
+<AstroPicture
+  {src}
+  {alt}
+  {width}
+  {height}
+  {loading}
+  {decoding}
+  {fetchpriority}
+  class={extraClass}
+  formats={['avif', 'webp']}
+/>

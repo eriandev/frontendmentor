@@ -1,0 +1,42 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Use pnpm 🗜️
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.10.5
+          run_install: false
+
+      - name: Use Node.js 🐢
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.10.0
+          cache: 'pnpm'
+
+      - name: Install dependencies ⚙️
+        run: pnpm install
+
+      - name: Build 🛠️
+        run: pnpm build:prod
+        env:
+          API_PROJECTS_URL: ${{ secrets.API_PROJECTS_URL }}
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist

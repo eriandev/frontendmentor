@@ -1,0 +1,18 @@
+---
+import Icon from 'shared/components/Icon.astro'
+import Link from 'shared/components/Link.astro'
+---
+
+<header class="container flex flex-wrap items-center justify-center py-12">
+  <div class="w-1/2">
+    <Icon name="logo" width={166} />
+  </div>
+
+  <nav class="invisible w-5/12 sm:visible">
+    <ul class="flex flex-wrap justify-center text-center align-middle text-sm md:text-base">
+      <li class="w-1/4"><Link to="#">Features</Link></li>
+      <li class="w-1/4"><Link to="#">Team</Link></li>
+      <li class="w-1/4"><Link to="#">Sign In</Link></li>
+    </ul>
+  </nav>
+</header>

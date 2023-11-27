@@ -1,0 +1,28 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Form from '@/components/Form.astro'
+import Finish from '@/components/Finish.astro'
+import Button from '@/components/Button.astro'
+import CardSection from '@/components/CardSection.astro'
+import Atributtion from 'shared/components/Atributtion.astro'
+---
+
+<Layout>
+  <main class="grid grid-rows-[15rem_auto] pb-11 lg:min-h-screen lg:grid-cols-[30rem_auto] lg:grid-rows-none lg:pb-0">
+    <CardSection />
+
+    <section
+      class="relative mx-auto flex h-full max-w-xl flex-col justify-center gap-7 self-center px-4 pt-28 lg:gap-10 lg:pt-0 xl:pl-48 2xl:pl-0"
+    >
+      <Form />
+      <Finish />
+      <Button id="btn-action">Confirm</Button>
+
+      <Atributtion
+        class="absolute bottom-0 left-0 right-0 mx-auto hidden w-max pb-8 text-center text-sm sm:pb-4 lg:block"
+      />
+    </section>
+  </main>
+
+  <Atributtion class="mx-auto max-w-[15rem] pb-8 text-center text-sm sm:pb-4 lg:hidden" />
+</Layout>

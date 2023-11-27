@@ -1,0 +1,43 @@
+---
+import { unslugify } from 'shared/utils/string'
+
+interface Props {
+  slug?: string
+  themeColor: `#${string}`
+}
+
+const { themeColor, slug } = Astro.props
+
+const isSlugString = typeof slug === 'string'
+const basePath = isSlugString ? '/frontendmentor/' + slug : '/frontendmentor'
+const title = isSlugString ? 'Frontend Mentor | ' + unslugify(slug) : 'Frontend Mentor Challenges Solved'
+const preview = isSlugString ? `${basePath}/preview.jpg` : `${basePath}/preview.png`
+const description = isSlugString
+  ? `Challenge ${unslugify(slug)} from frontendmentor.io`
+  : 'Frontend Mentor Challenges Solved'
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>{title}</title>
+<meta name="description" content={description} />
+
+<link rel="icon" type="image/png" sizes="32x32" href={basePath + '/favicon.png'} />
+<link rel="apple-touch-icon" href={basePath + '/favicon.png'} />
+<meta name="theme-color" content={themeColor} />
+
+<meta name="generator" content={Astro.generator} />
+
+<meta name="og:site_name" property="og:site_name" content={title} />
+<meta name="og:type" property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={preview} />
+<meta property="og:url" content={basePath} />
+
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:creator" content="@eriandev" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content={preview} />

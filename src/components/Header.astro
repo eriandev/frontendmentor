@@ -1,0 +1,40 @@
+---
+import Link from 'shared/components/Link.astro'
+import Icon from 'shared/components/Icon.astro'
+import Image from 'shared/components/Image.astro'
+
+const navigation = [
+  { to: '/', external: false, text: 'My Solutions' },
+  { to: 'https://www.frontendmentor.io/challenges', external: true, text: 'Challenges' },
+  { to: 'https://www.frontendmentor.io/resources', external: true, text: 'Resources' }
+]
+
+const src = '/frontendmentor/images/profile-image.webp'
+const profileLink = 'https://www.frontendmentor.io/profile/eriandev'
+const linkClass =
+  'relative after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:scale-0 after:bg-guru after:content-[""] after:[transition:transform_0.3s_ease_0s] hover:after:scale-100 hover:after:[transition:transform_0.3s_ease_0s]'
+---
+
+<header class="w-full py-4 lg:py-6">
+  <div class="mx-auto flex w-full max-w-[75rem] justify-between px-6">
+    <Icon name="logo" class="w-60 sm:w-72" />
+    <section class="flex gap-x-8">
+      <nav class="hidden items-center md:flex">
+        <ul class="flex gap-x-8 text-sm font-bold uppercase italic">
+          {
+            navigation.map(({ to, text }) => (
+              <li>
+                <Link external {to} class={linkClass}>
+                  {text}
+                </Link>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+      <Link external title="Go to my frontendmentor profile" to={profileLink}>
+        <Image {src} width={42} height={42} alt="Profile image" class="rounded-full" />
+      </Link>
+    </section>
+  </div>
+</header>

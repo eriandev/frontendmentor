@@ -1,0 +1,28 @@
+---
+interface Props {
+  level: number
+  class?: string
+}
+
+const { level, class: extraClass } = Astro.props
+
+const LEVELS = ['newbie', 'junior', 'intermediate', 'advanced', 'guru']
+const levelColor = LEVELS[level - 1]
+const bgColor = 'bg-' + levelColor
+const textColor = 'text-' + levelColor
+---
+
+<div
+  class:list={[
+    'flex h-max w-max items-center rounded-lg border text-xs font-bold leading-5 md:text-sm md:leading-6',
+    'border-' + levelColor,
+    extraClass
+  ]}
+>
+  <span class={`block h-full rounded-l-lg ${bgColor} px-2 text-white md:px-3`}>
+    {level}
+  </span>
+  <span class={`block px-1.5 uppercase ${textColor} md:px-3`}>
+    {levelColor}
+  </span>
+</div>

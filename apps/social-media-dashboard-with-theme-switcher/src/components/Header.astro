@@ -1,0 +1,70 @@
+<script>
+  const classList = document.querySelector('html')?.classList
+  const $checkbox = document.querySelector<HTMLInputElement>('#checkbox')
+
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    $checkbox?.setAttribute('checked', 'true')
+    classList?.add('dark')
+  }
+
+  $checkbox?.addEventListener('change', function () {
+    if (this.checked) classList?.add('dark')
+    else classList?.remove('dark')
+  })
+</script>
+
+<header class="transition-standard w-full rounded-b-xl bg-pale-blue pb-32 pt-8 dark:bg-dark-blue sm:pb-40 xl:pb-48">
+  <div class="container">
+    <div class="md:flex md:flex-wrap">
+      <div class="md:w-1/2">
+        <h1 class="text-3xl font-bold dark:text-white lg:text-4xl">Social Media Dashboard</h1>
+        <h2 class="text-lg font-bold text-desa-blue">Total Followers: 23,004</h2>
+      </div>
+
+      <hr class="my-6 border-desa-blue md:hidden" />
+
+      <div class="flex flex-wrap items-center justify-between md:flex md:w-1/2 md:justify-end">
+        <label for="checkbox" class="text-lg font-bold text-desa-blue dark:text-white md:px-6">Dark Mode</label>
+
+        <input type="checkbox" id="checkbox" class="checkbox hidden" />
+        <label for="checkbox" class="switch"></label>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .checkbox:checked ~ .switch {
+    background: linear-gradient(to right, hsl(210, 78%, 56%) 0%, hsl(146, 68%, 55%) 100%);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .checkbox:checked ~ .switch:before {
+    transform: translateX(30px);
+    background-color: hsl(228 28% 20% 100%);
+  }
+
+  .switch {
+    width: 60px;
+    height: 30px;
+    padding: 5px;
+    display: block;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 20px;
+    box-sizing: border-box;
+    background: hsl(230, 22%, 74%);
+  }
+
+  .switch::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    display: block;
+    transition: 0.3s;
+    background: #fff;
+    border-radius: 20px;
+    will-change: transform;
+    transform: translateX(0px);
+  }
+</style>

@@ -1,0 +1,11 @@
+---
+import CreditCardBack from '@/components/CreditCardBack.astro'
+import CreditCardFront from '@/components/CreditCardFront.astro'
+---
+
+<section class={'w-full bg-main-mobile bg-cover bg-center px-4 py-8 lg:flex'}>
+  <div class="mx-auto grid w-full max-w-md justify-items-end lg:flex lg:flex-col-reverse lg:gap-9 lg:self-center">
+    <CreditCardBack class="xl:ml-[45%]" />
+    <CreditCardFront class="-mt-16 justify-self-start lg:mt-0 lg:justify-self-auto xl:ml-[25%]" />
+  </div>
+</section>

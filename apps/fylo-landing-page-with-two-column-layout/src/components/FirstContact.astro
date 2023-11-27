@@ -1,0 +1,37 @@
+---
+import Icon from 'shared/components/Icon.astro'
+
+import Button from '@/components/Button.astro'
+---
+
+<section
+  id="first-contact"
+  class="container flex flex-wrap-reverse items-center justify-center py-12 lg:flex-wrap lg:pb-0"
+>
+  <div class="w-full text-center lg:w-1/2 lg:text-left">
+    <h2 class="py-2 font-raleway text-3xl font-bold [text-wrap:balance] lg:text-5xl">
+      All your files in one secure location, accesible anywhere.
+    </h2>
+
+    <p class="mx-auto pt-6 text-sm sm:w-3/4 lg:mx-0 lg:text-xl">
+      Fylo stores your most import files in one secure location. Access them wherever you need, share and collaborate
+      with friends, family, and co-workers.
+    </p>
+
+    <form class="mt-6 flex flex-wrap items-center justify-center lg:justify-start">
+      <input
+        class="my-4 h-12 w-full rounded border border-solid border-black pl-6 text-sm outline-none sm:w-3/4 lg:w-3/6"
+        type="email"
+        aria-label="Enter your email"
+        placeholder="Enter your email..."
+        required
+      />
+
+      <Button class="sm:w-3/4 lg:mx-4 lg:w-2/6">Get Started</Button>
+    </form>
+  </div>
+
+  <div class="w-full pb-12 sm:w-2/3 lg:w-5/12">
+    <Icon name="illustration-1" />
+  </div>
+</section>

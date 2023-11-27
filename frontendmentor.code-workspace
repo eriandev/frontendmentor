@@ -1,0 +1,40 @@
+{
+  "folders": [
+    {
+      "path": "packages/shared"
+    },
+    {
+      "path": "apps/fylo-landing-page-with-two-column-layout"
+    },
+    {
+      "path": "apps/social-media-dashboard-with-theme-switcher"
+    },
+    {
+      "path": "apps/interactive-card-details-form"
+    },
+    {
+      "path": "apps/ip-address-tracker"
+    }
+  ],
+
+  "launch": {
+    "version": "0.1.0",
+    "configurations": [
+      {
+        "command": "./node_modules/.bin/astro dev",
+        "name": "Development server",
+        "request": "launch",
+        "type": "node-terminal"
+      }
+    ]
+  },
+
+  "extensions": {
+    "recommendations": [
+      "astro-build.astro-vscode",
+      "bradlc.vscode-tailwindcss",
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode"
+    ]
+  }
+}

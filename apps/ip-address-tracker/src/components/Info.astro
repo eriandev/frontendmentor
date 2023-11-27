@@ -1,0 +1,27 @@
+---
+const blocks = [
+  { id: 'ip-address', title: 'IP Address', defaultValue: '192.212.174.101' },
+  { id: 'location', title: 'Location', defaultValue: 'Rosemead, California 91770' },
+  { id: 'timezone', title: 'Timezone', defaultValue: 'PST' },
+  { id: 'isp', title: 'ISP', defaultValue: 'AS7127 Southern California Edison' }
+]
+---
+
+<div class="z-[999] -mb-16">
+  <section
+    class="mx-auto flex min-h-[8rem] max-w-lg flex-col gap-y-6 rounded-xl bg-white px-4 py-8 text-center shadow-xl xl:grid xl:max-w-5xl xl:grid-cols-4 xl:justify-center xl:gap-x-8 xl:px-8 xl:text-left"
+  >
+    {
+      blocks.map(({ id, title, defaultValue }, index) => (
+        <article class:list={['xl:flex xl:flex-col xl:gap-y-2', { 'xl:border-l xl:border-gray xl:pl-7': index !== 0 }]}>
+          <header class="text-[10px] font-semibold uppercase tracking-[0.2em] text-dark-gray xl:text-xs">
+            {title}
+          </header>
+          <span {id} title={defaultValue} class="line-clamp-2 text-lg text-black [word-break:auto-phrase] xl:text-2xl">
+            {defaultValue}
+          </span>
+        </article>
+      ))
+    }
+  </section>
+</div>

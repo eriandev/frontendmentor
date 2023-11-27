@@ -1,0 +1,37 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Card from '@/components/Card.astro'
+import Header from '@/components/Header.astro'
+import PrimeCard from '@/components/PrimeCard.astro'
+import Atributtion from 'shared/components/Atributtion.astro'
+---
+
+<Layout>
+  <Header />
+
+  <main
+    class="container -mt-24 mb-6 grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-8 lg:flex-1 xl:-mt-32 xl:grid-cols-4 xl:gap-8"
+  >
+    <PrimeCard user="@nathanf" amount="1987" text="followers" variation={+12} social="facebook" />
+    <PrimeCard user="@nathanf" amount="1044" text="followers" variation={+99} social="twitter" />
+    <PrimeCard user="@realnathanf" amount="11k" text="followers" variation={+1099} social="instagram" />
+    <PrimeCard user="Nathan F." amount="8239" text="subscribers" variation={-144} social="youtube" />
+  </main>
+
+  <section class="container mt-12">
+    <h4 class="my-6 text-2xl font-bold text-desa-blue dark:text-white">Overview - Today</h4>
+
+    <div class="grid grid-flow-row auto-rows-auto grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 xl:grid-cols-4 xl:gap-8">
+      <Card title="Page Views" amount="87" social="facebook" variation={+3} />
+      <Card title="Likes" amount="52" social="facebook" variation={-2} />
+      <Card title="Likes" amount="5462" social="instagram" variation={+2257} />
+      <Card title="Profile Views" amount="52k" social="instagram" variation={+1375} />
+      <Card title="Retweets" amount="117" social="twitter" variation={+303} />
+      <Card title="Likes" amount="507" social="twitter" variation={+553} />
+      <Card title="Likes" amount="107" social="youtube" variation={-19} />
+      <Card title="Total Views" amount="1407" social="youtube" variation={-12} />
+    </div>
+  </section>
+
+  <Atributtion class="mb-4 mt-16 text-center text-sm dark:text-white" />
+</Layout>

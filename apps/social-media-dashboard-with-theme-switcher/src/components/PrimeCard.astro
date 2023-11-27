@@ -1,0 +1,42 @@
+---
+import Icon from 'shared/components/Icon.astro'
+
+interface Props {
+  user: string
+  text: string
+  amount: string
+  variation: number
+  social: 'facebook' | 'twitter' | 'instagram' | 'youtube'
+}
+
+const { amount, social, text, user, variation } = Astro.props
+
+const isUp = variation >= 0
+const cardBeforeClass =
+  'before:absolute before:left-0.5 before:right-0.5 before:top-0 before:block before:h-1 before:rounded-t-3xl'
+---
+
+<article
+  class:list={[
+    'transition-standard relative w-full rounded-lg bg-light-gray-blue py-8 text-center dark:bg-dark-desa-blue',
+    cardBeforeClass,
+    social
+  ]}
+>
+  <header class="flex items-center justify-center">
+    <Icon name={'icon-' + social} size={20} class="inline" />
+    <h3 class="px-2 font-bold text-desa-blue">{user}</h3>
+  </header>
+
+  <section class="py-6">
+    <span class="block py-1 text-6xl font-bold leading-none dark:text-white">{amount}</span>
+    <span class="uppercase tracking-[0.4em] text-desa-blue">{text}</span>
+  </section>
+
+  <footer class="flex items-center justify-center gap-x-1">
+    <Icon name={'icon-' + (isUp ? 'up' : 'down')} size={8} class="inline" />
+    <span class:list={['font-bold', { 'text-lime-green': isUp, 'text-bright-red': !isUp }]}>
+      {Math.abs(variation)} Today
+    </span>
+  </footer>
+</article>

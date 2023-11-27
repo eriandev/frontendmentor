@@ -1,0 +1,30 @@
+---
+import Button from '@/components/Button.astro'
+---
+
+<section id="second-contact" class="bg-primary-desa py-16 lg:py-32">
+  <div class="container flex flex-wrap items-start justify-center text-center text-white lg:text-left">
+    <div class="w-full lg:w-1/2">
+      <h3 class="w-full font-raleway text-3xl font-bold lg:text-4xl">Get early access today</h3>
+
+      <p class="mx-auto py-8 sm:w-3/4 lg:mx-0 lg:w-4/5 lg:pt-6 lg:text-lg">
+        It only takes a minute to sign up and our free starter tier is extremely generous. If you have any questions,
+        our support team would be happy to help you.
+      </p>
+    </div>
+
+    <div class="w-full lg:w-2/5">
+      <form class="flex flex-col items-start py-2 sm:justify-center">
+        <input
+          type="email"
+          aria-label="Enter your email"
+          placeholder="email@example.com"
+          class="mx-auto h-12 w-full rounded border border-solid border-black pl-4 text-sm text-black outline-none sm:w-3/4 lg:w-full lg:pl-6"
+          required
+        />
+
+        <Button class="mx-auto my-2 sm:w-3/4 lg:mx-0 lg:my-4 lg:w-3/6">Get Started For Free</Button>
+      </form>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,24 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+import ErrorMessage from './ErrorMessage.astro'
+import Label from './Label.astro'
+
+interface Props extends HTMLAttributes<'input'> {
+  id?: string
+  label?: string
+  withError?: boolean
+}
+
+const { id, label, withError = false, class: customCssClasses, ...attrs } = Astro.props
+---
+
+<div class={customCssClasses}>
+  {typeof label === 'string' ? <Label for={id}>{label}</Label> : null}
+  <input
+    id={id}
+    class="w-full cursor-pointer rounded-md border border-light-grayish-violet px-3 py-2 font-medium outline-none placeholder:text-light-grayish-violet focus:border-violet"
+    {...attrs}
+  />
+  {withError ? <ErrorMessage id={id} /> : null}
+</div>
