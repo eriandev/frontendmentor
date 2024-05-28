@@ -44,7 +44,7 @@ function getFormatted (text: string): string {
   return typeof text === 'string'
     ? text
       .replace(/[^0-9]/g, '')
-      .substr(0, 16)
+      .slice(0, 17)
       .split('')
       // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
       .reduce((str, l, i) => str + (!i || (Boolean((i % 4))) ? '' : ' ') + l, '')

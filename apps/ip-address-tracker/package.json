@@ -12,13 +12,12 @@
     "format": "prettier --write src/**/*.astro",
     "check": "astro check --tsconfig tsconfig.json"
   },
-  "packageManager": "pnpm@8.10.5",
   "engines": {
     "node": ">=18.18.0",
     "pnpm": ">=8.10.0"
   },
   "devDependencies": {
-    "@types/leaflet": "1.9.8",
+    "@types/leaflet": "1.9.12",
     "eslint-config-custom": "workspace:*",
     "shared": "workspace:*"
   },

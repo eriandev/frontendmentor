@@ -1,18 +1,12 @@
 export function getUTCFromTimezone (timeZone: string): string {
-  // Crear un objeto Date con la hora actual en la zona horaria dada
+  // Create a Date object with the current time in the given time zone
   const dateFormat = new Intl.DateTimeFormat('en-US', { timeZone, timeZoneName: 'short' })
 
-  console.log({ dateFormat })
-
-  // Obtener las partes formateadas de la fecha y hora
+  // Obtain the formatted parts of the date and time
   const dateParts = dateFormat.formatToParts(new Date())
 
-  console.log({ dateParts })
-
-  // Buscar la parte que contiene la diferencia con UTC
+  // Find the part that contains the difference from UTC
   const dateGMT = dateParts.find(part => part.type === 'timeZoneName')?.value ?? 'unknown'
-
-  console.log({ dateGMT })
 
   return dateGMT.replace('GMT', 'UTC')
 }

@@ -1,22 +1,4 @@
 {
-  "folders": [
-    {
-      "path": "packages/shared"
-    },
-    {
-      "path": "apps/fylo-landing-page-with-two-column-layout"
-    },
-    {
-      "path": "apps/social-media-dashboard-with-theme-switcher"
-    },
-    {
-      "path": "apps/interactive-card-details-form"
-    },
-    {
-      "path": "apps/ip-address-tracker"
-    }
-  ],
-
   "launch": {
     "version": "0.1.0",
     "configurations": [
@@ -36,5 +18,23 @@
       "dbaeumer.vscode-eslint",
       "esbenp.prettier-vscode"
     ]
-  }
+  },
+
+  "folders": [
+    {
+      "path": "packages/shared"
+    },
+    {
+      "path": "apps/fylo-landing-page-with-two-column-layout"
+    },
+    {
+      "path": "apps/social-media-dashboard-with-theme-switcher"
+    },
+    {
+      "path": "apps/interactive-card-details-form"
+    },
+    {
+      "path": "apps/ip-address-tracker"
+    }
+  ],
 }
