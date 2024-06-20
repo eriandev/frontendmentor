@@ -1,0 +1,23 @@
+{
+  "name": "calculator-app",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "astro": "astro",
+    "dev": "astro dev",
+    "preview": "astro preview",
+    "build": "pnpm check && astro build",
+    "lint": "eslint --fix src/**/*.{astro,ts}",
+    "format": "prettier --write src/**/*.astro",
+    "check": "astro check --tsconfig tsconfig.json"
+  },
+  "engines": {
+    "node": ">=18.18.0",
+    "pnpm": ">=8.10.0"
+  },
+  "devDependencies": {
+    "eslint-config-custom": "workspace:*",
+    "shared": "workspace:*"
+  }
+}

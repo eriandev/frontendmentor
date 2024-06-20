@@ -1,0 +1,20 @@
+---
+import MetaTags from 'shared/components/MetaTags.astro'
+import '@/styles.css'
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <MetaTags slug="calculator-app" themeColor="#1f212e" />
+
+    <script src="@/scripts/declareRefs.ts"></script>
+    <script src="@/scripts/calculatorActions.ts"></script>
+    <script src="@/scripts/themeActions.ts"></script>
+    <script src="@/scripts/events.ts"></script>
+  </head>
+
+  <body class="theme-1 grid min-h-screen content-center items-center gap-y-4 bg-color-main font-league-spartan">
+    <slot />
+  </body>
+</html>

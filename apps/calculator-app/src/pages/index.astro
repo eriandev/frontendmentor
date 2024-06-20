@@ -1,0 +1,17 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Header from '@/components/Header.astro'
+import Keypad from '@/components/Keypad.astro'
+import Display from '@/components/Display.astro'
+import Container from '@/components/Container.astro'
+import Atributtion from 'shared/components/Atributtion.astro'
+---
+
+<Layout>
+  <Container>
+    <Header />
+    <Display />
+    <Keypad />
+  </Container>
+  <Atributtion class="fix-color mx-auto text-center text-sm text-primary" />
+</Layout>

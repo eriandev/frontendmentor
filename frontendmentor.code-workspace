@@ -35,6 +35,9 @@
     },
     {
       "path": "apps/ip-address-tracker"
+    },
+    {
+      "path": "apps/calculator-app"
     }
   ],
 }
