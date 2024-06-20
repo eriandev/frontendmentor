@@ -9,13 +9,13 @@
     "check": "astro check --tsconfig tsconfig.json"
   },
   "devDependencies": {
-    "@types/node": "20.12.12",
+    "@types/node": "20.14.6",
     "astro-icon": "0.8.2",
     "eslint-config-custom": "workspace:*",
-    "prettier": "3.2.5",
+    "prettier": "3.3.2",
     "prettier-plugin-astro": "0.14.0",
-    "prettier-plugin-tailwindcss": "0.5.14",
-    "tailwindcss": "3.4.3",
-    "vite": "5.2.12"
+    "prettier-plugin-tailwindcss": "0.6.5",
+    "tailwindcss": "3.4.4",
+    "vite": "5.3.1"
   }
 }

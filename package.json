@@ -18,11 +18,11 @@
     "all:run": "pnpm -r --stream --workspace-concurrency 3"
   },
   "engines": {
-    "node": ">=18.18.0",
-    "pnpm": ">=8.10.0"
+    "node": ">=20.12.0",
+    "pnpm": ">=8.15.0"
   },
   "dependencies": {
-    "astro": "4.9.2"
+    "astro": "4.11.0"
   },
   "devDependencies": {
     "@astrojs/check": "0.7.0",
@@ -31,6 +31,6 @@
     "shared": "workspace:*",
     "sharp": "0.33.4",
     "typescript": "5.3.3",
-    "vite": "5.2.12"
+    "vite": "5.2.13"
   }
 }

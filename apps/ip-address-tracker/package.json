@@ -13,15 +13,15 @@
     "check": "astro check --tsconfig tsconfig.json"
   },
   "engines": {
-    "node": ">=18.18.0",
-    "pnpm": ">=8.10.0"
+    "node": ">=20.12.0",
+    "pnpm": ">=8.15.0"
+  },
+  "dependencies": {
+    "leaflet": "1.9.4"
   },
   "devDependencies": {
     "@types/leaflet": "1.9.12",
     "eslint-config-custom": "workspace:*",
     "shared": "workspace:*"
-  },
-  "dependencies": {
-    "leaflet": "1.9.4"
   }
 }
