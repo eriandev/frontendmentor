@@ -10,19 +10,26 @@ const LEVELS = ['newbie', 'junior', 'intermediate', 'advanced', 'guru']
 const levelColor = LEVELS[level - 1]
 const bgColor = 'bg-' + levelColor
 const textColor = 'text-' + levelColor
+const borderColor = 'border-' + levelColor
 ---
 
 <div
   class:list={[
-    'flex h-max w-max items-center rounded-lg border text-xs font-bold leading-5 md:text-sm md:leading-6',
-    'border-' + levelColor,
+    borderColor,
+    'flex h-max w-max items-center rounded-md border text-xs font-bold leading-5 md:text-sm md:leading-6',
     extraClass
   ]}
 >
-  <span class={`block h-full rounded-l-lg ${bgColor} px-2 text-white md:px-3`}>
+  <span class:list={[
+    bgColor,
+    'block h-full rounded-l-sm px-2 text-white md:px-3'
+  ]}>
     {level}
   </span>
-  <span class={`block px-1.5 uppercase ${textColor} md:px-3`}>
+  <span class:list={[
+    textColor,
+    'block px-1.5 uppercase md:px-3'
+  ]}>
     {levelColor}
   </span>
 </div>

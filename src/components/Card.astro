@@ -19,12 +19,12 @@ const techsGridAlign = 'grid grid-rows-2 gap-y-3'
 const techsFlexAlign = 'flex flex-wrap items-center justify-between'
 const levelSearchLink = `https://www.frontendmentor.io/challenges?difficulty=${level}&sort=difficulty%7Casc`
 const cardShadowClass =
-  'before:pointer-events-none before:absolute before:top-0 before:z-10 before:h-24 before:w-full before:rounded-t-2xl before:bg-[linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0))] before:content-[""]'
+  'before:pointer-events-none before:absolute before:top-0 before:z-10 before:h-24 before:w-full before:bg-[linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0))] before:content-[""]'
 ---
 
 <article class:list={['relative overflow-hidden rounded-2xl border border-gray-300 bg-white', cardShadowClass]}>
   <Link to={link} class="block overflow-hidden">
-    <Picture {source} alt={title} width={384} height={266} class="transition-colorize rounded-t-2xl" />
+    <Picture {source} alt={title} width={384} height={266} class="transition-zooming" />
   </Link>
 
   <section class="p-6 sm:px-4 md:px-6 xl:p-10">

@@ -65,13 +65,20 @@ const config: Config = {
           }
         },
 
-        '@media screen and (pointer: fine)': {
+        '@media (pointer: fine)': {
           '.transition-colorize': {
             filter: 'grayscale(100%)',
-            transition: 'transform 300ms, filter 300ms ease-in-out',
+            transition: 'filter 300ms ease-in-out',
 
             '&:hover': {
-              filter: 'grayscale(0)',
+              filter: 'grayscale(0)'
+            }
+          },
+
+          '.transition-zooming': {
+            transition: 'transform 300ms ease-in-out',
+
+            '&:hover': {
               transform: 'scale(1.05)'
             }
           }
