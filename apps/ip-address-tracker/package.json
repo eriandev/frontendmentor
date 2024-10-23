@@ -20,7 +20,7 @@
     "leaflet": "1.9.4"
   },
   "devDependencies": {
-    "@types/leaflet": "1.9.13",
+    "@types/leaflet": "1.9.14",
     "eslint-config-custom": "workspace:*",
     "shared": "workspace:*"
   }
