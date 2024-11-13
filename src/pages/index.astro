@@ -1,6 +1,5 @@
 ---
 import { get } from 'shared/utils/http'
-import { API_URL } from 'shared/consts'
 
 import Card from '@/components/Card.astro'
 import Layout from '@/layouts/Layout.astro'
@@ -17,7 +16,7 @@ interface Projects {
   title: string
 }
 
-const { results } = await get<{ results: Projects[] }>(API_URL + '/projects/')
+const { results } = await get<{ results: Projects[] }>(import.meta.env.PUBLIC_API_URL + '/projects/')
 const hasProjects = results.length > 0
 ---
 

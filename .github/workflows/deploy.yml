@@ -12,6 +12,9 @@ jobs:
   deploy:
     runs-on: ubuntu-22.04
 
+    env:
+      PUBLIC_API_URL: ${{ secrets.PUBLIC_API_URL }}
+
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
@@ -33,8 +36,6 @@ jobs:
 
       - name: Build 🛠️
         run: pnpm build:prod
-        env:
-          API_PROJECTS_URL: ${{ secrets.API_PROJECTS_URL }}
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4

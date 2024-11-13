@@ -1,6 +1,5 @@
 ---
 import { get } from 'shared/utils/http'
-import { API_URL } from 'shared/consts'
 import MetaTags from 'shared/components/MetaTags.astro'
 
 import Header from '@/components/Header.astro'
@@ -35,7 +34,7 @@ interface Landing {
   }
 }
 
-const { footer, header } = await get<Landing>(API_URL + '/landing/')
+const { footer, header } = await get<Landing>(import.meta.env.PUBLIC_API_URL + '/landing/')
 const { designedBy, developedBy } = footer
 const { navigation, profile } = header
 ---
