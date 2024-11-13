@@ -6,18 +6,21 @@ import Tech from '@/components/Tech.astro'
 import LevelTag from '@/components/LevelTag.astro'
 
 interface Props {
-  title: string
-  link: string
-  level: number
+  level: {
+    link: string
+    name: string
+    number: number
+  }
   image: string
+  link: string
   techs: string[]
+  title: string
 }
 
 const { image: source, level, link, title, techs } = Astro.props
 
 const techsGridAlign = 'grid grid-rows-2 gap-y-3'
 const techsFlexAlign = 'flex flex-wrap items-center justify-between'
-const levelSearchLink = `https://www.frontendmentor.io/challenges?difficulty=${level}&sort=difficulty%7Casc`
 const cardShadowClass =
   'before:pointer-events-none before:absolute before:top-0 before:z-10 before:h-24 before:w-full before:bg-[linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0))] before:content-[""]'
 ---
@@ -38,8 +41,8 @@ const cardShadowClass =
       <div class="flex gap-x-1.5 md:gap-x-2.5">
         {techs.map((tech) => <Tech name={tech} />)}
       </div>
-      <Link external to={levelSearchLink} class="justify-self-end">
-        <LevelTag {level} />
+      <Link external to={level.link} class="justify-self-end">
+        <LevelTag level={level.number} name={level.name} />
       </Link>
     </article>
   </section>

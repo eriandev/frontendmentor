@@ -1,22 +1,21 @@
 ---
 interface Props {
   level: number
+  name: string
   class?: string
 }
 
-const { level, class: extraClass } = Astro.props
+const { level, name, class: extraClass } = Astro.props
 
-const LEVELS = ['newbie', 'junior', 'intermediate', 'advanced', 'guru']
-const levelColor = LEVELS[level - 1]
-const bgColor = 'bg-' + levelColor
-const textColor = 'text-' + levelColor
-const borderColor = 'border-' + levelColor
+const bgColor = 'bg-' + name
+const textColor = 'text-' + name
+const borderColor = 'border-' + name
 ---
 
 <div
   class:list={[
-    borderColor,
     'flex h-max w-max items-center rounded-md border text-xs font-bold leading-5 md:text-sm md:leading-6',
+    borderColor,
     extraClass,
   ]}
 >
@@ -24,6 +23,6 @@ const borderColor = 'border-' + levelColor
     {level}
   </span>
   <span class:list={[textColor, 'block px-1.5 uppercase md:px-3']}>
-    {levelColor}
+    {name}
   </span>
 </div>

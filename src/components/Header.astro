@@ -3,14 +3,24 @@ import Link from 'shared/components/Link.astro'
 import Icon from 'shared/components/Icon.astro'
 import Image from 'shared/components/Image.astro'
 
-const navigation = [
-  { to: '/', external: false, text: 'My Solutions' },
-  { to: 'https://www.frontendmentor.io/challenges', external: true, text: 'Challenges' },
-  { to: 'https://www.frontendmentor.io/resources', external: true, text: 'Resources' },
-]
+interface Props {
+  navigation: Array<{
+    external: boolean
+    text: string
+    to: string
+  }>
+  profile: {
+    image: {
+      src: string
+      alt: string
+    }
+    link: string
+    title: string
+  }
+}
 
-const src = '/frontendmentor/images/profile-image.webp'
-const profileLink = 'https://www.frontendmentor.io/profile/eriandev'
+const { navigation, profile } = Astro.props
+
 const linkClass =
   'relative after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:scale-0 after:bg-guru after:content-[""] after:[transition:transform_0.3s_ease_0s] hover:after:scale-100 hover:after:[transition:transform_0.3s_ease_0s]'
 ---
@@ -32,8 +42,8 @@ const linkClass =
           }
         </ul>
       </nav>
-      <Link external title="Go to my frontendmentor profile" to={profileLink}>
-        <Image {src} width={42} height={42} alt="Profile image" class="rounded-full" />
+      <Link external title={profile.title} to={profile.link}>
+        <Image src={profile.image.src} width={42} height={42} alt={profile.image.alt} class="rounded-full" />
       </Link>
     </section>
   </div>

@@ -1,6 +1,43 @@
 ---
+import { get } from 'shared/utils/http'
+import { API_URL } from 'shared/consts'
 import MetaTags from 'shared/components/MetaTags.astro'
+
 import Header from '@/components/Header.astro'
+import Footer from '@/components/Footer.astro'
+
+interface Landing {
+  header: {
+    navigation: Array<{
+      external: boolean
+      text: string
+      to: string
+    }>
+    profile: {
+      image: {
+        src: string
+        alt: string
+      }
+      link: string
+      title: string
+    }
+  }
+
+  footer: {
+    designedBy: {
+      link: string
+      text: string
+    }
+    developedBy: {
+      link: string
+      text: string
+    }
+  }
+}
+
+const { footer, header } = await get<Landing>(API_URL + '/landing/')
+const { designedBy, developedBy } = footer
+const { navigation, profile } = header
 ---
 
 <!doctype html>
@@ -44,7 +81,8 @@ import Header from '@/components/Header.astro'
   </head>
 
   <body class="min-h-screen bg-gray-100 font-barlow font-medium text-black">
-    <Header />
+    <Header {navigation} {profile} />
     <slot />
+    <Footer {designedBy} {developedBy} />
   </body>
 </html>

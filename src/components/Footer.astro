@@ -1,5 +1,18 @@
 ---
 import Link from 'shared/components/Link.astro'
+
+interface Props {
+  designedBy: {
+    link: string
+    text: string
+  }
+  developedBy: {
+    link: string
+    text: string
+  }
+}
+
+const { designedBy, developedBy } = Astro.props
 ---
 
 <footer class="border-y border-gray-300 bg-white">
@@ -7,13 +20,13 @@ import Link from 'shared/components/Link.astro'
     class="mx-auto flex max-w-[75rem] flex-col justify-center gap-y-3 p-6 text-center md:flex-row md:justify-between"
   >
     <p>
-      Design is property of <Link external to="https://www.frontendmentor.io/" class="font-bold hover:underline">
-        Frontend Mentor
+      Design is property of <Link external to={designedBy.link} class="font-bold hover:underline">
+        {designedBy.text}
       </Link>
     </p>
     <p>
-      Developed by <Link external to="https://erian.dev/" class="font-semibold text-html hover:underline">
-        @eriandev
+      Developed by <Link external to={developedBy.link} class="font-semibold text-html hover:underline">
+        {developedBy.text}
       </Link>
     </p>
   </div>

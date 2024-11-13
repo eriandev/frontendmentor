@@ -1,11 +1,24 @@
 ---
+import { get } from 'shared/utils/http'
+import { API_URL } from 'shared/consts'
+
 import Card from '@/components/Card.astro'
 import Layout from '@/layouts/Layout.astro'
-import Footer from '@/components/Footer.astro'
-import { getProjects } from '@/services/projects'
 
-const projects = await getProjects()
-const hasProjects = projects.length > 0
+interface Projects {
+  level: {
+    link: string
+    name: string
+    number: number
+  }
+  image: string
+  link: string
+  techs: string[]
+  title: string
+}
+
+const { results } = await get<{ results: Projects[] }>(API_URL + '/projects/')
+const hasProjects = results.length > 0
 ---
 
 <Layout title="Frontendmentor Challenges Solved">
@@ -24,12 +37,10 @@ const hasProjects = projects.length > 0
   >
     {
       hasProjects ? (
-        projects.map((projectData) => <Card {...projectData} />)
+        results.map((projectData) => <Card {...projectData} />)
       ) : (
         <p class="mx-auto w-max text-2xl md:text-3xl">No projects to show...</p>
       )
     }
   </main>
-
-  <Footer />
 </Layout>
