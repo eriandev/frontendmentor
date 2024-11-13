@@ -1,4 +1,4 @@
-import { URL } from 'node:url'
+import icon from 'astro-icon'
 import tailwind from '@astrojs/tailwind'
 import type { AstroUserConfig } from 'astro/config'
 
@@ -9,7 +9,7 @@ export function getAstroConfig ({ project }: { project?: string } = {}): AstroUs
   const { hostname } = new URL(PROJECTS_URL)
 
   return {
-    integrations: [tailwind()],
+    integrations: [tailwind(), icon()],
     base: hasProjectName ? `/frontendmentor/${project}` : '/frontendmentor',
     outDir: hasProjectName ? `../../dist/${project}` : undefined,
     build: {

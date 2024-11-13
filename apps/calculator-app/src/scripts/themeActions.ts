@@ -9,12 +9,12 @@ const inputSteps = {
 }
 
 export function switchTheme (themeNumber: string): void {
-  const bodyClassList = document.body.classList
+  const { body } = document
 
-  bodyClassList.remove('theme-1')
-  bodyClassList.remove('theme-2')
-  bodyClassList.remove('theme-3')
-  bodyClassList.add(`theme-${themeNumber}`)
+  body.classList.remove('theme-1')
+  body.classList.remove('theme-2')
+  body.classList.remove('theme-3')
+  body.classList.add(`theme-${themeNumber}`)
 
   inputSteps[themeNumber as '1' | '2' | '3']?.click()
 

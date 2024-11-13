@@ -30,7 +30,7 @@ export function isValidForm (): boolean {
 }
 
 function isNotEmpty (ref: HTMLInputElement, id: string): boolean {
-  if (typeof ref.value !== 'string' || ref?.value?.length < 1) return showError(ref, id, EMPTY_ERROR_MESSAGE)
+  if (typeof ref.value !== 'string' || ref.value.length < 1) return showError(ref, id, EMPTY_ERROR_MESSAGE)
   return true
 }
 
@@ -42,7 +42,7 @@ function isValidNumber (ref: HTMLInputElement, id: string): boolean {
 
 function isValidCreditCardNumber (ref: HTMLInputElement, id: string): boolean {
   if (!isValidNumber(ref, id)) return false
-  if (ref?.value.length !== 16) return showError(ref, id, INVALID_CARD_NUMBER_ERROR_MESSAGE)
+  if (ref.value.length !== 16) return showError(ref, id, INVALID_CARD_NUMBER_ERROR_MESSAGE)
   return true
 }
 
@@ -64,7 +64,7 @@ function isValidCVCNumber (ref: HTMLInputElement, id: string): boolean {
 
 function showError (inputRef: HTMLInputElement, errorId: string, message: string): boolean {
   const spanError = $(`#error-${errorId}`)
-  inputRef?.classList.replace('border-light-grayish-violet', 'border-error')
+  inputRef.classList.replace('border-light-grayish-violet', 'border-error')
   if (spanError != null) spanError.textContent = message
   return false
 }

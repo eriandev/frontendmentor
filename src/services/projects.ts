@@ -1,6 +1,6 @@
 import { PROJECTS_URL } from 'shared/consts'
 
-export interface Project {
+export interface Projects {
   title: string
   image: string
   techs: string[]
@@ -8,13 +8,13 @@ export interface Project {
   link: string
 }
 
-export async function getProjects (): Promise<Project[]> {
+export async function getProjects (): Promise<Projects[]> {
   try {
     const response = await fetch(PROJECTS_URL)
 
     if (!response.ok) throw Error()
 
-    const { results }: { results: Project[] } = await response.json()
+    const { results } = await response.json() as { results: Projects[] }
     return results
   } catch (error) {
     console.error('Unable to obtain projects list')

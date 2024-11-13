@@ -10,9 +10,9 @@ function getLastNumber (value: string): string {
 }
 
 function getResult ($inputDisplay: HTMLInputElement): string {
-  // eslint-disable-next-line no-eval
+  // eslint-disable-next-line no-eval -- Required
   const result = eval($inputDisplay.value) as number
-  const resultHavePoint = Boolean(result.toString().match(/\./))
+  const resultHavePoint = Boolean(/\./.exec(result.toString()))
   return resultHavePoint ? result.toFixed(3) : result.toString()
 }
 
@@ -24,7 +24,7 @@ function updateOperation ($inputDisplay: HTMLInputElement, operation: string): v
 
 function updateValueWithPoint ($inputDisplay: HTMLInputElement): void {
   const lastValue = getLastNumber($inputDisplay.value)
-  const havePoint = Boolean(lastValue.match(/\./))
+  const havePoint = Boolean(/\./.exec(lastValue))
   const isLastEmpty = lastValue === ''
 
   if (!havePoint) {
@@ -95,7 +95,7 @@ export function updateKeyActive (event: KeyboardEvent, classListMethod: 'add' | 
     for (const { key, code } of keypadList) {
       const codeExists = Array.isArray(code)
 
-      if (key === event.key || (codeExists && code?.includes(event.code))) {
+      if (key === event.key || (codeExists && code.includes(event.code))) {
         const id = `#key-${codeExists ? code[0] : key}`
         $(id)?.classList[classListMethod]('active')
       }

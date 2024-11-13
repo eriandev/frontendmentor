@@ -14,8 +14,8 @@ const { id, value, variant = 'primary' } = Astro.props
   class:list={[
     'relative grid h-16 w-full select-none place-items-center rounded-lg border-b-4 border-key-primary-dark bg-key-primary-light text-3xl/none font-bold active:h-[60px] active:translate-y-[0.25rem] active:border-b-2',
     {
-      [`border-key-${variant}-dark bg-key-${variant}-light text-xl/none text-white`]: variant !== 'primary'
-    }
+      [`border-key-${variant}-dark bg-key-${variant}-light text-xl/none text-white`]: variant !== 'primary',
+    },
   ]}
 >
   <span class={variant === 'primary' ? 'h-6 text-primary' : 'h-4 text-secondary'}>{value}</span>

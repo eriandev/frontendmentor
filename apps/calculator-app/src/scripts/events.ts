@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.addEventListener('keydown', (event) => {
-    console.log(event.key)
     updateKeyActive(event, 'add')
   })
 

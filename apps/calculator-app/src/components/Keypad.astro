@@ -7,13 +7,11 @@ import { keyList } from '@/scripts/consts.ts'
   <article class="mb-4 grid grid-cols-[repeat(4,4rem)] gap-4">
     {
       keyList.map(({ key, code }) =>
-        key === 'Backspace'
-          ? (
+        key === 'Backspace' ? (
           <Key id={key} variant="secondary" value="DEL" />
-            )
-          : (
+        ) : (
           <Key id={Array.isArray(code) ? code[0] : key} value={key} />
-            )
+        ),
       )
     }
   </article>

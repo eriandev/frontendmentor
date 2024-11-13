@@ -1,5 +1,5 @@
 function isMaxLength (maxLength: number, { target }: KeyboardEvent): boolean {
-  const value = (target as HTMLInputElement)?.value
+  const {value} = (target as HTMLInputElement)
   return value.length < maxLength
 }
 

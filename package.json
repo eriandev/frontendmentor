@@ -12,9 +12,7 @@
     "check": "astro check --tsconfig tsconfig.json",
     "lint": "eslint --fix {src,apps,packages}/**/*.{astro,ts}",
     "format": "prettier --write {src,apps,packages}/**/*.astro",
-    "lint:prod": "pnpm lint && pnpm all:run lint",
     "build:prod": "pnpm build && pnpm all:run build",
-    "format:prod": "pnpm format && pnpm all:run format",
     "all:run": "pnpm -r --stream --workspace-concurrency 3"
   },
   "engines": {

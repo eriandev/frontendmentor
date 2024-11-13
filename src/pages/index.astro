@@ -19,17 +19,15 @@ const hasProjects = projects.length > 0
     class:list={[
       'mx-auto max-w-3xl xl:max-w-[75rem]',
       { 'h-main flex items-center': !hasProjects },
-      { 'grid grid-cols-1 gap-2 px-6 py-24 sm:grid-cols-2 md:gap-8 xl:grid-cols-3': hasProjects }
+      { 'grid grid-cols-1 gap-2 px-6 py-24 sm:grid-cols-2 md:gap-8 xl:grid-cols-3': hasProjects },
     ]}
   >
     {
-      hasProjects
-        ? (
-            projects.map((projectData) => <Card {...projectData} />)
-          )
-        : (
+      hasProjects ? (
+        projects.map((projectData) => <Card {...projectData} />)
+      ) : (
         <p class="mx-auto w-max text-2xl md:text-3xl">No projects to show...</p>
-          )
+      )
     }
   </main>
 
