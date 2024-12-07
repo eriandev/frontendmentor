@@ -1,4 +1,4 @@
-export function validateIP (ip: string): { isValid: boolean, message: string } {
+export function validateIP(ip: string): { isValid: boolean; message: string } {
   const IP_ADDRESS_REGEX = /^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}$/
 
   if (typeof ip !== 'string') return { isValid: false, message: 'No text' }

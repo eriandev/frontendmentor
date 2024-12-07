@@ -17,7 +17,7 @@ export const myMap = L.map('map', {
   zoomControl: true,
   attributionControl: false,
   layers: [BASE_MAPS['Google-Map']],
-  center: [INITIAL_LNG, INITIAL_LAT]
+  center: [INITIAL_LNG, INITIAL_LAT],
 })
 
 export const locationIcon = L.icon({
@@ -25,5 +25,5 @@ export const locationIcon = L.icon({
 
   iconSize: [38, 48],
   iconAnchor: [22, 94],
-  popupAnchor: [-3, -76]
+  popupAnchor: [-3, -76],
 })

@@ -22,13 +22,13 @@ jobs:
       - name: Use pnpm 🗜️
         uses: pnpm/action-setup@v2
         with:
-          version: 9.4.0
+          version: 9.15.0
           run_install: false
 
       - name: Use Node.js 🐢
         uses: actions/setup-node@v3
         with:
-          node-version: 20.15.0
+          node-version: 20.18.1
           cache: 'pnpm'
 
       - name: Install dependencies ⚙️

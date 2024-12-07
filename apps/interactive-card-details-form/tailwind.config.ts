@@ -2,10 +2,7 @@ import { plugin } from 'shared/config/tailwindcss'
 import type { Config } from 'shared/config/tailwindcss'
 
 const config: Config = {
-  content: [
-    './src/**/*.{astro,html}',
-    './node_modules/shared/components/*.astro'
-  ],
+  content: ['./src/**/*.{astro,html}', './node_modules/shared/components/*.astro'],
   safelist: ['border-error'],
   darkMode: 'class',
   theme: {
@@ -14,11 +11,11 @@ const config: Config = {
       md: '768px',
       lg: '1024px',
       xl: '1280px',
-      '2xl': '1440px'
+      '2xl': '1440px',
     },
 
     fontFamily: {
-      'space-grotesk': ['Space Grotesk', 'sans-serif']
+      'space-grotesk': ['Space Grotesk', 'sans-serif'],
     },
 
     colors: {
@@ -33,26 +30,26 @@ const config: Config = {
 
       black: 'hsl(0, 0%, 18%)',
       white: 'hsl(0, 0%, 100%)',
-      transparent: 'transparent'
+      transparent: 'transparent',
     },
 
     extend: {
       backgroundImage: {
         'main-mobile': "url('/frontendmentor/interactive-card-details-form/images/bg-main-mobile.png')",
-        'card-front': "url('/frontendmentor/interactive-card-details-form/images/bg-card-front.png')"
-      }
-    }
+        'card-front': "url('/frontendmentor/interactive-card-details-form/images/bg-card-front.png')",
+      },
+    },
   },
 
   plugins: [
     plugin(function ({ addComponents }) {
       addComponents({
         '.bg-credit-card-back': {
-          background: 'linear-gradient(145deg, rgba(255,255,255,1) 0%, rgba(222,221,223,1) 100%)'
-        }
+          background: 'linear-gradient(145deg, rgba(255,255,255,1) 0%, rgba(222,221,223,1) 100%)',
+        },
       })
-    })
-  ]
+    }),
+  ],
 }
 
 export default config

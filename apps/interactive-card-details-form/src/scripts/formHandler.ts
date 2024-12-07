@@ -17,7 +17,7 @@ btn?.addEventListener('click', () => {
   if (isComplete) initForm()
 })
 
-function initForm (): void {
+function initForm(): void {
   resetForm()
   resetCards()
 
@@ -28,13 +28,13 @@ function initForm (): void {
   completeView?.classList.replace('grid', 'hidden')
 }
 
-function completeForm (): void {
+function completeForm(): void {
   isComplete = true
   mainForm?.classList.replace('flex', 'hidden')
   completeView?.classList.replace('hidden', 'grid')
 }
 
-function clearErrors (): void {
+function clearErrors(): void {
   const inputs = $$<HTMLInputElement>('[id^=input-]')
   const errorMessages = $$<HTMLInputElement>('[id^=error-input]')
 
@@ -47,7 +47,7 @@ function clearErrors (): void {
   })
 }
 
-function resetForm (): void {
+function resetForm(): void {
   const inputs = $$<HTMLInputElement>('[id^=input-]')
   inputs.forEach((input) => {
     input.value = ''

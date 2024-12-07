@@ -19,10 +19,6 @@ export const keyList = [
   { key: '.', code: ['NumpadDecimal', 'Period', 'Comma'] },
   { key: '0' },
   { key: '/', code: ['NumpadDivide'] },
-  { key: 'x', code: ['KeyX', 'NumpadMultiply'] }
+  { key: 'x', code: ['KeyX', 'NumpadMultiply'] },
 ]
-export const keypadList = [
-  ...keyList,
-  { key: 'Enter', code: ['Enter', 'NumpadEnter'] },
-  { key: 'Delete' }
-]
+export const keypadList = [...keyList, { key: 'Enter', code: ['Enter', 'NumpadEnter'] }, { key: 'Delete' }]

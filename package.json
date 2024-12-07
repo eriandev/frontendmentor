@@ -11,7 +11,7 @@
     "build": "pnpm check && astro build",
     "check": "astro check --tsconfig tsconfig.json",
     "lint": "eslint --fix {src,apps,packages}/**/*.{astro,ts}",
-    "format": "prettier --write {src,apps,packages}/**/*.astro",
+    "format": "prettier --write {src,apps,packages}/**/*.{astro,ts}",
     "build:prod": "pnpm build && pnpm all:run build",
     "all:run": "pnpm -r --stream --workspace-concurrency 3"
   },

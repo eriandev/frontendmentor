@@ -5,18 +5,15 @@ import { inputStep1, inputStep2, inputStep3 } from '@/scripts/declareRefs'
 const inputSteps = {
   1: inputStep1,
   2: inputStep2,
-  3: inputStep3
+  3: inputStep3,
 }
 
-export function switchTheme (themeNumber: string): void {
+export function switchTheme(themeNumber: keyof typeof inputSteps): void {
   const { body } = document
 
-  body.classList.remove('theme-1')
-  body.classList.remove('theme-2')
-  body.classList.remove('theme-3')
-  body.classList.add(`theme-${themeNumber}`)
+  body.classList.remove('theme-1', 'theme-2', 'theme-3')
+  body.classList.add('theme-' + themeNumber)
 
-  inputSteps[themeNumber as '1' | '2' | '3']?.click()
-
+  inputSteps[themeNumber]?.click()
   storage.set(THEME_STORAGE, themeNumber)
 }

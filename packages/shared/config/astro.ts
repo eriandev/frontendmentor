@@ -1,14 +1,15 @@
 import icon from 'astro-icon'
 import tailwind from '@astrojs/tailwind'
-import type { AstroUserConfig } from 'astro/config'
+import type { AstroUserConfig } from 'astro'
 
 export interface GetAstroConfig {
   project?: string
   hostname?: string
 }
 
-export function getAstroConfig ({ project, hostname }: GetAstroConfig = {}): AstroUserConfig {
+export function getAstroConfig({ project, hostname }: GetAstroConfig = {}): AstroUserConfig {
   const assets = 'assets'
+  const hasHostname = typeof hostname === 'string'
   const hasProjectName = typeof project === 'string'
   const outDir = hasProjectName ? `../../dist/${project}` : undefined
   const base = hasProjectName ? `/frontendmentor/${project}` : '/frontendmentor'
@@ -16,10 +17,8 @@ export function getAstroConfig ({ project, hostname }: GetAstroConfig = {}): Ast
   return {
     base,
     outDir,
+    build: { assets },
     integrations: [tailwind(), icon()],
-    build: {
-      assets
-    },
-    image: hostname ? { domains: [hostname] } : undefined
+    image: hasHostname ? { domains: [hostname] } : undefined,
   }
 }

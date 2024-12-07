@@ -1,15 +1,9 @@
 import type { Config } from 'shared/config/tailwindcss'
 
 const config: Config = {
-  content: [
-    './src/**/*.{astro,html}',
-    './node_modules/shared/components/*.astro'
-  ],
+  content: ['./src/**/*.{astro,html}', './node_modules/shared/components/*.astro'],
 
-  safelist: [
-    'border-key-secondary-dark bg-key-secondary-light',
-    'border-key-tertiary-dark bg-key-tertiary-light'
-  ],
+  safelist: ['border-key-secondary-dark bg-key-secondary-light', 'border-key-tertiary-dark bg-key-tertiary-light'],
 
   darkMode: 'class',
 
@@ -19,12 +13,12 @@ const config: Config = {
       sm: '640px',
       md: '768px',
       lg: '1024px',
-      xl: '1280px'
+      xl: '1280px',
     },
 
     extend: {
       fontFamily: {
-        'league-spartan': ['League Spartan', 'sans-serif']
+        'league-spartan': ['League Spartan', 'sans-serif'],
       },
 
       colors: {
@@ -34,30 +28,30 @@ const config: Config = {
         color: {
           main: 'var(--main-color)',
           keypad: 'var(--keypad-color)',
-          screen: 'var(--screen-color)'
+          screen: 'var(--screen-color)',
         },
 
         key: {
           primary: {
             light: 'var(--key-primary-light)',
-            dark: 'var(--key-primary-dark)'
+            dark: 'var(--key-primary-dark)',
           },
 
           secondary: {
             light: 'var(--key-secondary-light)',
-            dark: 'var(--key-secondary-dark)'
+            dark: 'var(--key-secondary-dark)',
           },
 
           tertiary: {
             light: 'var(--key-tertiary-light)',
-            dark: 'var(--key-tertiary-dark)'
-          }
-        }
-      }
-    }
+            dark: 'var(--key-tertiary-dark)',
+          },
+        },
+      },
+    },
   },
 
-  plugins: []
+  plugins: [],
 }
 
 export default config

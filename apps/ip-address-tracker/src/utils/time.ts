@@ -1,4 +1,4 @@
-export function getUTCFromTimezone (timeZone: string): string {
+export function getUTCFromTimezone(timeZone: string): string {
   // Create a Date object with the current time in the given time zone
   const dateFormat = new Intl.DateTimeFormat('en-US', { timeZone, timeZoneName: 'short' })
 
@@ -6,7 +6,7 @@ export function getUTCFromTimezone (timeZone: string): string {
   const dateParts = dateFormat.formatToParts(new Date())
 
   // Find the part that contains the difference from UTC
-  const dateGMT = dateParts.find(part => part.type === 'timeZoneName')?.value ?? 'unknown'
+  const dateGMT = dateParts.find((part) => part.type === 'timeZoneName')?.value ?? 'unknown'
 
   return dateGMT.replace('GMT', 'UTC')
 }

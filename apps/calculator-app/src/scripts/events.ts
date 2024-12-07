@@ -7,9 +7,17 @@ import { updateKeyActive, updateInputDisplay } from '@/scripts/calculatorActions
 const themeNumber = storage.get(THEME_STORAGE)
 const inputRadioList = $$<HTMLInputElement>(INPUT_SWITCH_SELECTOR)
 
+function getValidThemeNumber(value: string): 1 | 2 | 3 {
+  const valueAsNumber = Number(value)
+  const isValidThemeNumber = valueAsNumber === 1 || valueAsNumber === 2 || valueAsNumber === 3
+
+  if (isValidThemeNumber) return valueAsNumber
+  return 1
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   if (themeNumber != null) {
-    switchTheme(themeNumber)
+    switchTheme(getValidThemeNumber(themeNumber))
   }
 
   document.addEventListener('keydown', (event) => {
@@ -23,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $keyButtons.forEach((element) => {
     element.addEventListener('click', (event) => {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion -- I'm sure, believe me
       const { id } = event.currentTarget as HTMLButtonElement
       const value = id.replace('key-', '')
       updateInputDisplay(value)
@@ -31,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   inputRadioList.forEach((inputRadio) => {
     inputRadio.addEventListener('input', () => {
-      switchTheme(inputRadio.value)
+      switchTheme(getValidThemeNumber(inputRadio.value))
     })
   })
 })
