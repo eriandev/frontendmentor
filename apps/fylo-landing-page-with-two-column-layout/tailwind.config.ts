@@ -3,6 +3,14 @@ import type { Config } from 'shared/config/tailwindcss'
 const config: Config = {
   content: ['./src/**/*.{astro,html}', './node_modules/shared/components/*.astro'],
   theme: {
+    screens: {
+      xs: '320px',
+      sm: '576px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+    },
+
     container: {
       center: true,
       padding: '2rem',
