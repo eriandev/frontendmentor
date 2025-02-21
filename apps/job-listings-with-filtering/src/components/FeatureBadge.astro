@@ -1,0 +1,17 @@
+---
+interface Props {
+  label: string
+  featured?: boolean
+}
+
+const { label, featured = false } = Astro.props
+---
+
+<div
+  class:list={[
+    'w-max rounded-full px-2 py-1 text-sm leading-none text-white',
+    featured ? 'bg-very-dark-grayish-cyan' : 'bg-desaturated-dark-cyan',
+  ]}
+>
+  <span class="mt-1 block select-none font-bold uppercase leading-none">{label}</span>
+</div>

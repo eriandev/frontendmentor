@@ -1,0 +1,23 @@
+{
+  "name": "job-listings-with-filtering",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "astro": "astro",
+    "dev": "astro dev",
+    "preview": "astro preview",
+    "build": "pnpm check && astro build",
+    "lint": "eslint --fix src/**/*.{astro,ts}",
+    "format": "prettier --write src/**/*.{astro,ts}",
+    "check": "astro check --tsconfig tsconfig.json"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=8"
+  },
+  "devDependencies": {
+    "eslint-config-custom": "workspace:*",
+    "shared": "workspace:*"
+  }
+}

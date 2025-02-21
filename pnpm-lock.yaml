@@ -77,6 +77,15 @@ importers:
         specifier: workspace:*
         version: link:../../packages/shared
 
+  apps/job-listings-with-filtering:
+    devDependencies:
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../../packages/eslint-config-custom
+      shared:
+        specifier: workspace:*
+        version: link:../../packages/shared
+
   apps/social-media-dashboard-with-theme-switcher:
     devDependencies:
       eslint-config-custom:

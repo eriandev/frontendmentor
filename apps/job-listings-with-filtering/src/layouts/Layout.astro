@@ -1,0 +1,43 @@
+---
+import MetaTags from 'shared/components/MetaTags.astro'
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <MetaTags slug="job-listings-with-filtering" themeColor="#5CA2A5" />
+
+    <style>
+      @font-face {
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+        font-family: 'League Spartan';
+        src: url('/frontendmentor/job-listings-with-filtering/fonts/league-spartan-500.woff2') format('woff2');
+      }
+      @font-face {
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+        font-family: 'League Spartan';
+        src: url('/frontendmentor/job-listings-with-filtering/fonts/league-spartan-700.woff2') format('woff2');
+      }
+    </style>
+
+    <script src="@/scripts/declareRefs.ts"></script>
+    <script src="@/scripts/filter.ts"></script>
+  </head>
+
+  <body class="min-h-screen bg-very-light-grayish-cyan font-league-spartan">
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display: none;">
+      <symbol id="cross" viewBox="0 0 24 24">
+        <path d="M18 6L6 18" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        </path>
+        <path d="M6 6L18 18" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        </path>
+      </symbol>
+    </svg>
+
+    <slot />
+  </body>
+</html>

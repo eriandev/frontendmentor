@@ -1,0 +1,50 @@
+---
+import { get } from 'shared/utils/http'
+
+import Layout from '@/layouts/Layout.astro'
+import Header from '@/components/Header.astro'
+import JobCard from '@/components/JobCard.astro'
+import Atributtion from 'shared/components/Atributtion.astro'
+
+interface JobPost {
+  id: number
+  company: string
+  logo: string
+  new: boolean
+  featured: boolean
+  position: string
+  role: string
+  level: string
+  postedAt: string
+  contract: string
+  location: string
+  languages: string[]
+  tools: string[]
+}
+
+const jobs = await get<{ data: JobPost[] }>(import.meta.env.PUBLIC_API_URL + '/data/job-list.json')
+const haveJobsToShow = jobs.data.length > 0
+---
+
+<Layout>
+  <Header />
+
+  <main class="my-12 px-4 transition-[margin] duration-300 ease-in-out">
+    <section class="grid max-w-screen-lg gap-y-12 sm:gap-y-6 lg:mx-auto">
+      {
+        haveJobsToShow &&
+          jobs.data.map((job, index) => (
+            <JobCard
+              {...job}
+              isNew={job.new}
+              lazyLoading={index >= 5}
+              id={'job-post-' + job.id}
+              tags={[job.role, job.level, ...job.languages, ...job.tools]}
+            />
+          ))
+      }
+    </section>
+  </main>
+
+  <Atributtion class="mx-auto pb-8 text-center text-sm sm:pb-4" />
+</Layout>

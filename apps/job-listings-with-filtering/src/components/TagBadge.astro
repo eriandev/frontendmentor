@@ -1,0 +1,15 @@
+---
+interface Props {
+  label: string
+}
+
+const { label } = Astro.props
+---
+
+<div data-filter={label} class="badge">
+  <span class="label">{label}</span>
+
+  <button>
+    <svg><use href="#cross"></use></svg>
+  </button>
+</div>

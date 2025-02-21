@@ -38,6 +38,9 @@
     },
     {
       "path": "apps/calculator-app"
+    },
+    {
+      "path": "apps/job-listings-with-filtering"
     }
   ],
 }
