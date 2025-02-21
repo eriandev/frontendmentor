@@ -3,7 +3,7 @@ import Key from '@/components/Key.astro'
 import { keyList } from '@/scripts/consts.ts'
 ---
 
-<section class="w-full rounded-xl bg-color-keypad p-8">
+<section class="w-full rounded-xl bg-keypad p-8">
   <article class="mb-4 grid grid-cols-[repeat(4,4rem)] gap-4">
     {
       keyList.map(({ key, code }) =>

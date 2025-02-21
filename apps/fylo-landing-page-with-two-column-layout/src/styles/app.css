@@ -1,0 +1,62 @@
+@import "shared/styles/tailwind";
+
+@theme {
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  --font-raleway: "Raleway", sans-serif;
+  --font-opensans: "Open Sans", sans-serif;
+
+  --text-2xs: 0.55rem;
+
+  --color-primary-dark: hsl(243, 87%, 12%);
+  --color-primary-desa: hsl(238, 22%, 44%);
+
+  --color-accent-blue: hsl(224, 93%, 58%);
+  --color-accent-green: hsl(170, 45%, 43%);
+
+  --color-neutral-blue: hsl(240, 75%, 98%);
+  --color-neutral-gray: hsl(0, 0%, 75%);
+
+  --color-olive: hsl(228, 45%, 44%);
+}
+
+@utility container {
+  @apply w-full mx-auto px-8;
+  @apply xs:max-w-screen-xs sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl;
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/frontendmentor/fylo-landing-page-with-two-column-layout/fonts/raleway-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/frontendmentor/fylo-landing-page-with-two-column-layout/fonts/raleway-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/frontendmentor/fylo-landing-page-with-two-column-layout/fonts/open-sans-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/frontendmentor/fylo-landing-page-with-two-column-layout/fonts/open-sans-700.woff2") format("woff2");
+}

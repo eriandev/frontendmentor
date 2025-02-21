@@ -1,5 +1,5 @@
 import icon from 'astro-icon'
-import tailwind from '@astrojs/tailwind'
+import tailwindcss from '@tailwindcss/vite'
 import type { AstroUserConfig } from 'astro'
 
 export interface GetAstroConfig {
@@ -18,7 +18,8 @@ export function getAstroConfig({ project, hostname }: GetAstroConfig = {}): Astr
     base,
     outDir,
     build: { assets },
-    integrations: [tailwind(), icon()],
+    integrations: [icon()],
+    vite: { plugins: [tailwindcss()] },
     image: hasHostname ? { domains: [hostname] } : undefined,
   }
 }

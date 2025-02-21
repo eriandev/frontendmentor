@@ -1,0 +1,86 @@
+@import "shared/styles/tailwind";
+@source "safelist.txt";
+
+@theme {
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  --font-barlow: "Barlow", sans-serif;
+
+  --color-guru: #ED2C49;
+  --color-advanced: #F48925;
+  --color-intermediate: #F1B604;
+  --color-junior: #AAD742;
+  --color-newbie: #6ABECD;
+
+  --color-html: #6ABECD;
+  --color-css: #3E54A3;
+  --color-js: #CF6390;
+  --color-api: #AAD742;
+  --color-svelte: #FF3E00;
+
+  --color-gray-100: #FAFAFA;
+  --color-gray-200: #F0F4F4;
+  --color-gray-300: #DBE5E6;
+
+  --color-black: #1C2022;
+  --color-white: #FFFFFF;
+  --color-transparent: transparent;
+}
+
+@utility h-main {
+  @apply h-[calc(100vh-240px)] md:h-[calc(100vh-206px)] lg:h-[calc(100vh-222px)];
+}
+
+@media (pointer: fine) {
+  .transition-colorize {
+    filter: grayscale(100%);
+    transition: filter 300ms ease-in-out;
+  }
+
+  .transition-colorize:hover {
+    filter: grayscale(0)
+  }
+
+  .transition-zooming {
+    transition: transform 300ms ease-in-out;
+  }
+
+  .transition-zooming:hover {
+    transform: scale(1.05)
+  }
+}
+
+@font-face {
+  font-family: "Barlow";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("/frontendmentor/fonts/barlow-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Barlow";
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+  src: url("/frontendmentor/fonts/barlow-500-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Barlow";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("/frontendmentor/fonts/barlow-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Barlow";
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: url("/frontendmentor/fonts/barlow-700-italic.woff2") format("woff2");
+}

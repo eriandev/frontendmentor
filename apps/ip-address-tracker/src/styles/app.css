@@ -1,0 +1,54 @@
+@import "shared/styles/tailwind";
+
+:root {
+  font-size: 18px;
+}
+
+@theme {
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  --font-rubik: "Rubik", sans-serif;
+
+  --color-very-dark-gray: hsl(0, 0%, 17%);
+  --color-dark-gray: hsl(0, 0%, 59%);
+  --color-gray: hsl(0, 0%, 85%);
+
+  --color-black: hsl(0, 0%, 15%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-transparent: transparent;
+}
+
+@utility bg-pattern-mobile {
+  background-image: url("/frontendmentor/ip-address-tracker/images/pattern-bg-mobile.png");
+}
+
+@utility bg-pattern-desktop {
+  background-image: url("/frontendmentor/ip-address-tracker/images/pattern-bg-desktop.png");
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/frontendmentor/ip-address-tracker/fonts/rubik-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/frontendmentor/ip-address-tracker/fonts/rubik-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/frontendmentor/ip-address-tracker/fonts/rubik-700.woff2") format("woff2");
+}

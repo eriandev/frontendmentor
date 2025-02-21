@@ -1,16 +1,11 @@
----
-const bgHeaderMobile = `bg-[url('/frontendmentor/job-listings-with-filtering/images/bg-header-mobile.svg')] bg-cover`
-const bgHeaderDesktop = `md:bg-[url('/frontendmentor/job-listings-with-filtering/images/bg-header-desktop.svg')]`
----
-
-<header class:list={['h-32 w-full bg-desaturated-dark-cyan', bgHeaderMobile, bgHeaderDesktop]}>
+<header class="h-32 w-full bg-desaturated-dark-cyan md:bg-header-desktop bg-header-mobile">
   <section id="filter-section" class="hidden px-4 pt-24">
     <div id="filter-container" class="mx-auto w-full max-w-screen-lg">
       <div class="flex items-center justify-between rounded-lg bg-white p-4 shadow-lg">
         <div id="filter-list" class="flex flex-wrap gap-4"></div>
         <button
           id="filter-clear"
-          class="font-bold text-dark-grayish-cyan hover:text-desaturated-dark-cyan hover:underline"
+          class="font-bold cursor-pointer text-dark-grayish-cyan hover:text-desaturated-dark-cyan hover:underline"
         >
           Clear
         </button>

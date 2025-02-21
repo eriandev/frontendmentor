@@ -1,28 +1,12 @@
 ---
 import MetaTags from 'shared/components/MetaTags.astro'
+import '@/styles/app.css'
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <MetaTags slug="job-listings-with-filtering" themeColor="#5CA2A5" />
-
-    <style>
-      @font-face {
-        font-weight: 500;
-        font-style: normal;
-        font-display: swap;
-        font-family: 'League Spartan';
-        src: url('/frontendmentor/job-listings-with-filtering/fonts/league-spartan-500.woff2') format('woff2');
-      }
-      @font-face {
-        font-weight: 700;
-        font-style: normal;
-        font-display: swap;
-        font-family: 'League Spartan';
-        src: url('/frontendmentor/job-listings-with-filtering/fonts/league-spartan-700.woff2') format('woff2');
-      }
-    </style>
 
     <script src="@/scripts/declareRefs.ts"></script>
     <script src="@/scripts/filter.ts"></script>

@@ -1,0 +1,76 @@
+@import "shared/styles/tailwind";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  font-size: 14px;
+}
+
+@theme {
+  --breakpoint-xs: 360px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  --font-inter: "Inter", sans-serif;
+
+  --color-lime-green: hsl(163, 72%, 41%);
+  --color-bright-red: hsl(356, 69%, 56%);
+  --color-dark-blue: hsl(230, 17%, 14%);
+
+  --color-top-dark-blue: hsl(232, 19%, 15%);
+  --color-dark-desa-blue: hsl(228, 28%, 20%);
+  --color-desa-blue: hsl(228, 34%, 66%);
+
+  --color-pale-blue: hsl(225, 100%, 98%);
+  --color-light-gray-blue: hsl(227, 47%, 96%);
+  --color-dark-gray-blue: hsl(228, 12%, 44%);
+
+  --color-facebook: hsl(208, 92%, 53%);
+  --color-twitter: hsl(203, 89%, 53%);
+  --color-instagram: linear-gradient(to right, hsl(37, 97%, 70%) 0%, hsl(329, 70%, 58%) 100%);
+  --color-youtube: hsl(348, 97%, 39%);
+}
+
+@utility container {
+  @apply w-full mx-auto px-6;
+  @apply xs:max-w-screen-xs sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl xl:px-16;
+}
+
+@utility transition-standard {
+  transition-duration: 400ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: color, background-color, border-color;
+}
+
+@utility facebook {
+  @apply before:bg-(--color-facebook);
+}
+
+@utility twitter {
+  @apply before:bg-(--color-twitter);
+}
+
+@utility instagram {
+  @apply before:bg-(--color-instagram);
+}
+
+@utility youtube {
+  @apply before:bg-(--color-youtube);
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/frontendmentor/social-media-dashboard-with-theme-switcher/fonts/inter-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/frontendmentor/social-media-dashboard-with-theme-switcher/fonts/inter-700.woff2") format("woff2");
+}

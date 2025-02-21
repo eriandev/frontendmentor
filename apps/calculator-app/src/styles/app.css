@@ -1,0 +1,156 @@
+@import "shared/styles/tailwind";
+@source "safelist.txt";
+
+:root {
+  /* ------------------------------------------------- */
+  /* -------------------- THEME 1 -------------------- */
+  /* ------------------------------------------------- */
+
+  --very-dark-desaturated-blue-main: hsl(222, 26%, 31%);
+  --very-dark-desaturated-blue-keypad: hsl(223, 31%, 20%);
+  --very-dark-desaturated-blue-screen: hsl(224, 36%, 15%);
+
+  --light-grayish-orange: hsl(30, 25%, 89%);
+  --grayish-orange: hsl(28, 16%, 65%);
+
+  --desaturated-dark-blue-key-bg: hsl(225, 21%, 49%);
+  --desaturated-dark-blue-key-sh: hsl(224, 28%, 35%);
+
+  --red: hsl(6, 63%, 50%);
+  --dark-red: hsl(6, 70%, 34%);
+
+  --very-dark-grayish-blue: hsl(221, 14%, 31%);
+
+
+  /* ------------------------------------------------- */
+  /* -------------------- THEME 2 -------------------- */
+  /* ------------------------------------------------- */
+
+  --light-gray-main: hsl(0, 0%, 90%);
+  --grayish-red-keypad: hsl(0, 5%, 81%);
+  --very-light-gray-screen: hsl(0, 0%, 93%);
+
+  --light-grayish-yellow: hsl(45, 7%, 89%);
+  --dark-grayish-orange: hsl(35, 11%, 61%);
+
+  --dark-moderate-cyan-key-bg: hsl(185, 42%, 37%);
+  --very-dark-cyan-key-sh: hsl(185, 58%, 25%);
+
+  --orange: hsl(25, 98%, 40%);
+  --dark-orange: hsl(25, 99%, 27%);
+
+  --very-dark-grayish-yellow: hsl(60, 10%, 19%);
+
+
+  /* ------------------------------------------------- */
+  /* -------------------- THEME 3 -------------------- */
+  /* ------------------------------------------------- */
+
+  --very-dark-violet-main: hsl(268, 75%, 9%);
+  --very-dark-violet-keypad: hsl(268, 71%, 12%);
+  --very-dark-violet-screen: hsl(268, 71%, 12%);
+
+  --very-dark-violet-key-bg: hsl(268, 47%, 21%);
+  --dark-magenta-key-sh: hsl(290, 70%, 36%);
+
+  --dark-violet-key-bg: hsl(281, 89%, 26%);
+  --vivid-magenta-key-sh: hsl(285, 91%, 52%);
+
+  --pure-cyan-key-bg: hsl(176, 100%, 44%);
+  --soft-cyan-key-sh: hsl(177, 92%, 70%);
+
+  --light-yellow: hsl(52, 100%, 62%);
+  --very-dark-blue: hsl(198, 20%, 13%);
+}
+
+@theme {
+  --breakpoint-xs: 360px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  --font-league-spartan: "League Spartan", sans-serif;
+
+  --color-main: var(--very-dark-desaturated-blue-main);
+  --color-keypad: var(--very-dark-desaturated-blue-keypad);
+  --color-screen: var(--very-dark-desaturated-blue-screen);
+
+  --color-key-primary-light: var(--light-grayish-orange);
+  --color-key-primary-dark: var(--grayish-orange);
+
+  --color-key-secondary-light: var(--desaturated-dark-blue-key-bg);
+  --color-key-secondary-dark: var(--desaturated-dark-blue-key-sh);
+
+  --color-key-tertiary-light: var(--red);
+  --color-key-tertiary-dark: var(--dark-red);
+
+  --color-primary: var(--very-dark-grayish-blue);
+  --color-secondary: var(--color-white);
+}
+
+body.theme-1 {
+  --color-main: var(--very-dark-desaturated-blue-main);
+  --color-keypad: var(--very-dark-desaturated-blue-keypad);
+  --color-screen: var(--very-dark-desaturated-blue-screen);
+
+  --color-key-primary-light: var(--light-grayish-orange);
+  --color-key-primary-dark: var(--grayish-orange);
+
+  --color-key-secondary-light: var(--desaturated-dark-blue-key-bg);
+  --color-key-secondary-dark: var(--desaturated-dark-blue-key-sh);
+
+  --color-key-tertiary-light: var(--red);
+  --color-key-tertiary-dark: var(--dark-red);
+
+  --color-primary: var(--very-dark-grayish-blue);
+  --color-secondary: var(--color-white);
+
+  & .text-primary.fix-color {
+    @apply text-white;
+  }
+}
+
+body.theme-2 {
+  --color-main: var(--light-gray-main);
+  --color-keypad: var(--grayish-red-keypad);
+  --color-screen: var(--very-light-gray-screen);
+
+  --color-key-primary-light: var(--light-grayish-yellow);
+  --color-key-primary-dark: var(--dark-grayish-orange);
+
+  --color-key-secondary-light: var(--dark-moderate-cyan-key-bg);
+  --color-key-secondary-dark: var(--very-dark-cyan-key-sh);
+
+  --color-key-tertiary-light: var(--orange);
+  --color-key-tertiary-dark: var(--dark-orange);
+
+  --color-primary: var(--very-dark-grayish-yellow);
+  --color-secondary: var(--color-white);
+}
+
+body.theme-3 {
+  --color-main: var(--very-dark-violet-main);
+  --color-keypad: var(--very-dark-violet-keypad);
+  --color-screen: var(--very-dark-violet-screen);
+
+  --color-key-primary-light: var(--very-dark-violet-key-bg);
+  --color-key-primary-dark: var(--dark-magenta-key-sh);
+
+  --color-key-secondary-light: var(--dark-violet-key-bg);
+  --color-key-secondary-dark: var(--vivid-magenta-key-sh);
+
+  --color-key-tertiary-light: var(--pure-cyan-key-bg);
+  --color-key-tertiary-dark: var(--soft-cyan-key-sh);
+
+  --color-primary: var(--light-yellow);
+  --color-secondary: var(--color-white);
+}
+
+@font-face {
+  font-family: "League Spartan";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/frontendmentor/calculator-app/fonts/league-spartan-700.woff2") format("woff2");
+}

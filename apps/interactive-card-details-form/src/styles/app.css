@@ -1,0 +1,65 @@
+@import "shared/styles/tailwind";
+@source "safelist.txt";
+
+:root {
+  font-size: 14px;
+}
+
+@theme {
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1440px;
+
+  --font-space-grotesk: "Space Grotesk", sans-serif;
+
+  --color-error: hsl(0, 100%, 66%);
+  --color-violet: hsl(278, 94%, 30%);
+  --color-gray: hsl(210, 12%, 71%);
+
+  --color-very-dark-violet: hsl(278, 68%, 11%);
+  --color-very-light-violet: hsl(249, 99%, 64%);
+  --color-dark-grayish-violet: hsl(279, 6%, 55%);
+  --color-light-grayish-violet: hsl(270, 3%, 87%);
+
+  --color-black: hsl(0, 0%, 18%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-transparent: transparent;
+}
+
+@utility bg-credit-card-back {
+  background: linear-gradient(145deg, rgba(255,255,255,1) 0%, rgba(222,221,223,1) 100%);
+}
+
+@utility bg-main-mobile {
+  background-image: url("/frontendmentor/interactive-card-details-form/images/bg-main-mobile.png");
+}
+
+@utility bg-card-front {
+  background-image: url("/frontendmentor/interactive-card-details-form/images/bg-card-front.png");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/frontendmentor/interactive-card-details-form/fonts/space-grotesk-300.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/frontendmentor/interactive-card-details-form/fonts/space-grotesk-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/frontendmentor/interactive-card-details-form/fonts/space-grotesk-500.woff2") format("woff2");
+}
