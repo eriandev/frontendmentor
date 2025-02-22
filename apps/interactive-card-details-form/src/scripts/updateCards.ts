@@ -12,12 +12,6 @@ import {
 } from './declareRefs.ts'
 
 export function resetCards(): void {
-  // if (cardNumber != null) cardNumber.textContent = '0000 0000 0000 0000'
-  // if (cardHolder != null) cardHolder.textContent = 'Jane Appleseed'
-  // if (cardExpMM != null) cardExpMM.textContent = '00'
-  // if (cardExYY != null) cardExYY.textContent = '00'
-  // if (cardCVC != null) cardCVC.value = '000'
-
   const cardElements = [
     { element: cardNumber, value: '0000 0000 0000 0000' },
     { element: cardHolder, value: 'Jane Appleseed' },

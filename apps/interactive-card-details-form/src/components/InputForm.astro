@@ -16,9 +16,9 @@ const { id, label, withError = false, class: customCssClasses, ...attrs } = Astr
 <div class={customCssClasses}>
   {typeof label === 'string' ? <Label for={id}>{label}</Label> : null}
   <input
-    id={id}
-    class="w-full cursor-pointer rounded-md border border-light-grayish-violet px-3 py-2 font-medium outline-none placeholder:text-light-grayish-violet focus:border-violet"
+    {id}
+    class="border-light-grayish-violet placeholder:text-light-grayish-violet focus:border-violet w-full cursor-pointer rounded-md border px-3 py-2 font-medium outline-none"
     {...attrs}
   />
-  {withError ? <ErrorMessage id={id} /> : null}
+  {withError ? <ErrorMessage {id} /> : null}
 </div>

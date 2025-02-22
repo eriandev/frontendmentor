@@ -21,20 +21,6 @@ export function isValidForm(): boolean {
   return inputs.every(({ input, validator, id }) => input != null && validator(input, input.id))
 }
 
-// export function isValidForm(): boolean {
-//   if (inputName == null || inputNum == null || inputYY == null || inputMM == null || inputCVC == null) return false
-
-//   const validations = [
-//     isNotEmpty(inputName, inputName.id),
-//     isValidCreditCardNumber(inputNum, inputNum.id),
-//     isValidYearNumber(inputYY, 'input-mm-yy'),
-//     isValidMonthNumber(inputMM, 'input-mm-yy'),
-//     isValidCVCNumber(inputCVC, inputCVC.id),
-//   ]
-
-//   return validations.every(Boolean)
-// }
-
 function isNotEmpty(ref: HTMLInputElement, id: string): boolean {
   if (typeof ref.value !== 'string' || ref.value.length < 1) return showError(ref, id, EMPTY_ERROR_MESSAGE)
   return true

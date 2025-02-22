@@ -18,19 +18,19 @@ const cardBeforeClass =
 
 <article
   class:list={[
-    'transition-standard relative w-full rounded-lg bg-light-gray-blue py-8 text-center dark:bg-dark-desa-blue',
+    'transition-standard bg-light-gray-blue dark:bg-dark-desa-blue relative w-full rounded-lg py-8 text-center',
     cardBeforeClass,
     social,
   ]}
 >
   <header class="flex items-center justify-center">
     <Icon name={'icon-' + social} size={20} class="inline" />
-    <h3 class="px-2 font-bold text-desa-blue">{user}</h3>
+    <h3 class="text-desa-blue px-2 font-bold">{user}</h3>
   </header>
 
   <section class="py-6">
     <span class="block py-1 text-6xl font-bold leading-none dark:text-white">{amount}</span>
-    <span class="uppercase tracking-[0.4em] text-desa-blue">{text}</span>
+    <span class="text-desa-blue uppercase tracking-[0.4em]">{text}</span>
   </section>
 
   <footer class="flex items-center justify-center gap-x-1">

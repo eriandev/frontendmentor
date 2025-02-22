@@ -1,4 +1,4 @@
-<article class="fix-color select-none text-sm uppercase text-primary">
+<article class="fix-color text-primary select-none text-sm uppercase">
   <div class="ml-auto w-max *:cursor-pointer *:px-3">
     <label for="step-1">1</label>
     <label for="step-2">2</label>
@@ -6,31 +6,34 @@
   </div>
   <div class="flex content-center items-center gap-x-6">
     <span class="mt-1.5 leading-none">theme</span>
-    <div class="relative grid h-8 w-[100px] grid-cols-3 rounded-full bg-keypad">
-      <input type="radio" id="step-1" name="switch-step" value="1" class="hidden cursor-pointer" />
-      <label aria-label="Step 1" for="step-1" class="cursor-pointer"></label>
+    <div class="bg-keypad relative grid h-8 w-[100px] grid-cols-3 rounded-full">
+      <input type="radio" id="switch-theme-1" name="switch-theme" value="1" class="hidden cursor-pointer" />
+      <label aria-label="Step 1" for="switch-theme-1" class="cursor-pointer"></label>
 
-      <input type="radio" id="step-2" name="switch-step" value="2" class="hidden cursor-pointer" />
-      <label aria-label="Step 2" for="step-2" class="cursor-pointer"></label>
+      <input type="radio" id="switch-theme-2" name="switch-theme" value="2" class="hidden cursor-pointer" />
+      <label aria-label="Step 2" for="switch-theme-2" class="cursor-pointer"></label>
 
-      <input type="radio" id="step-3" name="switch-step" value="3" class="hidden cursor-pointer" />
-      <label aria-label="Step 3" for="step-3" class="cursor-pointer"></label>
+      <input type="radio" id="switch-theme-3" name="switch-theme" value="3" class="hidden cursor-pointer" />
+      <label aria-label="Step 3" for="switch-theme-3" class="cursor-pointer"></label>
 
-      <span id="selector" class="absolute left-0 transition-[left] duration-300 ease-in-out ml-1.5 mt-1.5 h-5 w-5 rounded-full bg-key-tertiary-light"></span>
+      <span
+        id="selector"
+        class="bg-key-tertiary-light absolute left-0 ml-1.5 mt-1.5 h-5 w-5 rounded-full transition-[left] duration-300 ease-in-out"
+      ></span>
     </div>
   </div>
 </article>
 
 <style>
-  #step-1:checked ~ #selector {
+  #switch-theme-1:checked ~ #selector {
     left: 0;
   }
 
-  #step-2:checked ~ #selector {
+  #switch-theme-2:checked ~ #selector {
     left: 33%;
   }
 
-  #step-3:checked ~ #selector {
+  #switch-theme-3:checked ~ #selector {
     left: 68%;
   }
 </style>

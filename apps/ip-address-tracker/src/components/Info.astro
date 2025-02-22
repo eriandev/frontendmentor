@@ -13,8 +13,8 @@ const blocks = [
   >
     {
       blocks.map(({ id, title, defaultValue }, index) => (
-        <article class:list={['xl:flex xl:flex-col xl:gap-y-2', { 'xl:border-l xl:border-gray xl:pl-7': index !== 0 }]}>
-          <header class="text-[10px] font-semibold uppercase tracking-[0.2em] text-dark-gray xl:text-xs">
+        <article class:list={['xl:flex xl:flex-col xl:gap-y-2', { 'xl:border-gray xl:border-l xl:pl-7': index !== 0 }]}>
+          <header class="text-dark-gray text-[10px] font-semibold uppercase tracking-[0.2em] xl:text-xs">
             {title}
           </header>
           <span {id} title={defaultValue} class="line-clamp-2 text-lg text-black [word-break:auto-phrase] xl:text-2xl">

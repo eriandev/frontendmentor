@@ -12,7 +12,7 @@ const { id, value, variant = 'primary' } = Astro.props
 <button
   id={`key-${id}`}
   class:list={[
-    'relative grid h-16 w-full select-none place-items-center rounded-lg border-b-4 border-key-primary-dark bg-key-primary-light text-3xl/none font-bold active:h-[60px] active:translate-y-[0.25rem] active:border-b-2',
+    'border-key-primary-dark bg-key-primary-light relative grid h-16 w-full select-none place-items-center rounded-lg border-b-4 text-3xl/none font-bold active:h-[60px] active:translate-y-[0.25rem] active:border-b-2',
     {
       [`border-key-${variant}-dark bg-key-${variant}-light text-xl/none text-white`]: variant !== 'primary',
     },

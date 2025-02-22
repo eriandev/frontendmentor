@@ -1,7 +1,7 @@
 export const KEY_SELECTOR = '[id^="key-"]'
 export const NUMBERS_SEPARATE_REGEX = /[+\-*/]/
 export const THEME_STORAGE = 'calculator-app-theme'
-export const INPUT_SWITCH_SELECTOR = 'input[name="switch-step"]'
+export const INPUT_SWITCH_SELECTOR = 'input[name="switch-theme"]'
 
 export const keyList = [
   { key: '7' },

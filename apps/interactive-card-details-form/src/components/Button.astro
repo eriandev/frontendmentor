@@ -7,8 +7,8 @@ const { id } = Astro.props
 ---
 
 <button
-  id={id}
-  class="w-[368px] rounded-lg cursor-pointer bg-very-dark-violet py-4 font-medium tracking-wide text-white transition-transform duration-200 ease-in-out active:scale-95"
+  {id}
+  class="bg-very-dark-violet w-[368px] cursor-pointer rounded-lg py-4 font-medium tracking-wide text-white transition-transform duration-200 ease-in-out active:scale-95"
 >
   <slot />
 </button>

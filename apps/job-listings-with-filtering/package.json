@@ -9,8 +9,8 @@
     "preview": "astro preview",
     "build": "pnpm check && astro build",
     "lint": "eslint --fix src/**/*.{astro,ts}",
-    "format": "prettier --write src/**/*.{astro,ts}",
-    "check": "astro check --tsconfig tsconfig.json"
+    "check": "astro check --tsconfig tsconfig.json",
+    "format": "prettier --write src/**/*.{astro,ts,css}"
   },
   "engines": {
     "node": ">=20",

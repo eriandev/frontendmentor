@@ -1,4 +1,4 @@
-@import "shared/styles/tailwind";
+@import 'shared/styles/tailwind';
 
 :root {
   font-size: 14px;
@@ -11,7 +11,7 @@
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
 
-  --font-spartan: "League Spartan", sans-serif;
+  --font-spartan: 'League Spartan', sans-serif;
 
   --color-desaturated-dark-cyan: hsl(180, 29%, 50%);
 
@@ -24,19 +24,19 @@
 
 @utility bg-header-mobile {
   background-size: cover;
-  background-image: url("/frontendmentor/job-listings-with-filtering/images/bg-header-mobile.svg");
+  background-image: url('/frontendmentor/job-listings-with-filtering/images/bg-header-mobile.svg');
 }
 
 @utility bg-header-desktop {
-  background-image: url("/frontendmentor/job-listings-with-filtering/images/bg-header-desktop.svg");
+  background-image: url('/frontendmentor/job-listings-with-filtering/images/bg-header-desktop.svg');
 }
 
 @utility badge {
   @apply flex;
 
   & .label {
-    @apply flex font-bold leading-none select-none cursor-pointer px-2 w-max items-center rounded-[0.375rem] h-8 text-desaturated-dark-cyan bg-very-light-grayish-cyan;
-    @apply hover:text-white hover:bg-desaturated-dark-cyan;
+    @apply text-desaturated-dark-cyan bg-very-light-grayish-cyan flex h-8 w-max cursor-pointer select-none items-center rounded-[0.375rem] px-2 font-bold leading-none;
+    @apply hover:bg-desaturated-dark-cyan hover:text-white;
   }
 
   & button {
@@ -45,12 +45,12 @@
 
   &.filter {
     & .label {
-      @apply rounded-tr-none rounded-br-none cursor-auto;
+      @apply cursor-auto rounded-br-none rounded-tr-none;
       @apply hover:text-desaturated-dark-cyan hover:bg-very-light-grayish-cyan;
     }
 
     & button {
-      @apply block font-bold px-1 cursor-pointer items-center h-8 text-white rounded-tr-lg rounded-br-lg bg-desaturated-dark-cyan;
+      @apply bg-desaturated-dark-cyan block h-8 cursor-pointer items-center rounded-br-lg rounded-tr-lg px-1 font-bold text-white;
       @apply hover:bg-very-dark-grayish-cyan;
 
       & svg {
@@ -61,17 +61,17 @@
 }
 
 @font-face {
-  font-family: "League Spartan";
+  font-family: 'League Spartan';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("/frontendmentor/job-listings-with-filtering/fonts/league-spartan-500.woff2") format("woff2");
+  src: url('/frontendmentor/job-listings-with-filtering/fonts/league-spartan-500.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "League Spartan";
+  font-family: 'League Spartan';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("/frontendmentor/job-listings-with-filtering/fonts/league-spartan-700.woff2") format("woff2");
+  src: url('/frontendmentor/job-listings-with-filtering/fonts/league-spartan-700.woff2') format('woff2');
 }

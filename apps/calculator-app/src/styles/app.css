@@ -1,4 +1,4 @@
-@import "shared/styles/tailwind";
+@import 'shared/styles/tailwind';
 @source "safelist.txt";
 
 :root {
@@ -21,7 +21,6 @@
 
   --very-dark-grayish-blue: hsl(221, 14%, 31%);
 
-
   /* ------------------------------------------------- */
   /* -------------------- THEME 2 -------------------- */
   /* ------------------------------------------------- */
@@ -40,7 +39,6 @@
   --dark-orange: hsl(25, 99%, 27%);
 
   --very-dark-grayish-yellow: hsl(60, 10%, 19%);
-
 
   /* ------------------------------------------------- */
   /* -------------------- THEME 3 -------------------- */
@@ -70,7 +68,7 @@
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
 
-  --font-league-spartan: "League Spartan", sans-serif;
+  --font-league-spartan: 'League Spartan', sans-serif;
 
   --color-main: var(--very-dark-desaturated-blue-main);
   --color-keypad: var(--very-dark-desaturated-blue-keypad);
@@ -148,9 +146,9 @@ body.theme-3 {
 }
 
 @font-face {
-  font-family: "League Spartan";
+  font-family: 'League Spartan';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("/frontendmentor/calculator-app/fonts/league-spartan-700.woff2") format("woff2");
+  src: url('/frontendmentor/calculator-app/fonts/league-spartan-700.woff2') format('woff2');
 }

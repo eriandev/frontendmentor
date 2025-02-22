@@ -1,4 +1,4 @@
-@import "shared/styles/tailwind";
+@import 'shared/styles/tailwind';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -13,7 +13,7 @@
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
 
-  --font-inter: "Inter", sans-serif;
+  --font-inter: 'Inter', sans-serif;
 
   --color-lime-green: hsl(163, 72%, 41%);
   --color-bright-red: hsl(356, 69%, 56%);
@@ -34,7 +34,7 @@
 }
 
 @utility container {
-  @apply w-full mx-auto px-6;
+  @apply mx-auto w-full px-6;
   @apply xs:max-w-screen-xs sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl xl:px-16;
 }
 
@@ -61,16 +61,16 @@
 }
 
 @font-face {
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("/frontendmentor/social-media-dashboard-with-theme-switcher/fonts/inter-400.woff2") format("woff2");
+  src: url('/frontendmentor/social-media-dashboard-with-theme-switcher/fonts/inter-400.woff2') format('woff2');
 }
 @font-face {
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("/frontendmentor/social-media-dashboard-with-theme-switcher/fonts/inter-700.woff2") format("woff2");
+  src: url('/frontendmentor/social-media-dashboard-with-theme-switcher/fonts/inter-700.woff2') format('woff2');
 }
