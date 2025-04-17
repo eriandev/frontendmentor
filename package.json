@@ -20,19 +20,19 @@
     "pnpm": ">=8"
   },
   "dependencies": {
-    "astro": "5.5.5"
+    "astro": "5.7.2"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.4",
-    "@types/node": "22.13.13",
-    "eslint": "9.23.0",
+    "@types/node": "22.14.1",
+    "eslint": "9.24.0",
     "eslint-config-custom": "workspace:*",
     "prettier": "3.5.3",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.6.11",
     "shared": "workspace:*",
-    "sharp": "0.33.5",
-    "typescript": "5.8.2",
-    "vite": "6.2.3"
+    "sharp": "0.34.1",
+    "typescript": "5.8.3",
+    "vite": "6.3.0"
   }
 }
