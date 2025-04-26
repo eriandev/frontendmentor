@@ -5,14 +5,12 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "lint": "eslint --fix ./**/*.{astro,ts}",
     "format": "prettier --write ./**/*.{astro,css}",
     "check": "astro check --tsconfig tsconfig.json"
   },
   "devDependencies": {
     "@tailwindcss/vite": "4.1.4",
     "astro-icon": "1.1.5",
-    "eslint-config-custom": "workspace:*",
     "tailwindcss": "4.1.4"
   }
 }

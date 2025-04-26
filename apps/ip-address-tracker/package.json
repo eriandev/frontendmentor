@@ -8,7 +8,6 @@
     "dev": "astro dev",
     "preview": "astro preview",
     "build": "pnpm check && astro build",
-    "lint": "eslint --fix src/**/*.{astro,ts}",
     "check": "astro check --tsconfig tsconfig.json",
     "format": "prettier --write src/**/*.{astro,ts,css}"
   },
@@ -21,7 +20,6 @@
   },
   "devDependencies": {
     "@types/leaflet": "1.9.17",
-    "eslint-config-custom": "workspace:*",
     "shared": "workspace:*"
   }
 }
