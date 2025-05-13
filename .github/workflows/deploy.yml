@@ -22,13 +22,13 @@ jobs:
       - name: Use pnpm 🗜️
         uses: pnpm/action-setup@v2
         with:
-          version: 9.15.0
+          version: 10.11.0
           run_install: false
 
       - name: Use Node.js 🐢
         uses: actions/setup-node@v3
         with:
-          node-version: 20.18.1
+          node-version: 22.15.0
           cache: 'pnpm'
 
       - name: Install dependencies ⚙️
@@ -36,6 +36,9 @@ jobs:
 
       - name: Build 🛠️
         run: pnpm build:prod
+
+      - name: Disable Jekyll ⛔
+        run: touch dist/.nojekyll
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
