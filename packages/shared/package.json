@@ -9,8 +9,8 @@
     "check": "astro check --tsconfig tsconfig.json"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "4.1.4",
+    "@tailwindcss/vite": "4.1.11",
     "astro-icon": "1.1.5",
-    "tailwindcss": "4.1.4"
+    "tailwindcss": "4.1.11"
   }
 }
