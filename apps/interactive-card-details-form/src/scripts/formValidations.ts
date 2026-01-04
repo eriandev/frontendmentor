@@ -28,7 +28,7 @@ function isNotEmpty(ref: HTMLInputElement, id: string): boolean {
 
 function isValidNumber(ref: HTMLInputElement, id: string): boolean {
   if (!isNotEmpty(ref, id)) return false
-  if (isNaN(parseInt(ref.value))) return showError(ref, id, INVALID_NUMBER_ERROR_MESSAGE)
+  if (isNaN(parseInt(ref.value, 10))) return showError(ref, id, INVALID_NUMBER_ERROR_MESSAGE)
   return true
 }
 
@@ -39,12 +39,16 @@ function isValidCreditCardNumber(ref: HTMLInputElement, id: string): boolean {
 }
 
 function isValidMonthNumber(ref: HTMLInputElement, id: string): boolean {
-  if (isNaN(parseInt(ref.value)) || parseInt(ref.value) > 12) return showError(ref, id, INVALID_MONTH_ERROR_MESSAGE)
+  if (isNaN(parseInt(ref.value, 10)) || parseInt(ref.value, 10) > 12) {
+    return showError(ref, id, INVALID_MONTH_ERROR_MESSAGE)
+  }
   return true
 }
 
 function isValidYearNumber(ref: HTMLInputElement, id: string): boolean {
-  if (isNaN(parseInt(ref.value)) || parseInt(ref.value) > 60) return showError(ref, id, INVALID_YEAR_ERROR_MESSAGE)
+  if (isNaN(parseInt(ref.value, 10)) || parseInt(ref.value, 10) > 60) {
+    return showError(ref, id, INVALID_YEAR_ERROR_MESSAGE)
+  }
   return true
 }
 

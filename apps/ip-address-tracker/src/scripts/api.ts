@@ -47,8 +47,8 @@ function normalizeResponse(response: Partial<APIResponse & APIErrorResponse>): P
   return {
     isp: org,
     ipAddress: ip,
-    lng: parseInt(lng),
-    lat: parseInt(lat),
+    lng: parseInt(lng, 10),
+    lat: parseInt(lat, 10),
     location: `${city}, ${region} ${postal}`,
     timezone: typeof timezone === 'string' ? getUTCFromTimezone(timezone) : 'unknown',
   }

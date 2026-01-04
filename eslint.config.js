@@ -8,6 +8,9 @@ export default [
     files: ['**/*.js', '**/*.ts'],
     rules: {
       ...love.rules,
+      'eqeqeq': 'off',
+      'no-param-reassign': 'off',
+      'prefer-named-capture-group': 'off',
       '@typescript-eslint/unbound-method': 'off',
       '@typescript-eslint/no-magic-numbers': 'off',
       '@typescript-eslint/prefer-destructuring': 'off',

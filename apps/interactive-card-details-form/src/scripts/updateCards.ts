@@ -37,19 +37,19 @@ inputNum?.addEventListener('input', ({ target }) => {
 })
 inputName?.addEventListener('input', ({ target }) => {
   if (!(target instanceof HTMLInputElement)) return
-  if (cardHolder != null) cardHolder.textContent = typeof target.value !== 'undefined' ? target.value : 'Jane Appleseed'
+  if (cardHolder != null) cardHolder.textContent = target.value === 'undefined' ? 'Jane Appleseed' : target.value
 })
 inputMM?.addEventListener('input', ({ target }) => {
   if (!(target instanceof HTMLInputElement)) return
-  if (cardExpMM != null) cardExpMM.textContent = typeof target.value !== 'undefined' ? target.value : '00'
+  if (cardExpMM != null) cardExpMM.textContent = typeof target.value === 'undefined' ? '00' : target.value
 })
 inputYY?.addEventListener('input', ({ target }) => {
   if (!(target instanceof HTMLInputElement)) return
-  if (cardExYY != null) cardExYY.textContent = typeof target.value !== 'undefined' ? target.value : '00'
+  if (cardExYY != null) cardExYY.textContent = typeof target.value === 'undefined' ? '00' : target.value
 })
 inputCVC?.addEventListener('input', ({ target }) => {
   if (!(target instanceof HTMLInputElement)) return
-  if (cardCVC != null) cardCVC.value = typeof target.value !== 'undefined' ? target.value : '000'
+  if (cardCVC != null) cardCVC.value = typeof target.value === 'undefined' ? '000' : target.value
 })
 
 function getFormatted(text: string): string {

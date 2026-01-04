@@ -103,7 +103,7 @@ function getDataTags(jobPostId: string): string[] {
   if ($jobPostArticled == null) return []
 
   const stringTags = $jobPostArticled.getAttribute('data-tags')
-  return stringTags != null ? stringTags.toLocaleLowerCase().split(',') : []
+  return stringTags == null ? [] : stringTags.toLocaleLowerCase().split(',')
 }
 
 function filterJobPosts(): void {

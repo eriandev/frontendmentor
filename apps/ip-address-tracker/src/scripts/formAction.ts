@@ -23,7 +23,7 @@ async function formAction(event: MouseEvent): Promise<void> {
 
   const formData = new FormData($form ?? undefined)
   const possibleValue = formData.get('ip-value')
-  const inputValue = typeof possibleValue === 'string' ? possibleValue.toString().trim() : null
+  const inputValue = typeof possibleValue === 'string' ? possibleValue.trim() : null
 
   const { isValid, message } = validateIP(inputValue ?? '')
 
