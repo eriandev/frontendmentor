@@ -4,7 +4,7 @@ import MetaTags from 'shared/components/MetaTags.astro'
 
 import Header from '@/components/Header.astro'
 import Footer from '@/components/Footer.astro'
-import '@/styles/app.css'
+import '@/app.css'
 
 interface Landing {
   header: {
@@ -46,7 +46,7 @@ const { navigation, profile } = header
     <MetaTags themeColor="#FAFAFA" />
   </head>
 
-  <body class="font-barlow min-h-screen bg-gray-100 font-medium text-black">
+  <body class="min-h-screen bg-gray-100 font-barlow font-medium text-black">
     <Header {navigation} {profile} />
     <slot />
     <Footer {designedBy} {developedBy} />

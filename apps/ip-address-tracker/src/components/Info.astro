@@ -7,17 +7,17 @@ const blocks = [
 ]
 ---
 
-<div class="z-[999] -mb-16">
+<div class="z-999 -mb-16">
   <section
-    class="mx-auto flex min-h-[8rem] max-w-lg flex-col gap-y-6 rounded-xl bg-white px-4 py-8 text-center shadow-xl xl:grid xl:max-w-5xl xl:grid-cols-4 xl:justify-center xl:gap-x-8 xl:px-8 xl:text-left"
+    class="mx-auto flex min-h-32 max-w-lg flex-col gap-y-6 rounded-xl bg-white px-4 py-8 text-center shadow-xl xl:grid xl:max-w-5xl xl:grid-cols-4 xl:justify-center xl:gap-x-8 xl:px-8 xl:text-left"
   >
     {
       blocks.map(({ id, title, defaultValue }, index) => (
-        <article class:list={['xl:flex xl:flex-col xl:gap-y-2', { 'xl:border-gray xl:border-l xl:pl-7': index !== 0 }]}>
-          <header class="text-dark-gray text-[10px] font-semibold uppercase tracking-[0.2em] xl:text-xs">
+        <article class:list={['xl:flex xl:flex-col xl:gap-y-2', { 'xl:border-l xl:border-gray xl:pl-7': index !== 0 }]}>
+          <header class="text-[10px] font-semibold tracking-[0.2em] text-dark-gray uppercase xl:text-xs">
             {title}
           </header>
-          <span {id} title={defaultValue} class="line-clamp-2 text-lg text-black [word-break:auto-phrase] xl:text-2xl">
+          <span {id} title={defaultValue} class="line-clamp-2 text-lg [word-break:auto-phrase] text-black xl:text-2xl">
             {defaultValue}
           </span>
         </article>

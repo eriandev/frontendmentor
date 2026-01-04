@@ -2,6 +2,22 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/frontendmentor/social-media-dashboard-with-theme-switcher/fonts/inter-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/frontendmentor/social-media-dashboard-with-theme-switcher/fonts/inter-700.woff2') format('woff2');
+}
+
 :root {
   font-size: 14px;
 }
@@ -35,7 +51,7 @@
 
 @utility container {
   @apply mx-auto w-full px-6;
-  @apply xs:max-w-screen-xs sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl xl:px-16;
+  @apply xs:max-w-screen-xs sm:max-w-screen-sm md:max-w-3xl lg:max-w-5xl xl:max-w-7xl xl:px-16;
 }
 
 @utility transition-standard {
@@ -45,32 +61,17 @@
 }
 
 @utility facebook {
-  @apply before:bg-(--color-facebook);
+  @apply before:bg-facebook;
 }
 
 @utility twitter {
-  @apply before:bg-(--color-twitter);
+  @apply before:bg-twitter;
 }
 
 @utility instagram {
-  @apply before:bg-(--color-instagram);
+  @apply before:bg-instagram;
 }
 
 @utility youtube {
-  @apply before:bg-(--color-youtube);
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/frontendmentor/social-media-dashboard-with-theme-switcher/fonts/inter-400.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/frontendmentor/social-media-dashboard-with-theme-switcher/fonts/inter-700.woff2') format('woff2');
+  @apply before:bg-youtube;
 }

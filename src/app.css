@@ -1,5 +1,5 @@
 @import 'shared/styles/tailwind';
-@source "safelist.txt";
+@source 'safelist.txt';
 
 @theme {
   --breakpoint-sm: 576px;

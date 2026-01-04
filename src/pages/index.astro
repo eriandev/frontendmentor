@@ -2,7 +2,7 @@
 import { get } from 'shared/utils/http'
 
 import Card from '@/components/Card.astro'
-import Layout from '@/layouts/Layout.astro'
+import Layout from '@/app.astro'
 
 interface Projects {
   level: {
@@ -30,7 +30,7 @@ const hasProjects = results.length > 0
   <main
     class:list={[
       'mx-auto max-w-3xl xl:max-w-[75rem]',
-      { 'h-main flex items-center': !hasProjects },
+      { 'flex h-main items-center': !hasProjects },
       { 'grid grid-cols-1 gap-2 px-6 py-24 sm:grid-cols-2 md:gap-8 xl:grid-cols-3': hasProjects },
     ]}
   >

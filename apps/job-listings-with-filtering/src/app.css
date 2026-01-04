@@ -1,5 +1,21 @@
 @import 'shared/styles/tailwind';
 
+@font-face {
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/frontendmentor/job-listings-with-filtering/fonts/league-spartan-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/frontendmentor/job-listings-with-filtering/fonts/league-spartan-700.woff2') format('woff2');
+}
+
 :root {
   font-size: 14px;
 }
@@ -35,7 +51,7 @@
   @apply flex;
 
   & .label {
-    @apply text-desaturated-dark-cyan bg-very-light-grayish-cyan flex h-8 w-max cursor-pointer select-none items-center rounded-[0.375rem] px-2 font-bold leading-none;
+    @apply flex h-8 w-max cursor-pointer items-center rounded-md bg-very-light-grayish-cyan px-2 leading-none font-bold text-desaturated-dark-cyan select-none;
     @apply hover:bg-desaturated-dark-cyan hover:text-white;
   }
 
@@ -45,12 +61,12 @@
 
   &.filter {
     & .label {
-      @apply cursor-auto rounded-br-none rounded-tr-none;
-      @apply hover:text-desaturated-dark-cyan hover:bg-very-light-grayish-cyan;
+      @apply cursor-auto rounded-tr-none rounded-br-none;
+      @apply hover:bg-very-light-grayish-cyan hover:text-desaturated-dark-cyan;
     }
 
     & button {
-      @apply bg-desaturated-dark-cyan block h-8 cursor-pointer items-center rounded-br-lg rounded-tr-lg px-1 font-bold text-white;
+      @apply block h-8 cursor-pointer items-center rounded-tr-lg rounded-br-lg bg-desaturated-dark-cyan px-1 font-bold text-white;
       @apply hover:bg-very-dark-grayish-cyan;
 
       & svg {
@@ -58,20 +74,4 @@
       }
     }
   }
-}
-
-@font-face {
-  font-family: 'League Spartan';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('/frontendmentor/job-listings-with-filtering/fonts/league-spartan-500.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'League Spartan';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/frontendmentor/job-listings-with-filtering/fonts/league-spartan-700.woff2') format('woff2');
 }

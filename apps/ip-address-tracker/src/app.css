@@ -1,5 +1,29 @@
 @import 'shared/styles/tailwind';
 
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/frontendmentor/ip-address-tracker/fonts/rubik-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/frontendmentor/ip-address-tracker/fonts/rubik-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/frontendmentor/ip-address-tracker/fonts/rubik-700.woff2') format('woff2');
+}
+
 :root {
   font-size: 18px;
 }
@@ -27,28 +51,4 @@
 
 @utility bg-pattern-desktop {
   background-image: url('/frontendmentor/ip-address-tracker/images/pattern-bg-desktop.png');
-}
-
-@font-face {
-  font-family: 'Rubik';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url('/frontendmentor/ip-address-tracker/fonts/rubik-400.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Rubik';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/frontendmentor/ip-address-tracker/fonts/rubik-500.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Rubik';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('/frontendmentor/ip-address-tracker/fonts/rubik-700.woff2') format('woff2');
 }

@@ -1,5 +1,13 @@
 @import 'shared/styles/tailwind';
-@source "safelist.txt";
+@source 'safelist.txt';
+
+@font-face {
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/frontendmentor/calculator-app/fonts/league-spartan-700.woff2') format('woff2');
+}
 
 :root {
   /* ------------------------------------------------- */
@@ -143,12 +151,4 @@ body.theme-3 {
 
   --color-primary: var(--light-yellow);
   --color-secondary: var(--color-white);
-}
-
-@font-face {
-  font-family: 'League Spartan';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/frontendmentor/calculator-app/fonts/league-spartan-700.woff2') format('woff2');
 }
