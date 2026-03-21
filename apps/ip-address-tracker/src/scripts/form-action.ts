@@ -12,7 +12,7 @@ import {
   $timezone,
   locationIcon,
   myMap,
-} from '@/scripts/declareRefs.ts'
+} from '@/scripts/declare-refs.ts'
 
 $button?.addEventListener('click', (event) => {
   void formAction(event)

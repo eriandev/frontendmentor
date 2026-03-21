@@ -9,7 +9,7 @@ import {
   inputName,
   inputNum,
   inputYY,
-} from './declareRefs.ts'
+} from './declare-refs.ts'
 
 export function resetCards(): void {
   const cardElements = [

@@ -1,6 +1,6 @@
 import { $ } from 'shared/utils/dom.ts'
 import { keypadList } from '@/scripts/consts.ts'
-import { $inputDisplay } from '@/scripts/declareRefs.ts'
+import { $inputDisplay } from '@/scripts/declare-refs.ts'
 
 let isOperationUsed = false
 

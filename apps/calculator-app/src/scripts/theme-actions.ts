@@ -1,6 +1,6 @@
 import { storage } from 'shared/utils/dom.ts'
 import { THEME_STORAGE } from '@/scripts/consts.ts'
-import { inputStep1, inputStep2, inputStep3 } from '@/scripts/declareRefs'
+import { inputStep1, inputStep2, inputStep3 } from '@/scripts/declare-refs'
 
 const inputSteps = {
   1: inputStep1,

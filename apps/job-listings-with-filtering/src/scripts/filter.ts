@@ -7,7 +7,7 @@ import {
   $filterSection,
   $jobPosts,
   $main,
-} from '@/scripts/declareRefs.ts'
+} from '@/scripts/declare-refs.ts'
 
 declare global {
   interface Window {

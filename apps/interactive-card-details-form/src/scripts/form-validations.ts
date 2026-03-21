@@ -1,6 +1,6 @@
 import { $ } from 'shared/utils/dom'
 
-import { inputCVC, inputMM, inputName, inputNum, inputYY } from './declareRefs.ts'
+import { inputCVC, inputMM, inputName, inputNum, inputYY } from './declare-refs.ts'
 
 const EMPTY_ERROR_MESSAGE = "Can't be blank"
 const INVALID_NUMBER_ERROR_MESSAGE = 'Wrong format, numbers only'

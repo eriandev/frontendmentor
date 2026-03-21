@@ -1,8 +1,8 @@
 import { $$, storage } from 'shared/utils/dom.ts'
-import { $keyButtons } from '@/scripts/declareRefs.ts'
-import { switchTheme } from '@/scripts/themeActions.ts'
+import { $keyButtons } from '@/scripts/declare-refs.ts'
+import { switchTheme } from '@/scripts/theme-actions.ts'
 import { INPUT_SWITCH_SELECTOR, THEME_STORAGE } from '@/scripts/consts.ts'
-import { updateKeyActive, updateInputDisplay } from '@/scripts/calculatorActions.ts'
+import { updateKeyActive, updateInputDisplay } from '@/scripts/calculator-actions'
 
 const themeNumber = storage.get(THEME_STORAGE)
 const inputRadioList = $$<HTMLInputElement>(INPUT_SWITCH_SELECTOR)

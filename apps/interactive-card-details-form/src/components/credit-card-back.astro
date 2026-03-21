@@ -7,7 +7,7 @@ const { class: customCssClasses } = Astro.props
 ---
 
 <script>
-  import { cardCVC } from '@/scripts/declareRefs.ts'
+  import { cardCVC } from '@/scripts/declare-refs.ts'
 
   cardCVC?.addEventListener('click', () => {
     if (cardCVC?.type === 'password') {

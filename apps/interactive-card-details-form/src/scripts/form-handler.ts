@@ -1,8 +1,8 @@
 import { $$ } from 'shared/utils/dom.ts'
 
-import { btn, completeView, mainForm } from './declareRefs.ts'
-import { isValidForm } from './formValidations.ts'
-import { resetCards } from './updateCards.ts'
+import { btn, completeView, mainForm } from './declare-refs.ts'
+import { isValidForm } from './form-validations.ts'
+import { resetCards } from './update-cards.ts'
 
 let isComplete = false
 
