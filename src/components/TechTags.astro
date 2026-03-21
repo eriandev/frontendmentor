@@ -1,0 +1,17 @@
+---
+interface Props {
+  techs: string[]
+}
+
+const { techs } = Astro.props
+---
+
+<ul class="flex gap-2">
+  {
+    techs.map((tech) => {
+      const bgColor = `bg-${tech}-light`
+      const textColor = `text-${tech}-dark`
+      return <li class:list={[bgColor, textColor, 'rounded px-1.5 font-bold uppercase md:text-lg']}>{tech}</li>
+    })
+  }
+</ul>

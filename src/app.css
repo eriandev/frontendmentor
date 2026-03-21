@@ -8,6 +8,7 @@
   --breakpoint-xl: 1280px;
 
   --font-barlow: 'Barlow', sans-serif;
+  --font-heebo: 'Heebo', sans-serif;
 
   --color-guru: #e11d48;
   --color-advanced: #f97316;
@@ -15,11 +16,16 @@
   --color-junior: #34d399;
   --color-newbie: #06b6d4;
 
-  --color-html: #6abecd;
-  --color-css: #3e54a3;
-  --color-js: #cf6390;
-  --color-api: #aad742;
-  --color-svelte: #ff3e00;
+  --color-html-dark: #0284c7;
+  --color-html-light: #e0f2fe;
+  --color-css-dark: #d97706;
+  --color-css-light: #fef3c7;
+  --color-js-dark: #dc2626;
+  --color-js-light: #fee2e2;
+  --color-api-dark: #16a34a;
+  --color-api-light: #dcfce7;
+  --color-svelte-dark: #ff3e00;
+  --color-svelte-light: #ffdf80;
 
   --color-gray-100: #fafafa;
   --color-gray-200: #f0f4f4;
@@ -51,36 +57,4 @@
   .transition-zooming:hover {
     transform: scale(1.05);
   }
-}
-
-@font-face {
-  font-family: 'Barlow';
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-  src: url('/frontendmentor/fonts/barlow-500.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Barlow';
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-  src: url('/frontendmentor/fonts/barlow-500-italic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Barlow';
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-  src: url('/frontendmentor/fonts/barlow-700.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Barlow';
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-  src: url('/frontendmentor/fonts/barlow-700-italic.woff2') format('woff2');
 }

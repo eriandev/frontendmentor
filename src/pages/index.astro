@@ -4,7 +4,7 @@ import { get } from 'shared/utils/http'
 import Card from '@/components/Card.astro'
 import Layout from '@/app.astro'
 
-interface Projects {
+export interface Projects {
   level: {
     link: string
     name: string
@@ -14,6 +14,7 @@ interface Projects {
   link: string
   techs: string[]
   title: string
+  description: string
 }
 
 const { results } = await get<{ results: Projects[] }>(import.meta.env.PUBLIC_API_URL + '/projects/')
@@ -22,16 +23,16 @@ const hasProjects = results.length > 0
 
 <Layout title="Frontendmentor Challenges Solved">
   <section class="border-y border-y-gray-300">
-    <div class="mx-auto flex w-full max-w-[75rem] px-6 tracking-[0.2em]">
+    <div class="mx-auto flex w-full max-w-300 px-6 tracking-[0.2em] xl:px-0">
       <article class="w-max border-x border-x-gray-300 px-6 py-4 font-bold uppercase">My Solutions</article>
     </div>
   </section>
 
   <main
     class:list={[
-      'mx-auto max-w-3xl xl:max-w-[75rem]',
+      'mx-auto max-w-3xl xl:max-w-300',
       { 'flex h-main items-center': !hasProjects },
-      { 'grid grid-cols-1 gap-2 px-6 py-24 sm:grid-cols-2 md:gap-8 xl:grid-cols-3': hasProjects },
+      { 'grid grid-cols-1 gap-6.5 px-6 py-16 sm:grid-cols-2 xl:grid-cols-3 xl:px-0': hasProjects },
     ]}
   >
     {
