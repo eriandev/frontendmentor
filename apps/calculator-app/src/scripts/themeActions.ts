@@ -12,7 +12,7 @@ export function switchTheme(themeNumber: keyof typeof inputSteps): void {
   const { body } = document
 
   body.classList.remove('theme-1', 'theme-2', 'theme-3')
-  body.classList.add('theme-' + themeNumber)
+  body.classList.add(`theme-${themeNumber}`)
 
   inputSteps[themeNumber]?.click()
   storage.set(THEME_STORAGE, themeNumber)

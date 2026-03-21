@@ -79,7 +79,7 @@ function deleteParent(element: HTMLElement): void {
 function updateMainMarginTop(): void {
   if ($main == null) return
   const filterSectionHeight = ($filterContainer?.offsetHeight ?? 0) + 40
-  $main.style.marginTop = filterSectionHeight.toString() + 'px'
+  $main.style.marginTop = `${filterSectionHeight.toString()}px`
 }
 
 function clearFilters(): void {
@@ -98,7 +98,7 @@ function clearFilters(): void {
 }
 
 function getDataTags(jobPostId: string): string[] {
-  const $jobPostArticled = $('#' + jobPostId)
+  const $jobPostArticled = $(`#${jobPostId}`)
 
   if ($jobPostArticled == null) return []
 

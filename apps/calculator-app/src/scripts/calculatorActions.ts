@@ -5,14 +5,14 @@ import { $inputDisplay } from '@/scripts/declareRefs.ts'
 let isOperationUsed = false
 
 function getLastNumber(value: string): string {
-  const numberValueList = value.split(/[+\-*/]/)
+  const numberValueList = value.split(/[+\-*/]/v)
   return numberValueList[numberValueList.length - 1]
 }
 
 function getResult($inputDisplay: HTMLInputElement): string {
   // eslint-disable-next-line no-eval, @typescript-eslint/no-unsafe-type-assertion -- Accurate type validation is not required, but eval yes
   const result = eval($inputDisplay.value) as number
-  const resultHavePoint = Boolean(/\./.exec(result.toString()))
+  const resultHavePoint = Boolean(/\./v.exec(result.toString()))
   return resultHavePoint ? result.toFixed(3) : result.toString()
 }
 
@@ -57,11 +57,11 @@ function updateOperation($inputDisplay: HTMLInputElement, operation: string): vo
 
 function updateValueWithPoint($inputDisplay: HTMLInputElement): void {
   const lastValue = getLastNumber($inputDisplay.value)
-  const havePoint = Boolean(/\./.exec(lastValue))
+  const havePoint = Boolean(/\./v.exec(lastValue))
   const isLastEmpty = lastValue === ''
 
   if (!havePoint) {
-    $inputDisplay.value = isLastEmpty ? $inputDisplay.value + '0.' : $inputDisplay.value + '.'
+    $inputDisplay.value = isLastEmpty ? `${$inputDisplay.value}0.` : `${$inputDisplay.value}.`
     isOperationUsed = false
   }
 }

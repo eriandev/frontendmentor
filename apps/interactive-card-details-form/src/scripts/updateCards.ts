@@ -55,7 +55,7 @@ inputCVC?.addEventListener('input', ({ target }) => {
 function getFormatted(text: string): string {
   return typeof text === 'string'
     ? text
-        .replace(/[^0-9]/g, '')
+        .replace(/[^0-9]/gv, '')
         .slice(0, 17)
         .split('')
         // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions -- Required

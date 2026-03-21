@@ -4,7 +4,7 @@ function isMaxLength(maxLength: number, { target }: KeyboardEvent): boolean {
 }
 
 function isOnlyNumbers({ key }: KeyboardEvent): boolean {
-  const pattern = /^[0-9]$/
+  const pattern = /^[0-9]$/v
   return pattern.test(key)
 }
 
