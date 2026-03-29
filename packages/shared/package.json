@@ -5,6 +5,7 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "clean": "rm -rf node_modules",
     "format": "prettier --write ./**/*.{astro,css}",
     "check": "astro check --tsconfig tsconfig.json"
   },

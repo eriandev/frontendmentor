@@ -10,6 +10,7 @@
     "preview": "astro preview",
     "build": "pnpm check && astro build",
     "check": "astro check --tsconfig tsconfig.json",
+    "clean": "rm -rf node_modules dist && pnpm all:run clean",
     "lint": "eslint --fix {apps,packages,src}/**/*.{astro,ts,js}",
     "format": "prettier --write {apps,packages,src}/**/*.{astro,ts,js,css}",
     "all:run": "pnpm -r --stream --workspace-concurrency 3",
