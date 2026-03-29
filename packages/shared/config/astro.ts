@@ -1,13 +1,16 @@
+import path from 'node:path'
 import icon from 'astro-icon'
+import svelte from '@astrojs/svelte'
 import tailwindcss from '@tailwindcss/vite'
 import type { AstroUserConfig } from 'astro'
 
 export interface GetAstroConfig {
   project?: string
   hostname?: string
+  useSvelte?: boolean
 }
 
-export function getAstroConfig({ project, hostname }: GetAstroConfig = {}): AstroUserConfig {
+export function getAstroConfig({ project, hostname, useSvelte = false }: GetAstroConfig = {}): AstroUserConfig {
   const assets = 'assets'
   const hasHostname = typeof hostname === 'string'
   const hasProjectName = typeof project === 'string'
@@ -18,8 +21,15 @@ export function getAstroConfig({ project, hostname }: GetAstroConfig = {}): Astr
     base,
     outDir,
     build: { assets },
-    integrations: [icon()],
-    vite: { plugins: [tailwindcss()] },
     image: hasHostname ? { domains: [hostname] } : undefined,
+    integrations: [icon(), ...(useSvelte ? [svelte()] : [])],
+    vite: {
+      plugins: [tailwindcss()],
+      resolve: {
+        alias: {
+          '@': path.resolve('./src'),
+        },
+      },
+    },
   }
 }
