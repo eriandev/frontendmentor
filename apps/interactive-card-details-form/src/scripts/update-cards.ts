@@ -21,7 +21,7 @@ export function resetCards(): void {
   ]
 
   cardElements.forEach(({ element, value }) => {
-    if (element == null) return
+    if (element === null) return
 
     if (element instanceof HTMLInputElement) {
       element.value = value
@@ -33,23 +33,23 @@ export function resetCards(): void {
 
 inputNum?.addEventListener('input', ({ target }) => {
   if (!(target instanceof HTMLInputElement)) return
-  if (cardNumber != null) cardNumber.textContent = getFormatted(target.value)
+  if (cardNumber !== null) cardNumber.textContent = getFormatted(target.value)
 })
 inputName?.addEventListener('input', ({ target }) => {
   if (!(target instanceof HTMLInputElement)) return
-  if (cardHolder != null) cardHolder.textContent = target.value === 'undefined' ? 'Jane Appleseed' : target.value
+  if (cardHolder !== null) cardHolder.textContent = target.value === 'undefined' ? 'Jane Appleseed' : target.value
 })
 inputMM?.addEventListener('input', ({ target }) => {
   if (!(target instanceof HTMLInputElement)) return
-  if (cardExpMM != null) cardExpMM.textContent = typeof target.value === 'undefined' ? '00' : target.value
+  if (cardExpMM !== null) cardExpMM.textContent = typeof target.value === 'undefined' ? '00' : target.value
 })
 inputYY?.addEventListener('input', ({ target }) => {
   if (!(target instanceof HTMLInputElement)) return
-  if (cardExYY != null) cardExYY.textContent = typeof target.value === 'undefined' ? '00' : target.value
+  if (cardExYY !== null) cardExYY.textContent = typeof target.value === 'undefined' ? '00' : target.value
 })
 inputCVC?.addEventListener('input', ({ target }) => {
   if (!(target instanceof HTMLInputElement)) return
-  if (cardCVC != null) cardCVC.value = typeof target.value === 'undefined' ? '000' : target.value
+  if (cardCVC !== null) cardCVC.value = typeof target.value === 'undefined' ? '000' : target.value
 })
 
 function getFormatted(text: string): string {

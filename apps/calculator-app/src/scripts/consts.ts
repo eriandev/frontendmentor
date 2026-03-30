@@ -1,5 +1,5 @@
 export const KEY_SELECTOR = '[id^="key-"]'
-export const NUMBERS_SEPARATE_REGEX = /[+\-*/]/v
+export const NUMBERS_SEPARATE_REGEX = /[+\-*\/]/v
 export const THEME_STORAGE = 'calculator-app-theme'
 export const INPUT_SWITCH_SELECTOR = 'input[name="switch-theme"]'
 

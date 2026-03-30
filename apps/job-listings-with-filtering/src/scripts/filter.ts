@@ -25,7 +25,7 @@ $badgeList.forEach((badge) => {
 })
 
 function addFilter(filterName: string | null): void {
-  if (filterName == null || $filterSection == null) return
+  if (filterName === null || $filterSection === null) return
 
   createBadgeFilter(filterName)
 
@@ -45,7 +45,7 @@ function addFilter(filterName: string | null): void {
 function createBadgeFilter(filterName: string): void {
   const filterAlreadyExists = filters.includes(filterName.toLocaleLowerCase())
 
-  if ($filterList == null || filterAlreadyExists) return
+  if ($filterList === null || filterAlreadyExists) return
 
   $filterList.innerHTML += `<div id="badge-filter-${filterName.toLocaleLowerCase()}" class="badge filter">
   <span class="label">${filterName}</span>
@@ -58,7 +58,7 @@ function createBadgeFilter(filterName: string): void {
 function removeFilter(element: HTMLElement): void {
   const filterName = element.parentElement?.id.split('-')[2]
 
-  if (filterName != null) {
+  if (filterName !== undefined) {
     const newFilters = new Set(filters)
     newFilters.delete(filterName.toLocaleLowerCase())
     filters = Array.from(newFilters)
@@ -77,19 +77,19 @@ function deleteParent(element: HTMLElement): void {
 }
 
 function updateMainMarginTop(): void {
-  if ($main == null) return
+  if ($main === null) return
   const filterSectionHeight = ($filterContainer?.offsetHeight ?? 0) + 40
   $main.style.marginTop = `${filterSectionHeight.toString()}px`
 }
 
 function clearFilters(): void {
-  if ($filterSection == null || $filterList == null) return
+  if ($filterSection === null || $filterList === null) return
 
   $filterSection.classList.add('hidden')
   $filterList.innerHTML = ''
   filters = []
 
-  if ($main == null) return
+  if ($main === null) return
 
   showAllJobPosts()
   $main.removeAttribute('style')
@@ -100,10 +100,10 @@ function clearFilters(): void {
 function getDataTags(jobPostId: string): string[] {
   const $jobPostArticled = $(`#${jobPostId}`)
 
-  if ($jobPostArticled == null) return []
+  if ($jobPostArticled === null) return []
 
   const stringTags = $jobPostArticled.getAttribute('data-tags')
-  return stringTags == null ? [] : stringTags.toLocaleLowerCase().split(',')
+  return stringTags === null ? [] : stringTags.toLocaleLowerCase().split(',')
 }
 
 function filterJobPosts(): void {

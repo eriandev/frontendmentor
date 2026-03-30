@@ -27,7 +27,7 @@ async function formAction(event: MouseEvent): Promise<void> {
 
   const { isValid, message } = validateIP(inputValue ?? '')
 
-  if (!isValid || inputValue == null) {
+  if (!isValid || inputValue === null) {
     $input?.setCustomValidity(message)
     $input?.reportValidity()
     return
@@ -37,7 +37,7 @@ async function formAction(event: MouseEvent): Promise<void> {
 
   const { error, ipAddress, isp, lat, lng, location, timezone } = await getIpInfo(inputValue)
 
-  if (error != null) return
+  if (error !== undefined) return
 
   const elements = [
     { element: $ipAddress, value: ipAddress, title: ipAddress },
@@ -47,7 +47,7 @@ async function formAction(event: MouseEvent): Promise<void> {
   ]
 
   elements.forEach(({ element, value, title }) => {
-    if (element != null) {
+    if (element !== null) {
       element.textContent = value ?? '-'
       element.setAttribute('title', title ?? '-')
     }
@@ -57,7 +57,7 @@ async function formAction(event: MouseEvent): Promise<void> {
 }
 
 function moveMarker(lat?: number, lng?: number): void {
-  if (lng == null || lat == null) return
+  if (typeof lng !== 'number' || typeof lat !== 'number') return
 
   myMap.setView(new L.LatLng(lat, lng))
 

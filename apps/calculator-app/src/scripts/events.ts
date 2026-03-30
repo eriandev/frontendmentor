@@ -16,7 +16,7 @@ function getValidThemeNumber(value: string): 1 | 2 | 3 {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (themeNumber != null) {
+  if (themeNumber !== null) {
     switchTheme(getValidThemeNumber(themeNumber))
   }
 
@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $keyButtons.forEach((element) => {
     element.addEventListener('click', (event) => {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion -- I'm sure, believe me
       const { id } = event.currentTarget as HTMLButtonElement
       const value = id.replace('key-', '')
       updateInputDisplay(value)

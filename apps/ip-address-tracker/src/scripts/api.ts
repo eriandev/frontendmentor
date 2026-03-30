@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-type-assertion -- Accurate type validation is not required */
-
 import { getUTCFromTimezone } from '@/utils/time'
 
 export interface APIResponse {

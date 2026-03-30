@@ -5,12 +5,12 @@ import { $inputDisplay } from '@/scripts/declare-refs.ts'
 let isOperationUsed = false
 
 function getLastNumber(value: string): string {
-  const numberValueList = value.split(/[+\-*/]/v)
+  const numberValueList = value.split(/[+\-*\/]/v)
   return numberValueList[numberValueList.length - 1]
 }
 
 function getResult($inputDisplay: HTMLInputElement): string {
-  // eslint-disable-next-line no-eval, @typescript-eslint/no-unsafe-type-assertion -- Accurate type validation is not required, but eval yes
+  // eslint-disable-next-line no-eval -- Accurate type validation is not required, but eval yes
   const result = eval($inputDisplay.value) as number
   const resultHavePoint = Boolean(/\./v.exec(result.toString()))
   return resultHavePoint ? result.toFixed(3) : result.toString()
@@ -69,7 +69,7 @@ function updateValueWithPoint($inputDisplay: HTMLInputElement): void {
 export function updateInputDisplay(value: string): void {
   const isDigit = !Number.isNaN(Number(value))
 
-  if ($inputDisplay != null) {
+  if ($inputDisplay !== null) {
     switch (value) {
       case 'NumpadMultiply':
       case 'KeyX':
@@ -116,7 +116,7 @@ export function updateInputDisplay(value: string): void {
 export function updateKeyActive(event: KeyboardEvent, classListMethod: 'add' | 'remove'): void {
   try {
     const keyItem = keypadList.find(({ key, code }) => matchesKeyOrCode(event, key, code))
-    if (keyItem != null) $(`#key-${keyItem.key}`)?.classList[classListMethod]('active')
+    if (keyItem !== undefined) $(`#key-${keyItem.key}`)?.classList[classListMethod]('active')
   } catch (error) {
     console.error(error)
   }

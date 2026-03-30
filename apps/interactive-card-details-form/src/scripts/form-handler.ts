@@ -23,7 +23,7 @@ function initForm(): void {
 
   isComplete = false
 
-  if (btn != null) btn.textContent = 'Confirm'
+  if (btn !== null) btn.textContent = 'Confirm'
   mainForm?.classList.replace('hidden', 'flex')
   completeView?.classList.replace('grid', 'hidden')
 }

@@ -18,7 +18,7 @@ export function isValidForm(): boolean {
     { input: inputCVC, validator: isValidCVCNumber, id: inputCVC?.id },
   ]
 
-  return inputs.every(({ input, validator, id }) => input != null && validator(input, input.id))
+  return inputs.every(({ input, validator }) => input !== null && validator(input, input.id))
 }
 
 function isNotEmpty(ref: HTMLInputElement, id: string): boolean {
@@ -61,6 +61,6 @@ function isValidCVCNumber(ref: HTMLInputElement, id: string): boolean {
 function showError(inputRef: HTMLInputElement, errorId: string, message: string): boolean {
   const spanError = $(`#error-${errorId}`)
   inputRef.classList.replace('border-light-grayish-violet', 'border-error')
-  if (spanError != null) spanError.textContent = message
+  if (spanError !== null) spanError.textContent = message
   return false
 }
