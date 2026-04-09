@@ -45,6 +45,9 @@
     },
     {
       "path": "apps/job-listings-with-filtering"
+    },
+    {
+      "path": "apps/weather-app"
     }
   ],
 }

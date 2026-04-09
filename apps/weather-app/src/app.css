@@ -1,0 +1,98 @@
+@import 'shared/styles/tailwind';
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/frontendmentor/weather-app/fonts/dm-sans-300.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/frontendmentor/weather-app/fonts/dm-sans-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/frontendmentor/weather-app/fonts/dm-sans-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/frontendmentor/weather-app/fonts/dm-sans-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/frontendmentor/weather-app/fonts/bricolage-grotesque-700.woff2') format('woff2');
+}
+
+@utility bg-card-main-large {
+  background-image: url('/frontendmentor/weather-app/images/bg-today-large.svg');
+}
+
+@utility bg-card-main-small {
+  background-image: url('/frontendmentor/weather-app/images/bg-today-small.svg');
+}
+
+@theme {
+  --breakpoint-xs: 375px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1440px;
+
+  --font-dm-sans: 'DM Sans', sans-serif;
+  --font-bricolage-grotesque: 'Bricolage Grotesque', sans-serif;
+
+  --color-card-dark: hsl(240, 26%, 20%);
+  --color-card-border: hsl(240, 23%, 29%);
+
+  --color-card-light: hsl(240, 22%, 24%);
+
+  --color-select: hsl(242, 22%, 30%);
+
+  --color-neutral-900: hsl(243, 96%, 9%);
+  --color-neutral-800: hsl(243, 27%, 20%);
+  --color-neutral-700: hsl(243, 23%, 24%);
+  --color-neutral-600: hsl(243, 23%, 30%);
+  --color-neutral-300: hsl(240, 6%, 70%);
+  --color-neutral-200: hsl(250, 6%, 84%);
+  --color-neutral: hsl(0, 0%, 100%);
+
+  --color-orange-500: hsl(28, 100%, 52%);
+
+  --color-blue-500: hsl(233, 67%, 56%);
+  --color-blue-700: hsl(248, 70%, 36%);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .scroll-container {
+    overflow-y: auto;
+
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .scroll-container {
+    scrollbar-width: none;
+  }
+
+  .scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+}

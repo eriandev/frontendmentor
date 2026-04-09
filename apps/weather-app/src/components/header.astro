@@ -1,0 +1,64 @@
+---
+import Icon from 'shared/components/icon.astro'
+import GroupedSelect from '@/components/grouped-select.svelte'
+import type { Option } from '@/utils/types'
+
+type Section = {
+  key: string
+  title: string
+  options: Option[]
+}
+
+const defaultValue = { temp: 'c', speed: 'km/h', length: 'mm' }
+const sections: Section[] = [
+  {
+    key: 'temp',
+    title: 'Temperature',
+    options: [
+      {
+        label: 'Celsius (°C)',
+        value: 'c',
+      },
+      {
+        label: 'Fahrenheit (°F)',
+        value: 'f',
+      },
+    ],
+  },
+  {
+    key: 'speed',
+    title: 'Wind Speed',
+    options: [
+      {
+        label: 'km/h',
+        value: 'km/h',
+      },
+      {
+        label: 'mph',
+        value: 'mph',
+      },
+    ],
+  },
+  {
+    key: 'length',
+    title: 'Precipitation',
+    options: [
+      {
+        label: 'Millimeters (mm)',
+        value: 'mm',
+      },
+      {
+        label: 'Inches (in)',
+        value: 'in',
+      },
+    ],
+  },
+]
+---
+
+<header class="w-full pt-8">
+  <section class="mx-auto flex w-full max-w-6xl justify-between px-5">
+    <Icon name="logo" class="h-10 w-42" />
+    <GroupedSelect client:idle label="Units" {sections} {defaultValue} />
+  </section>
+</header>
