@@ -29,8 +29,8 @@
     "@astrojs/svelte": "8.0.4",
     "@eslint/compat": "2.0.3",
     "@types/node": "25.5.0",
-    "@typescript-eslint/eslint-plugin": "8.57.1",
-    "@typescript-eslint/parser": "8.57.1",
+    "@typescript-eslint/eslint-plugin": "8.57.2",
+    "@typescript-eslint/parser": "8.57.2",
     "eslint": "9.39.4",
     "eslint-config-love": "151.0.0",
     "eslint-plugin-astro": "1.6.0",
@@ -41,9 +41,9 @@
     "prettier-plugin-tailwindcss": "0.7.2",
     "shared": "workspace:*",
     "sharp": "0.34.5",
-    "svelte": "5.55.1",
+    "svelte": "5.55.2",
     "typescript": "5.9.3",
     "typescript-eslint": "8.57.2",
-    "vite": "7.3.1"
+    "vite": "7.3.2"
   }
 }
