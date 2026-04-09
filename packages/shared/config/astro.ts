@@ -31,8 +31,8 @@ export function getAstroConfig({ project, hostname, useSvelte = false }: GetAstr
         },
       },
       ssr: {
-        noExternal: ['@usesvelte/inline-svg']
-      }
+        noExternal: ['@usesvelte/inline-svg'],
+      },
     },
   }
 }
