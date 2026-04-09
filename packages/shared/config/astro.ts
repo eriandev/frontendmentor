@@ -30,6 +30,9 @@ export function getAstroConfig({ project, hostname, useSvelte = false }: GetAstr
           '@': path.resolve('./src'),
         },
       },
+      ssr: {
+        noExternal: ['@usesvelte/inline-svg']
+      }
     },
   }
 }
