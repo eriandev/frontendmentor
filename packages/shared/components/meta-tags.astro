@@ -3,7 +3,7 @@ import { unslugify } from 'shared/utils/string'
 
 interface Props {
   slug?: string
-  themeColor: `#${string}`
+  themeColor?: `#${string}`
 }
 
 const { themeColor, slug } = Astro.props
@@ -25,7 +25,7 @@ const description = isSlugString
 
 <link rel="icon" type="image/png" sizes="32x32" href={basePath + '/favicon.png'} />
 <link rel="apple-touch-icon" href={basePath + '/favicon.png'} />
-<meta name="theme-color" content={themeColor} />
+{themeColor ? <meta name="theme-color" content={themeColor} /> : null}
 
 <meta name="generator" content={Astro.generator} />
 
