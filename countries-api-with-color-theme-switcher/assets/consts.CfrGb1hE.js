@@ -1,0 +1,1 @@
+const a=["eng","fra","spa"],e=["name","cca3","borders","tld"],s=["name","nativeName","capital","cca3","currencies","flags","languages","population","region","subregion"],n={dark:{icon:"moon",label:"Dark Mode"},light:{icon:"sun",label:"Light Mode"}};export{e as b,s as d,a as l,n as t};
