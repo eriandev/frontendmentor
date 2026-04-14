@@ -13,6 +13,7 @@
     "clean": "rm -rf node_modules dist && pnpm all:run clean",
     "lint": "eslint --fix {apps,packages,src}/**/*.{astro,svelte,ts,js}",
     "format": "prettier --write {apps,packages,src}/**/*.{astro,svelte,ts,js,css}",
+    "reset": "rm -rf node_modules dist .astro pnpm-lock.yaml && pnpm all:run reset",
     "all:run": "pnpm -r --stream --workspace-concurrency 3",
     "build:prod": "pnpm build && pnpm all:run build"
   },
