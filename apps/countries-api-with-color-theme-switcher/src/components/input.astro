@@ -1,0 +1,27 @@
+---
+import Icon from 'shared/components/icon.astro'
+---
+
+<script>
+  import { $ } from 'shared/utils/dom'
+  import { useCountries } from '@/logic/use-countries.svelte'
+
+  const countries = useCountries()
+  const searchInput = $('#search-input')!
+
+  searchInput.addEventListener('input', (e) => {
+    countries.search((e.target as HTMLInputElement).value)
+  })
+</script>
+
+<label
+  for="search-input"
+  class="flex w-full max-w-132 items-center gap-x-4 rounded-lg bg-white px-8 py-4 shadow-md dark:bg-dark-mode-elements"
+>
+  <Icon name="search" size={20} />
+  <input
+    id="search-input"
+    placeholder="Search for a country..."
+    class="w-full outline-none placeholder:font-semibold placeholder:select-none"
+  />
+</label>

@@ -1,0 +1,22 @@
+{
+  "name": "countries-api-with-color-theme-switcher",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "astro": "astro",
+    "dev": "astro dev",
+    "preview": "astro preview",
+    "clean": "rm -rf node_modules dist",
+    "build": "pnpm check && astro build",
+    "check": "astro check --tsconfig tsconfig.json",
+    "format": "prettier --write src/**/*.{astro,svelte,ts,css}"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=8"
+  },
+  "devDependencies": {
+    "shared": "workspace:*"
+  }
+}

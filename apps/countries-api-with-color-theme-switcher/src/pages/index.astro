@@ -1,0 +1,17 @@
+---
+import Layout from '@/app.astro'
+import Input from '@/components/input.astro'
+import Cards from '@/components/cards.svelte'
+import Select from '@/components/select.svelte'
+---
+
+<Layout>
+  <section class="mx-auto flex w-full max-w-7xl flex-col justify-between gap-y-12 px-6 py-12 md:flex-row">
+    <Input />
+    <Select client:idle />
+  </section>
+
+  <main class="h-full">
+    <Cards client:load />
+  </main>
+</Layout>

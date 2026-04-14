@@ -1,0 +1,37 @@
+---
+import Header from '@/components/header.astro'
+import MetaTags from 'shared/components/meta-tags.astro'
+import Atributtion from 'shared/components/atributtion.astro'
+import '@/app.css'
+
+interface Props {
+  bodyClass?: string
+}
+
+const { bodyClass } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <MetaTags slug="countries-api-with-color-theme-switcher" />
+
+    <script is:inline>
+      const theme = localStorage.getItem('theme')
+      if (theme === 'dark') document.documentElement.classList.add('dark')
+    </script>
+  </head>
+
+  <body
+    class:list={[
+      'relative min-h-screen bg-light-mode font-nunito-sans text-light-mode-text dark:bg-dark-mode dark:text-white',
+      bodyClass,
+    ]}
+  >
+    <Header />
+    <slot />
+    <Atributtion
+      class="fixed right-0 bottom-0 left-0 mx-auto w-max rounded-t-lg bg-light-mode p-1 text-center text-xs font-semibold dark:bg-dark-mode"
+    />
+  </body>
+</html>

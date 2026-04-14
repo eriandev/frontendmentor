@@ -1,0 +1,101 @@
+---
+import Layout from '@/app.astro'
+import Link from 'shared/components/link.astro'
+import Icon from 'shared/components/icon.astro'
+import Image from 'shared/components/image.astro'
+import { useCountries } from '@/logic/use-countries.svelte'
+
+export async function getStaticPaths() {
+  const countryList = await useCountries().getList()
+  return countryList.map((country) => ({
+    params: { code: country.cca3.toLocaleLowerCase() },
+    props: { country },
+  }))
+}
+
+const { country } = Astro.props
+---
+
+<Layout bodyClass="bg-white">
+  <section class="w-full">
+    <article class="mx-auto flex max-w-7xl flex-col justify-between gap-y-12 px-6 py-20 md:flex-row">
+      <Link
+        to="/frontendmentor/countries-api-with-color-theme-switcher"
+        class="flex w-max items-center gap-x-2 rounded-lg bg-white px-8 py-2 font-semibold shadow-[0_0_8px_rgba(0,0,0,0.24)] dark:bg-dark-mode-elements"
+      >
+        <Icon name="arrow-left" size={20} />
+        <span>Back</span>
+      </Link>
+    </article>
+  </section>
+
+  <main class="mx-auto grid w-full max-w-7xl gap-24 px-6 pb-20 lg:grid-cols-2">
+    <Image
+      width={568}
+      height={378}
+      fetchpriority="high"
+      alt={country.flag.alt}
+      src={country.flag.png}
+      class="w-full object-cover"
+      onerror={`this.onerror=null; this.src='${country.flag.svg}';`}
+    />
+    <section class="space-y-5 self-center">
+      <h2 class="text-4xl font-extrabold capitalize">{country.name}</h2>
+
+      <article class="grid gap-y-12 lg:grid-cols-2">
+        <ul class="space-y-1.5">
+          {
+            country.nativeName ? (
+              <li>
+                <span class="font-semibold">Native Name:</span> {country.nativeName}
+              </li>
+            ) : null
+          }
+          <li><span class="font-semibold">Population:</span> {country.population}</li>
+          <li><span class="font-semibold">Region:</span> {country.region}</li>
+          {
+            country.subRegion ? (
+              <li>
+                <span class="font-semibold">Sub Region:</span> {country.subRegion}
+              </li>
+            ) : null
+          }
+          {
+            country.capital ? (
+              <li>
+                <span class="font-semibold">Capital:</span> {country.capital}
+              </li>
+            ) : null
+          }
+        </ul>
+
+        <ul class="space-y-1.5">
+          {
+            country.tld ? (
+              <li>
+                <span class="font-semibold">Top Level Domain:</span> {country.tld}
+              </li>
+            ) : null
+          }
+          <li><span class="font-semibold">Currencies:</span> {country.currencies.join(', ')}</li>
+          <li><span class="font-semibold">Languages:</span> {country.languages.join(', ')}</li>
+        </ul>
+      </article>
+      {
+        country.borders.length > 0 ? (
+          <footer class="mt-16 flex flex-wrap items-center gap-4">
+            <span class="font-semibold">Border Countries:</span>
+            {country.borders.map(({ cca3, name }) => (
+              <Link
+                to={`/frontendmentor/countries-api-with-color-theme-switcher/country/${cca3.toLowerCase()}`}
+                class="block rounded-sm bg-white px-8 py-2 leading-none shadow-[0_0_8px_rgba(0,0,0,0.1)] dark:bg-dark-mode-elements"
+              >
+                {name}
+              </Link>
+            ))}
+          </footer>
+        ) : null
+      }
+    </section>
+  </main>
+</Layout>

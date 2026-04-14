@@ -82,6 +82,12 @@ importers:
         specifier: workspace:*
         version: link:../../packages/shared
 
+  apps/countries-api-with-color-theme-switcher:
+    devDependencies:
+      shared:
+        specifier: workspace:*
+        version: link:../../packages/shared
+
   apps/fylo-landing-page-with-two-column-layout:
     devDependencies:
       shared:

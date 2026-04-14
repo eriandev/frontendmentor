@@ -1,0 +1,59 @@
+@import 'shared/styles/tailwind';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/frontendmentor/countries-api-with-color-theme-switcher/fonts/nunito-sans-300.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/frontendmentor/countries-api-with-color-theme-switcher/fonts/nunito-sans-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/frontendmentor/countries-api-with-color-theme-switcher/fonts/nunito-sans-800.woff2') format('woff2');
+}
+
+@theme {
+  --breakpoint-xs: 375px;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1440px;
+
+  --font-nunito-sans: 'Nunito Sans', sans-serif;
+
+  --color-dark-mode-elements: hsl(210, 22%, 22%);
+  --color-dark-mode: hsl(205, 26%, 17%);
+  --color-light-mode-text: hsl(200, 15%, 8%);
+  --color-light-mode-input: hsl(0, 0%, 50%);
+  --color-light-mode: hsl(0, 0%, 96%);
+  --white: hsl(0, 100%, 100%);
+}
+
+@layer components {
+  .card {
+    @apply h-full max-h-88 w-full max-w-65 shadow-md hover:shadow-lg;
+  }
+
+  .card-header {
+    @apply h-full w-full overflow-hidden rounded-t-md;
+  }
+
+  .card-body {
+    @apply grid gap-y-4 rounded-b-md bg-white p-6 dark:bg-dark-mode-elements;
+  }
+}
