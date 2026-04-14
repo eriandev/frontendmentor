@@ -10,7 +10,17 @@ interface Props extends ImgAttributes {
   lazy?: boolean
 }
 
-const { source, alt, width, height, decoding, fetchpriority, lazy = false, class: extraClass } = Astro.props
+const {
+  source,
+  alt,
+  width,
+  height,
+  decoding,
+  lazy = false,
+  fetchpriority,
+  class: extraClass,
+  ...restProps
+} = Astro.props
 const loading = lazy ? 'lazy' : 'eager'
 
 let src: ImageMetadata
@@ -38,4 +48,5 @@ try {
   {fetchpriority}
   class={extraClass}
   formats={['avif', 'webp']}
+  {...restProps}
 />
