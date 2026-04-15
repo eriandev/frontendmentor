@@ -7,15 +7,26 @@
   let selected = $state<Theme>('light')
   let currentTheme = $derived(themes[selected])
 
-  function toogle(theme: Theme) {
+  function applyTheme(theme: Theme) {
     selected = theme
     localStorage.setItem('theme', theme)
     document.documentElement.classList[theme === 'dark' ? 'add' : 'remove']('dark')
   }
 
+  function toogle(theme: Theme) {
+    if (!document.startViewTransition) {
+      applyTheme(theme)
+      return
+    }
+
+    document.startViewTransition(() => {
+      applyTheme(theme)
+    })
+  }
+
   onMount(() => {
     const theme = localStorage.getItem('theme') as Theme | null
-    toogle(theme ?? 'light')
+    applyTheme(theme ?? 'light')
   })
 </script>
 
