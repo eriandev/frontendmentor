@@ -41,8 +41,6 @@
       ...selectedValue,
       [sectionKey]: optionValue,
     }
-
-    console.info({ selectedValue })
   }
 
   function updatePositionRaf() {
