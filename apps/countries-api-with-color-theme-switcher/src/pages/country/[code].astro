@@ -2,7 +2,6 @@
 import Layout from '@/app.astro'
 import Link from 'shared/components/link.astro'
 import Icon from 'shared/components/icon.astro'
-import Image from 'shared/components/image.astro'
 import { getCountryList } from '@/data/countries'
 
 export async function getStaticPaths() {
@@ -30,17 +29,20 @@ const { country } = Astro.props
   </section>
 
   <main class="mx-auto grid w-full max-w-7xl gap-24 px-6 pb-20 lg:grid-cols-2">
-    <Image
+    <img
       width={568}
       height={378}
       fetchpriority="high"
       alt={country.flag.alt}
       src={country.flag.png}
       class="w-full object-cover"
-      onerror={`this.onerror=null; this.src='${country.flag.svg}';`}
+      transition:name={`card-img-${country.cca3}`}
+      onerror={`this.onerror=null;this.src='${country.flag.svg}';`}
     />
     <section class="space-y-5 self-center">
-      <h2 class="text-4xl font-extrabold capitalize">{country.name}</h2>
+      <h2 transition:name={`card-name-${country.cca3}`} class="text-4xl font-extrabold capitalize">
+        {country.name}
+      </h2>
 
       <article class="grid gap-y-12 lg:grid-cols-2">
         <ul class="space-y-1.5">

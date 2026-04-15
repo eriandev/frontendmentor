@@ -20,7 +20,7 @@ const { countryList } = Astro.props
 >
   {
     countryList.map(({ capital, cca3, flag, name, population, region }, index) => (
-      <article class="card" data-cca3={cca3} data-name={name} data-region={region} data-capital={capital}>
+      <article id={`card-${cca3}`} class="card" data-name={name} data-region={region} data-capital={capital}>
         <Link
           to={`/frontendmentor/countries-api-with-color-theme-switcher/country/${cca3.toLowerCase()}`}
           class="grid-row-[minmax(0,160px)_auto] grid h-full"
@@ -32,14 +32,17 @@ const { countryList } = Astro.props
               alt={flag.alt}
               src={flag.png}
               class="h-full w-full object-cover"
+              transition:name={`card-img-${cca3}`}
               loading={index <= 7 ? 'eager' : 'lazy'}
               fetchpriority={index <= 7 ? 'high' : undefined}
-              onerror={`this.onerror=null;this.src=${flag.svg};`}
+              onerror={`this.onerror=null;this.src='${flag.svg}';`}
             />
           </header>
 
           <div class="card-body">
-            <h2 class="text-lg font-extrabold">{name}</h2>
+            <h2 transition:name={`card-name-${cca3}`} class="text-lg font-extrabold">
+              {name}
+            </h2>
 
             <ul class="grid">
               <li class="flex gap-x-1">
