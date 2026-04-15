@@ -2,9 +2,12 @@
   import { onMount } from 'svelte'
   import Icon from 'shared/components/icon.svelte'
   import { $ as domSelector } from 'shared/utils/dom'
-  import { useCountries } from '@/logic/use-countries.svelte'
 
-  const countries = useCountries()
+  interface Props {
+    regions: string[]
+  }
+
+  const { regions }: Props = $props()
 
   let open = $state(false)
   let contentRef = $state<HTMLDivElement>()
@@ -20,10 +23,14 @@
   }
 
   function handleChange(option: string) {
-    open = false
     if (searchInput) searchInput.value = ''
+
     selected = selected === option ? null : option
-    countries.changeFilter(selected)
+    document.dispatchEvent(
+      new CustomEvent('region-change', {
+        detail: { region: selected },
+      }),
+    )
   }
 
   onMount(() => {
@@ -51,7 +58,7 @@
       role="listbox"
       class="absolute top-full left-0 z-100 mt-2 grid min-w-full rounded-lg bg-white shadow-md dark:bg-dark-mode-elements"
     >
-      {#each $countries.regions as region, index (region)}
+      {#each regions as region, index (region)}
         {@const isSelected = selected === region}
 
         <button
@@ -60,7 +67,7 @@
           aria-selected={isSelected}
           class={[
             'cursor-pointer rounded px-8 py-2 text-left capitalize hover:underline',
-            { 'pt-4': index === 0, 'pb-4': index === $countries.regions.length - 1, underline: isSelected },
+            { 'pt-4': index === 0, 'pb-4': index === regions.length - 1, underline: isSelected },
           ]}
           onclick={() => handleChange(region)}
         >

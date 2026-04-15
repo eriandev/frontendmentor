@@ -3,12 +3,12 @@ import Layout from '@/app.astro'
 import Link from 'shared/components/link.astro'
 import Icon from 'shared/components/icon.astro'
 import Image from 'shared/components/image.astro'
-import { useCountries } from '@/logic/use-countries.svelte'
+import { getCountryList } from '@/data/countries'
 
 export async function getStaticPaths() {
-  const countryList = await useCountries().getList()
+  const countryList = await getCountryList()
   return countryList.map((country) => ({
-    params: { code: country.cca3.toLocaleLowerCase() },
+    params: { code: country.cca3.toLowerCase() },
     props: { country },
   }))
 }

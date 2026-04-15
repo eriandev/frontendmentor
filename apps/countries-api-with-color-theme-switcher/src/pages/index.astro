@@ -1,17 +1,26 @@
 ---
 import Layout from '@/app.astro'
+import Cards from '@/components/cards.astro'
 import Input from '@/components/input.astro'
-import Cards from '@/components/cards.svelte'
 import Select from '@/components/select.svelte'
+import { getCountryList, getRegions } from '@/data/countries'
+
+const countryList = await getCountryList()
+const regions = getRegions(countryList)
 ---
 
 <Layout>
+  <Fragment slot="head">
+    <script src="@/scripts/declare-refs.ts"></script>
+    <script src="@/scripts/filters-handler.ts"></script>
+  </Fragment>
+
   <section class="mx-auto flex w-full max-w-7xl flex-col justify-between gap-y-12 px-6 py-12 md:flex-row">
     <Input />
-    <Select client:idle />
+    <Select client:load {regions} />
   </section>
 
   <main class="h-full">
-    <Cards client:load />
+    <Cards {countryList} />
   </main>
 </Layout>

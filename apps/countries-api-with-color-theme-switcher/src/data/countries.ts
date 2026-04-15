@@ -10,7 +10,11 @@ import type {
 
 let cache: Country[] | null = null
 
-export async function getCountries() {
+export function getRegions(countryList: Country[]) {
+  return [...new Set(countryList.map((c) => c.region.toLocaleLowerCase()))].sort()
+}
+
+export async function getCountryList() {
   if (cache !== null) return cache
 
   const [detailResponse, bordersResponse] = await Promise.allSettled([

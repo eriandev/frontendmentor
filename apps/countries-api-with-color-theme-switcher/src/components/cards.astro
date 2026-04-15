@@ -1,0 +1,65 @@
+---
+import Link from 'shared/components/link.astro'
+import type { Country } from '@/utils/types'
+
+interface Props {
+  countryList: Country[]
+}
+
+const { countryList } = Astro.props
+---
+
+<section
+  class:list={[
+    'cards mx-auto grid h-full max-w-7xl grid-cols-[repeat(auto-fit,minmax(268px,1fr))] items-center gap-y-10 pb-24 md:gap-y-16 xl:grid-cols-4',
+    {
+      'justify-items-center': countryList.length >= 4,
+      'justify-items-start px-6': countryList.length < 4,
+    },
+  ]}
+>
+  {
+    countryList.map(({ capital, cca3, flag, name, population, region }, index) => (
+      <article class="card" data-cca3={cca3} data-name={name} data-region={region} data-capital={capital}>
+        <Link
+          to={`/frontendmentor/countries-api-with-color-theme-switcher/country/${cca3.toLowerCase()}`}
+          class="grid-row-[minmax(0,160px)_auto] grid h-full"
+        >
+          <header class="card-header">
+            <img
+              width={260}
+              height={160}
+              alt={flag.alt}
+              src={flag.png}
+              class="h-full w-full object-cover"
+              loading={index <= 7 ? 'eager' : 'lazy'}
+              fetchpriority={index <= 7 ? 'high' : undefined}
+              onerror={`this.onerror=null;this.src=${flag.svg};`}
+            />
+          </header>
+
+          <div class="card-body">
+            <h2 class="text-lg font-extrabold">{name}</h2>
+
+            <ul class="grid">
+              <li class="flex gap-x-1">
+                <span class="font-semibold">Population:</span>
+                <span>{population}</span>
+              </li>
+              <li class="flex gap-x-1">
+                <span class="font-semibold">Region:</span>
+                <span>{region}</span>
+              </li>
+              {capital ? (
+                <li class="flex gap-x-1">
+                  <span class="font-semibold">Capital:</span>
+                  <span>{capital}</span>
+                </li>
+              ) : null}
+            </ul>
+          </div>
+        </Link>
+      </article>
+    ))
+  }
+</section>
