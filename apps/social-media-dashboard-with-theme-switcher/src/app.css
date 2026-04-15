@@ -69,7 +69,9 @@
 }
 
 @utility instagram {
-  @apply before:bg-instagram;
+  &::before {
+    background: var(--color-instagram);
+  }
 }
 
 @utility youtube {
