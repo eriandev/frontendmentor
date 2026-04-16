@@ -7,32 +7,21 @@
   let selected = $state<Theme>('light')
   let currentTheme = $derived(themes[selected])
 
-  function applyTheme(theme: Theme) {
+  function switchTheme(theme: Theme) {
     selected = theme
     localStorage.setItem('theme', theme)
     document.documentElement.classList[theme === 'dark' ? 'add' : 'remove']('dark')
   }
 
-  function toogle(theme: Theme) {
-    if (!document.startViewTransition) {
-      applyTheme(theme)
-      return
-    }
-
-    document.startViewTransition(() => {
-      applyTheme(theme)
-    })
-  }
-
   onMount(() => {
     const theme = localStorage.getItem('theme') as Theme | null
-    applyTheme(theme ?? 'light')
+    switchTheme(theme ?? 'light')
   })
 </script>
 
 <button
   class="flex cursor-pointer items-center gap-x-3 font-semibold"
-  onclick={() => toogle(selected === 'light' ? 'dark' : 'light')}
+  onclick={() => switchTheme(selected === 'light' ? 'dark' : 'light')}
 >
   <Icon name={currentTheme.icon} size={20} />
   <span>{currentTheme.label}</span>
