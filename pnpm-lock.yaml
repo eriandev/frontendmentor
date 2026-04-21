@@ -125,6 +125,12 @@ importers:
         specifier: workspace:*
         version: link:../../packages/shared
 
+  apps/space-tourism-multi-page-website:
+    devDependencies:
+      shared:
+        specifier: workspace:*
+        version: link:../../packages/shared
+
   apps/weather-app:
     dependencies:
       openmeteo:

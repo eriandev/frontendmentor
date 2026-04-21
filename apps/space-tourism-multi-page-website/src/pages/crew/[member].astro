@@ -1,0 +1,108 @@
+---
+import { getCollection } from 'astro:content'
+import Icon from 'shared/components/icon.astro'
+import Link from 'shared/components/link.astro'
+import Image from 'shared/components/image.astro'
+import { basePath, crewSteps } from '@/utils/consts'
+import Layout from '@/app.astro'
+
+export async function getStaticPaths() {
+  const members = await getCollection('members')
+  return members.map(({ data, id }) => ({
+    params: { member: id },
+    props: { data, id },
+  }))
+}
+
+const {
+  id,
+  data: { description, name, position, nextLink, prevLink },
+} = Astro.props
+---
+
+<Layout navKey="crew" bodyClass="relative bg-crew-mobile bg-no-repeat bg-cover md:bg-crew-tablet lg:bg-crew-desktop">
+  {
+    prevLink ? (
+      <Link
+        to={prevLink}
+        class="absolute top-1/2 left-4 z-10 grid size-10 cursor-pointer place-items-center rounded-full bg-black/40 text-white transition-[background-color,scale] duration-200 ease-in-out select-none hover:bg-black/30 active:scale-95 md:left-6 md:size-16 xl:left-12 xl:size-20"
+      >
+        <Icon name="chevron-left" class="size-6 md:size-8" />
+      </Link>
+    ) : null
+  }
+
+  <main class="px-6 pt-6 md:px-10 md:pt-10 xl:flex xl:h-198 xl:justify-center xl:gap-x-27 xl:pt-12">
+    <header class="grid gap-y-6 xl:justify-items-start">
+      <div
+        transition:name="crew-title"
+        class="text-center font-barlow-condensed tracking-[15%] text-white uppercase md:text-left md:text-[1.25rem] xl:text-left xl:text-[1.75rem]"
+      >
+        <span class="pr-6 font-bold opacity-25">02</span>Meet your crew
+      </div>
+      <section class="pt-16 text-center xl:text-left">
+        <span
+          transition:name="crew-position"
+          class="block font-bellefair text-lg text-white/50 uppercase md:text-2xl xl:text-[2rem]"
+        >
+          {position}
+        </span>
+        <h1
+          transition:name="crew-name"
+          class="font-bellefair text-2xl text-white uppercase md:text-[2.5rem] xl:text-[3.5rem]"
+        >
+          {name}
+        </h1>
+
+        <p
+          transition:name="crew-description"
+          class="mx-auto max-w-lg pt-6 font-barlow text-sm leading-[1.8] text-blue-300 md:text-base xl:mx-0"
+        >
+          {description}
+        </p>
+      </section>
+
+      <ul
+        transition:name="crew-points"
+        class="mt-16 mb-8 flex justify-center gap-x-4 xl:mt-0 xl:mb-0 xl:gap-x-10 xl:self-center"
+      >
+        {
+          crewSteps.map(({ key, to }) => (
+            <li>
+              <Link
+                {to}
+                class:list={[
+                  'block size-2.5 rounded-full transition-colors duration-300 ease-in-out xl:size-4',
+                  { 'bg-white': id === key, 'bg-white/18 hover:bg-white/50': id !== key },
+                ]}
+              />
+            </li>
+          ))
+        }
+      </ul>
+    </header>
+
+    <section>
+      <Image
+        alt={name}
+        width={280}
+        height={340}
+        fetchpriority="high"
+        transition:name="crew-image"
+        src={`${basePath}/images/crew/${name.toLowerCase().replaceAll(' ', '-')}.webp`}
+        class="mx-auto mask-b-from-75% mask-b-to-100% select-none md:w-111.5"
+      />
+    </section>
+  </main>
+
+  {
+    nextLink ? (
+      <Link
+        to={nextLink}
+        class="absolute top-1/2 right-4 z-10 grid size-10 cursor-pointer place-items-center rounded-full bg-black/40 text-white transition-[background-color,scale] duration-200 ease-in-out select-none hover:bg-black/30 active:scale-95 md:right-6 md:size-16 xl:right-12 xl:size-20"
+      >
+        <Icon name="chevron-right" class="size-6 md:size-8" />
+      </Link>
+    ) : null
+  }
+</Layout>

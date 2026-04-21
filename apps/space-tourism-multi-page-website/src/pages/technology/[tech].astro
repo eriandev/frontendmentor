@@ -1,0 +1,100 @@
+---
+import { getCollection } from 'astro:content'
+import Link from 'shared/components/link.astro'
+import Image from 'shared/components/image.astro'
+import { technologySteps } from '@/utils/consts'
+import Layout from '@/app.astro'
+
+export async function getStaticPaths() {
+  const technologies = await getCollection('technologies')
+  return technologies.map(({ data, id }) => ({
+    params: { tech: id },
+    props: { data, id },
+  }))
+}
+
+const {
+  id,
+  data: { description, imageName, title },
+} = Astro.props
+---
+
+<Layout
+  navKey="technology"
+  bodyClass="bg-technology-mobile bg-no-repeat bg-cover bg-bottom-left md:bg-technology-tablet lg:bg-technology-desktop"
+>
+  <main class="grid max-w-7xl gap-y-22 pt-6 md:pt-10 xl:mx-auto xl:gap-y-23 xl:pt-12 xl:pb-12">
+    <div
+      class="px-6 text-center font-barlow-condensed tracking-[15%] text-white uppercase md:px-10 md:text-left md:text-[1.25rem] xl:px-0 xl:text-left xl:text-[1.75rem]"
+    >
+      <span class="pr-6 font-bold opacity-25">03</span>Space launch 101
+    </div>
+    <div class="xl:flex xl:flex-row-reverse xl:justify-center xl:gap-x-27 xl:pb-17">
+      <header>
+        <article
+          aria-labelledby={imageName}
+          transition:name="tech-image"
+          class="aspect-video w-full bg-cover bg-bottom select-none md:bg-center xl:hidden"
+          style={`background-image: url(/frontendmentor/space-tourism-multi-page-website/images/technology/${imageName}.webp)`}
+        >
+        </article>
+
+        <Image
+          width={608}
+          height={600}
+          alt={imageName}
+          fetchpriority="high"
+          class="hidden xl:block"
+          transition:name="tech-image"
+          src={`/frontendmentor/space-tourism-multi-page-website/images/technology/${imageName}.webp`}
+        />
+      </header>
+
+      <section
+        class="w-full px-6 pb-12 text-center xl:flex xl:max-w-160 xl:items-center xl:gap-x-16 xl:p-0 xl:text-left"
+      >
+        <ul
+          class="mt-8 mb-10 flex justify-center gap-4 font-bellefair text-lg md:text-2xl xl:mt-0 xl:mb-0 xl:grid xl:gap-8 xl:self-center"
+        >
+          {
+            technologySteps.map(({ key, to }, index) => (
+              <li>
+                <Link
+                  {to}
+                  class:list={[
+                    'grid size-10 place-items-center rounded-full border transition-colors duration-300 ease-in-out md:size-14 xl:size-20 xl:text-[2rem]',
+                    {
+                      'border-white bg-white': id === key,
+                      'border-white/25 bg-transparent text-white hover:border-white': id !== key,
+                    },
+                  ]}
+                >
+                  {index + 1}
+                </Link>
+              </li>
+            ))
+          }
+        </ul>
+
+        <article>
+          <span class="block font-bellefair text-lg text-white/50 uppercase md:text-2xl xl:text-[2rem]">
+            The terminology…
+          </span>
+          <h1
+            transition:name="tech-title"
+            class="my-4 font-bellefair text-2xl text-white uppercase md:text-[2.5rem] xl:text-[3.5rem]"
+          >
+            {title}
+          </h1>
+
+          <p
+            transition:name="tech-description"
+            class="mx-auto max-w-lg font-barlow text-sm leading-[1.8] text-blue-300 md:text-base xl:text-lg"
+          >
+            {description}
+          </p>
+        </article>
+      </section>
+    </div>
+  </main>
+</Layout>

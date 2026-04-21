@@ -1,0 +1,154 @@
+@import 'shared/styles/tailwind';
+
+@font-face {
+  font-family: 'Bellefair';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/frontendmentor/space-tourism-multi-page-website/fonts/bellefair-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/frontendmentor/space-tourism-multi-page-website/fonts/barlow-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/frontendmentor/space-tourism-multi-page-website/fonts/barlow-condensed-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/frontendmentor/space-tourism-multi-page-website/fonts/barlow-condensed-700.woff2') format('woff2');
+}
+
+@utility bg-home-desktop {
+  background-image: url('/frontendmentor/space-tourism-multi-page-website/images/bg-home-desktop.webp');
+}
+
+@utility bg-home-tablet {
+  background-image: url('/frontendmentor/space-tourism-multi-page-website/images/bg-home-tablet.webp');
+}
+
+@utility bg-home-mobile {
+  background-image: url('/frontendmentor/space-tourism-multi-page-website/images/bg-home-mobile.webp');
+}
+
+@utility bg-destination-desktop {
+  background-image: url('/frontendmentor/space-tourism-multi-page-website/images/destination/bg-destination-desktop.webp');
+}
+
+@utility bg-destination-tablet {
+  background-image: url('/frontendmentor/space-tourism-multi-page-website/images/destination/bg-destination-tablet.webp');
+}
+
+@utility bg-destination-mobile {
+  background-image: url('/frontendmentor/space-tourism-multi-page-website/images/destination/bg-destination-mobile.webp');
+}
+
+@utility bg-crew-desktop {
+  background-image: url('/frontendmentor/space-tourism-multi-page-website/images/crew/bg-crew-desktop.webp');
+}
+
+@utility bg-crew-tablet {
+  background-image: url('/frontendmentor/space-tourism-multi-page-website/images/crew/bg-crew-tablet.webp');
+}
+
+@utility bg-crew-mobile {
+  background-image: url('/frontendmentor/space-tourism-multi-page-website/images/crew/bg-crew-mobile.webp');
+}
+
+@utility bg-technology-desktop {
+  background-image: url('/frontendmentor/space-tourism-multi-page-website/images/technology/bg-technology-desktop.webp');
+}
+
+@utility bg-technology-tablet {
+  background-image: url('/frontendmentor/space-tourism-multi-page-website/images/technology/bg-technology-tablet.webp');
+}
+
+@utility bg-technology-mobile {
+  background-image: url('/frontendmentor/space-tourism-multi-page-website/images/technology/bg-technology-mobile.webp');
+}
+
+@theme {
+  --breakpoint-xs: 375px;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1440px;
+
+  --font-barlow: 'Barlow', sans-serif;
+  --font-bellefair: 'Bellefair', sans-serif;
+  --font-barlow-condensed: 'Barlow Condensed', sans-serif;
+
+  --color-blue-300: hsl(231, 77%, 90%);
+  --color-blue-900: hsl(230, 35%, 7%);
+
+  --animate-floating: floating 5s ease-in-out infinite;
+  @keyframes floating {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+@layer components {
+  .nav-horizontal-item {
+    @apply relative flex gap-x-3 text-white;
+    @apply after:absolute after:right-0 after:bottom-0 after:left-0 after:h-[3px] after:w-full after:transition-colors after:duration-300 after:ease-in-out after:content-[''];
+
+    &:hover {
+      @apply after:bg-white/50;
+    }
+
+    &.selected {
+      @apply after:bg-white;
+    }
+  }
+
+  .nav-vertical-item {
+    @apply relative flex gap-x-3 text-white;
+    @apply after:absolute after:right-0 after:h-full after:w-[3px] after:transition-colors after:duration-300 after:ease-in-out after:content-[''];
+
+    &:hover {
+      @apply after:bg-white/50;
+    }
+
+    &.selected {
+      @apply after:bg-white;
+    }
+  }
+
+  .nav-mobile {
+    transition:
+      transform 0.5s ease,
+      opacity 0.5s ease;
+    transform: translateX(100%);
+    pointer-events: none;
+    opacity: 0;
+
+    &:target {
+      transition:
+        transform 0.35s ease,
+        opacity 0.25s ease;
+      transform: translateX(0);
+      pointer-events: auto;
+      opacity: 1;
+    }
+  }
+}

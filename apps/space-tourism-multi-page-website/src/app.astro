@@ -1,0 +1,32 @@
+---
+import { ClientRouter } from 'astro:transitions'
+import MetaTags from 'shared/components/meta-tags.astro'
+import Atributtion from 'shared/components/atributtion.astro'
+import Header from '@/components/header.astro'
+import '@/app.css'
+
+interface Props {
+  navKey: string
+  bodyClass?: string
+  withoutAtributtion?: boolean
+}
+
+const { bodyClass, navKey, withoutAtributtion = false } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <MetaTags slug="space-tourism-multi-page-website" />
+
+    <ClientRouter />
+
+    <slot name="head" />
+  </head>
+
+  <body class:list={['relative min-h-screen', bodyClass]}>
+    <Header {navKey} />
+    <slot />
+    {!withoutAtributtion ? <Atributtion class="absolute right-5 bottom-0.5 text-sm text-white" /> : null}
+  </body>
+</html>

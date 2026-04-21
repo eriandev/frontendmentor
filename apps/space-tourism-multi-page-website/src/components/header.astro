@@ -1,0 +1,44 @@
+---
+import Icon from 'shared/components/icon.astro'
+import Link from 'shared/components/link.astro'
+import Navigation from '@/components/navigation.astro'
+import { headerNavData as navData } from '@/utils/consts'
+
+interface Props {
+  navKey: string
+}
+
+const { navKey: selectedNav } = Astro.props
+---
+
+<header class="flex items-center justify-between p-6 md:p-0 xl:pt-10">
+  <section class="md:px-10 xl:px-16">
+    <Icon name="logo" size={40} class="md:size-12" />
+  </section>
+
+  <hr class="hidden h-px w-full grow text-white/25 xl:block" />
+
+  <Link to="#nav-mobile" class="md:hidden">
+    <Icon name="hamburger" size={24} />
+  </Link>
+
+  <Navigation
+    listed
+    {navData}
+    {selectedNav}
+    itemClass="py-9"
+    listClass="justify-end gap-x-12 px-10"
+    class="hidden w-full max-w-184 bg-white/5 text-white backdrop-blur-2xl md:block"
+  />
+</header>
+
+<section
+  id="nav-mobile"
+  class="nav-mobile fixed top-0 right-0 bottom-0 z-50 flex w-2/3 flex-col gap-12 bg-black/15 backdrop-blur-2xl md:hidden"
+>
+  <Link to="#closed" class="flex w-full justify-end px-6 py-8">
+    <Icon name="close" size={24} />
+  </Link>
+
+  <Navigation listed {navData} {selectedNav} class="pl-8" listClass="grid gap-8" orientation="vertical" />
+</section>

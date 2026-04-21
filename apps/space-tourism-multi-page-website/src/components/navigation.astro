@@ -1,0 +1,47 @@
+---
+import Link from 'shared/components/link.astro'
+
+interface Props {
+  class?: string
+  listed?: boolean
+  listClass?: string
+  itemClass?: string
+  selectedNav?: string
+  orientation?: 'horizontal' | 'vertical'
+  navData?: Array<{
+    to: string
+    key: string
+    label: string
+    class?: string
+  }>
+}
+
+const {
+  class: extraClass,
+  listClass,
+  itemClass,
+  listed = false,
+  navData = [],
+  orientation = 'horizontal',
+  selectedNav,
+} = Astro.props
+---
+
+<nav class={extraClass}>
+  <ul class:list={['flex font-barlow-condensed tracking-[2px] uppercase', listClass]}>
+    {
+      navData.map(({ key, label, to }, index) => (
+        <li>
+          <Link {to} class:list={[`nav-${orientation}-item`, itemClass, { selected: selectedNav === key }]}>
+            {listed ? (
+              <span class:list={['font-bold tracking-[2.7px]', { 'hidden xl:inline': index === 0 }]}>
+                {index.toString().padStart(2, '0')}
+              </span>
+            ) : null}
+            {label}
+          </Link>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

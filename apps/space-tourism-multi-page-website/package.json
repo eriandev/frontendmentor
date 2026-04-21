@@ -1,0 +1,23 @@
+{
+  "name": "space-tourism-multi-page-website",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "astro": "astro",
+    "dev": "astro dev",
+    "preview": "astro preview",
+    "clean": "rm -rf node_modules dist",
+    "build": "pnpm check && astro build",
+    "reset": "pnpm clean && rm -rf .astro",
+    "check": "astro check --tsconfig tsconfig.json",
+    "format": "prettier --write src/**/*.{astro,svelte,md,ts,css}"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=8"
+  },
+  "devDependencies": {
+    "shared": "workspace:*"
+  }
+}
