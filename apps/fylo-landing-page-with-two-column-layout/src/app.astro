@@ -1,15 +1,16 @@
 ---
-import MetaTags from 'shared/components/meta-tags.astro'
+import BaseLayout from 'shared/components/base-layout.astro'
 import '@/app.css'
+
+const slug = 'fylo-landing-page-with-two-column-layout'
+const projectName = 'Fylo landing page with two column layout'
+const body = {
+  class: 'min-h-screen font-opensans',
+}
+const description =
+  "This project is great if you're starting to get confident with slightly more complex layouts. The second section with the testimonial area will provide a nice challenge."
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <MetaTags slug="fylo-landing-page-with-two-column-layout" themeColor="#070439" />
-  </head>
-
-  <body class="min-h-screen font-opensans">
-    <slot />
-  </body>
-</html>
+<BaseLayout {body} {projectName} {description} {slug} themeColor="#070439">
+  <slot />
+</BaseLayout>

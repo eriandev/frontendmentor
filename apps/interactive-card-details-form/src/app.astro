@@ -1,20 +1,26 @@
 ---
-import MetaTags from 'shared/components/meta-tags.astro'
+import BaseLayout from 'shared/components/base-layout.astro'
 import '@/app.css'
+
+const slug = 'interactive-card-details-form'
+const projectName = 'Interactive card details form'
+const attribution = {
+  class: 'mx-auto max-w-60 pb-8 text-center text-sm sm:pb-4 lg:hidden',
+}
+const body = {
+  class: 'min-h-screen font-space-grotesk',
+}
+const description =
+  'This fun project will be an excellent way to practice DOM manipulation and form validation while also putting your HTML and CSS skills to the test.'
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <MetaTags slug="interactive-card-details-form" themeColor="#600594" />
-
+<BaseLayout {body} {attribution} {projectName} {description} {slug} themeColor="#600594">
+  <Fragment slot="head">
     <script src="@/scripts/declare-refs.ts"></script>
     <script src="@/scripts/update-cards.ts"></script>
     <script src="@/scripts/validate-inputs.ts"></script>
     <script src="@/scripts/form-handler.ts"></script>
-  </head>
+  </Fragment>
 
-  <body class="min-h-screen font-space-grotesk">
-    <slot />
-  </body>
-</html>
+  <slot />
+</BaseLayout>

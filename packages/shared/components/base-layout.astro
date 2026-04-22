@@ -1,0 +1,57 @@
+---
+import { ClientRouter } from 'astro:transitions'
+import Attribution from 'shared/components/attribution.astro'
+import OpenGraph from 'shared/components/open-graph.astro'
+import type { BaseLayoutProps } from 'shared/utils/types'
+import '@/app.css'
+
+type Props = BaseLayoutProps
+
+const {
+  body,
+  slug,
+  themeColor,
+  projectName,
+  description,
+  attribution,
+  preload = [],
+  preconnect = [],
+  html = { lang: 'en' },
+  withTransitions = false,
+} = Astro.props
+
+const projectBasePath = 'https://eriandev.github.io/frontendmentor'
+const basePath = slug ? projectBasePath + '/' + slug : projectBasePath
+const title = slug ? 'Frontend Mentor Challenges Solved | ' + projectName : projectName
+const preview = basePath + '/preview.jpg'
+const favicon = basePath + '/favicon.png'
+---
+
+<!doctype html>
+<html {...html}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <OpenGraph {basePath} {title} {description} {preview} />
+
+    <link rel="apple-touch-icon" type="image/png" href={favicon} />
+    <link rel="icon" type="image/png" sizes="32x32" href={favicon} />
+    {themeColor ? <meta name="theme-color" content={themeColor} /> : null}
+
+    {preconnect.map((link) => <link rel="preconnect" {...link} />)}
+    {preload.map((link) => <link rel="preload" {...link} />)}
+
+    {withTransitions ? <ClientRouter /> : null}
+
+    <slot name="head" />
+  </head>
+
+  <body {...body}>
+    <slot />
+    {attribution ? <Attribution {...attribution} /> : null}
+  </body>
+</html>

@@ -1,27 +1,34 @@
 ---
-import MetaTags from 'shared/components/meta-tags.astro'
+import BaseLayout from 'shared/components/base-layout.astro'
+import Header from '@/components/header.astro'
 import '@/app.css'
+
+const slug = 'job-listings-with-filtering'
+const projectName = 'Job listings with filtering'
+const attribution = { class: 'mx-auto pb-8 text-center text-sm sm:pb-4' }
+const body = {
+  class: 'font-league-spartan min-h-screen bg-very-light-grayish-cyan',
+}
+const description =
+  "In this challenge, you'll be using JavaScript to filter out jobs based on selected categories. We provide a local JSON file to help you practice working with JSON data."
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <MetaTags slug="job-listings-with-filtering" themeColor="#5CA2A5" />
-
+<BaseLayout {body} {attribution} {projectName} {description} {slug} themeColor="#5CA2A5">
+  <Fragment slot="head">
     <script src="@/scripts/declare-refs.ts"></script>
     <script src="@/scripts/filter.ts"></script>
-  </head>
+  </Fragment>
 
-  <body class="font-league-spartan min-h-screen bg-very-light-grayish-cyan">
-    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display: none;">
-      <symbol id="cross" viewBox="0 0 24 24">
-        <path d="M18 6L6 18" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-        </path>
-        <path d="M6 6L18 18" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-        </path>
-      </symbol>
-    </svg>
+  <Header />
 
-    <slot />
-  </body>
-</html>
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display: none;">
+    <symbol id="cross" viewBox="0 0 24 24">
+      <path d="M18 6L6 18" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      </path>
+      <path d="M6 6L18 18" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      </path>
+    </symbol>
+  </svg>
+
+  <slot />
+</BaseLayout>

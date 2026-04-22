@@ -1,17 +1,20 @@
 ---
-import MetaTags from 'shared/components/meta-tags.astro'
+import BaseLayout from 'shared/components/base-layout.astro'
+import Header from '@/components/header.astro'
 import '@/app.css'
+
+const slug = 'social-media-dashboard-with-theme-switcher'
+const projectName = 'Social media dashboard with theme switcher'
+const attribution = { class: 'mt-16 mb-4 text-center text-sm dark:text-white' }
+const body = {
+  class:
+    'min-h-screen bg-white font-inter transition-standard lg:flex lg:flex-col lg:content-between dark:bg-top-dark-blue',
+}
+const description =
+  'This challenge will be a perfect chance to practice your Grid skills. The color theme switcher also adds a nice additional test.'
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <MetaTags slug="social-media-dashboard-with-theme-switcher" themeColor="#1F212E" />
-  </head>
-
-  <body
-    class="min-h-screen bg-white font-inter transition-standard lg:flex lg:flex-col lg:content-between dark:bg-top-dark-blue"
-  >
-    <slot />
-  </body>
-</html>
+<BaseLayout {slug} {body} {attribution} {projectName} {description} themeColor="#1F212E">
+  <Header />
+  <slot />
+</BaseLayout>

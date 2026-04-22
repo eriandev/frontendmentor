@@ -1,14 +1,10 @@
 ---
 import Layout from '@/app.astro'
 import Card from '@/components/card.astro'
-import Header from '@/components/header.astro'
 import PrimeCard from '@/components/prime-card.astro'
-import Atributtion from 'shared/components/atributtion.astro'
 ---
 
 <Layout>
-  <Header />
-
   <main
     class="container -mt-24 mb-6 grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-8 lg:flex-1 xl:-mt-32 xl:grid-cols-4 xl:gap-8"
   >
@@ -32,6 +28,4 @@ import Atributtion from 'shared/components/atributtion.astro'
       <Card title="Total Views" amount="1407" social="youtube" variation={-12} />
     </div>
   </section>
-
-  <Atributtion class="mt-16 mb-4 text-center text-sm dark:text-white" />
 </Layout>

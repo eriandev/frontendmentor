@@ -1,20 +1,26 @@
 ---
-import MetaTags from 'shared/components/meta-tags.astro'
+import BaseLayout from 'shared/components/base-layout.astro'
 import '@/app.css'
+
+const slug = 'calculator-app'
+const projectName = 'Calculator app'
+const attribution = {
+  class: 'fix-color mx-auto text-center text-sm text-primary',
+}
+const body = {
+  class: 'theme-1 grid min-h-screen content-center items-center gap-y-4 bg-main font-league-spartan',
+}
+const description =
+  "This calculator app will be a great test of your CSS and JS skills especially. If you're wanting to practice using Grid, this challenge will be perfect for you!"
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <MetaTags slug="calculator-app" themeColor="#1f212e" />
-
+<BaseLayout withTransitions {body} {attribution} {projectName} {description} {slug} themeColor="#1f212e">
+  <Fragment slot="head">
     <script src="@/scripts/declare-refs.ts"></script>
     <script src="@/scripts/calculator-actions.ts"></script>
     <script src="@/scripts/theme-actions.ts"></script>
     <script src="@/scripts/events.ts"></script>
-  </head>
+  </Fragment>
 
-  <body class="theme-1 grid min-h-screen content-center items-center gap-y-4 bg-main font-league-spartan">
-    <slot />
-  </body>
-</html>
+  <slot />
+</BaseLayout>

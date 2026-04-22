@@ -1,7 +1,6 @@
 ---
 import { get } from 'shared/utils/http'
-import MetaTags from 'shared/components/meta-tags.astro'
-
+import BaseLayout from 'shared/components/base-layout.astro'
 import Header from '@/components/header.astro'
 import Footer from '@/components/footer.astro'
 import '@/app.css'
@@ -38,59 +37,57 @@ interface Landing {
 const { footer, header } = await get<Landing>(import.meta.env.PUBLIC_API_URL + '/landing/')
 const { designedBy, developedBy } = footer
 const { navigation, profile } = header
+
+const projectName = 'Frontend Mentor Challenges Solved by @eriandev'
+const description = 'Frontend Mentor Challenges Solved by @eriandev'
+const body = {
+  class: 'min-h-screen bg-gray-100 font-barlow font-medium text-black',
+}
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <MetaTags themeColor="#FAFAFA" />
+<BaseLayout {body} {projectName} {description} themeColor="#FAFAFA">
+  <style is:inline slot="head">
+    @font-face {
+      font-family: 'Barlow';
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+      src: url('/frontendmentor/fonts/barlow-500.woff2') format('woff2');
+    }
 
-    <style is:inline>
-      @font-face {
-        font-family: 'Barlow';
-        font-weight: 500;
-        font-style: normal;
-        font-display: swap;
-        src: url('/frontendmentor/fonts/barlow-500.woff2') format('woff2');
-      }
+    @font-face {
+      font-family: 'Barlow';
+      font-weight: 500;
+      font-style: italic;
+      font-display: swap;
+      src: url('/frontendmentor/fonts/barlow-500-italic.woff2') format('woff2');
+    }
 
-      @font-face {
-        font-family: 'Barlow';
-        font-weight: 500;
-        font-style: italic;
-        font-display: swap;
-        src: url('/frontendmentor/fonts/barlow-500-italic.woff2') format('woff2');
-      }
+    @font-face {
+      font-family: 'Barlow';
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+      src: url('/frontendmentor/fonts/barlow-700.woff2') format('woff2');
+    }
 
-      @font-face {
-        font-family: 'Barlow';
-        font-weight: 700;
-        font-style: normal;
-        font-display: swap;
-        src: url('/frontendmentor/fonts/barlow-700.woff2') format('woff2');
-      }
+    @font-face {
+      font-family: 'Barlow';
+      font-weight: 700;
+      font-style: italic;
+      font-display: swap;
+      src: url('/frontendmentor/fonts/barlow-700-italic.woff2') format('woff2');
+    }
 
-      @font-face {
-        font-family: 'Barlow';
-        font-weight: 700;
-        font-style: italic;
-        font-display: swap;
-        src: url('/frontendmentor/fonts/barlow-700-italic.woff2') format('woff2');
-      }
-
-      @font-face {
-        font-family: 'Heebo';
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-        src: url('/frontendmentor/fonts/heebo-400.woff2') format('woff2');
-      }
-    </style>
-  </head>
-
-  <body class="min-h-screen bg-gray-100 font-barlow font-medium text-black">
-    <Header {navigation} {profile} />
-    <slot />
-    <Footer {designedBy} {developedBy} />
-  </body>
-</html>
+    @font-face {
+      font-family: 'Heebo';
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+      src: url('/frontendmentor/fonts/heebo-400.woff2') format('woff2');
+    }
+  </style>
+  <Header {navigation} {profile} />
+  <slot />
+  <Footer {designedBy} {developedBy} />
+</BaseLayout>

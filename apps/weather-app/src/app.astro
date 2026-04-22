@@ -1,15 +1,17 @@
 ---
-import MetaTags from 'shared/components/meta-tags.astro'
+import BaseLayout from 'shared/components/base-layout.astro'
+import Header from '@/components/header.astro'
 import '@/app.css'
+
+const slug = 'weather-app'
+const projectName = 'Weather App'
+const body = { class: 'min-h-screen bg-neutral-900 font-dm-sans' }
+const attribution = { class: 'mx-auto pb-6 text-center text-sm text-white' }
+const description =
+  'Build a responsive weather app with search functionality, unit conversion, and detailed forecasts using the Open-Meteo API.'
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <MetaTags slug="weather-app" themeColor="#1f212e" />
-  </head>
-
-  <body class="min-h-screen bg-neutral-900 font-dm-sans">
-    <slot />
-  </body>
-</html>
+<BaseLayout {body} {attribution} {projectName} {description} {slug} themeColor="#1f212e">
+  <Header />
+  <slot />
+</BaseLayout>

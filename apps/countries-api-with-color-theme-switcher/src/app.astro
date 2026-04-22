@@ -1,7 +1,5 @@
 ---
-import { ClientRouter } from 'astro:transitions'
-import Atributtion from 'shared/components/atributtion.astro'
-import MetaTags from 'shared/components/meta-tags.astro'
+import BaseLayout from 'shared/components/base-layout.astro'
 import Header from '@/components/header.astro'
 import '@/app.css'
 
@@ -10,15 +8,25 @@ interface Props {
 }
 
 const { bodyClass } = Astro.props
+
+const slug = 'countries-api-with-color-theme-switcher'
+const projectName = 'REST Countries API with color theme switcher'
+const attribution = {
+  class:
+    'fixed right-0 bottom-0 left-0 mx-auto w-max rounded-t-lg bg-light-mode p-1 text-center text-xs font-semibold dark:bg-dark-mode',
+}
+const body = {
+  'class:list': [
+    'relative min-h-screen bg-light-mode font-nunito-sans text-light-mode-text dark:bg-dark-mode dark:text-white',
+    bodyClass,
+  ],
+}
+const description =
+  "If you're wanting to test your JavaScript skills this is the challenge for you. Use whichever JS framework you prefer and pull data from the REST Countries API."
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <MetaTags slug="countries-api-with-color-theme-switcher" />
-
-    <ClientRouter />
-
+<BaseLayout withTransitions {body} {attribution} {projectName} {description} {slug}>
+  <Fragment slot="head">
     <script is:inline>
       const applyTheme = () => {
         const theme = localStorage.getItem('theme')
@@ -31,18 +39,8 @@ const { bodyClass } = Astro.props
     </script>
 
     <slot name="head" />
-  </head>
+  </Fragment>
 
-  <body
-    class:list={[
-      'relative min-h-screen bg-light-mode font-nunito-sans text-light-mode-text dark:bg-dark-mode dark:text-white',
-      bodyClass,
-    ]}
-  >
-    <Header />
-    <slot />
-    <Atributtion
-      class="fixed right-0 bottom-0 left-0 mx-auto w-max rounded-t-lg bg-light-mode p-1 text-center text-xs font-semibold dark:bg-dark-mode"
-    />
-  </body>
-</html>
+  <Header />
+  <slot />
+</BaseLayout>

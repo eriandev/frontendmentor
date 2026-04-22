@@ -1,0 +1,26 @@
+---
+import type { HTMLTag } from 'astro/types'
+import Link from './link.astro'
+
+interface Props {
+  as?: HTMLTag
+  class?: string
+}
+
+const { as: Tag = 'footer', class: extraClass }: Props = Astro.props
+---
+
+<Tag class={extraClass}>
+  Challenge by
+  <Link
+    external
+    class="inline-block hover:underline"
+    to="https://www.frontendmentor.io/challenges"
+    style={{ color: '#3E54A3' }}
+  >
+    Frontend Mentor
+  </Link>. Coded by
+  <Link external to="https://erian.dev" class="inline-block font-semibold hover:underline" style={{ color: '#02ABB1' }}>
+    eriandev
+  </Link>
+</Tag>

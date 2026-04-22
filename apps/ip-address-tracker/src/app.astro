@@ -1,21 +1,30 @@
 ---
-import MetaTags from 'shared/components/meta-tags.astro'
-import Atributtion from 'shared/components/atributtion.astro'
+import BaseLayout from 'shared/components/base-layout.astro'
 import '@/app.css'
+
+const slug = 'ip-address-tracker'
+const projectName = 'IP Address Tracker'
+const attribution = {
+  class: 'bg-opacity-80 fixed right-0 bottom-0 left-0 z-999 mx-auto w-max bg-white p-1 text-[0.625rem]',
+}
+const body = {
+  class: 'min-h-screen bg-dark-gray font-rubik',
+}
+const description =
+  "In this challenge, you'll be using two separate APIs together to create an IP Address Tracking app."
+
+const preload = [
+  {
+    as: 'style',
+    href: 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
+    integrity: 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=',
+    crossorigin: true,
+  },
+]
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <MetaTags slug="ip-address-tracker" themeColor="#4B60BB" />
-
-    <link
-      rel="preload"
-      as="style"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-      crossorigin
-    />
+<BaseLayout {body} {attribution} {projectName} {description} {slug} {preload} themeColor="#4B60BB">
+  <Fragment slot="head">
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -33,11 +42,7 @@ import '@/app.css'
     <script src="@/scripts/declare-refs.ts"></script>
     <script src="@/scripts/validation.ts"></script>
     <script src="@/scripts/form-action.ts"></script>
-  </head>
+  </Fragment>
 
-  <body class="min-h-screen bg-dark-gray font-rubik">
-    <slot />
-
-    <Atributtion class="bg-opacity-80 fixed right-0 bottom-0 left-0 z-999 mx-auto w-max bg-white p-1 text-[0.625rem]" />
-  </body>
-</html>
+  <slot />
+</BaseLayout>
