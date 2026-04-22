@@ -1,32 +1,27 @@
 ---
-import { ClientRouter } from 'astro:transitions'
-import MetaTags from 'shared/components/meta-tags.astro'
-import Atributtion from 'shared/components/atributtion.astro'
+import BaseLayout from 'shared/components/base-layout.astro'
 import Header from '@/components/header.astro'
+import type { BaseLayoutProps } from 'shared/utils/types'
 import '@/app.css'
 
 interface Props {
   navKey: string
   bodyClass?: string
-  withoutAtributtion?: boolean
+  noAttribution?: boolean
+  preload?: BaseLayoutProps['preload']
+  preconnect?: BaseLayoutProps['preconnect']
 }
 
-const { bodyClass, navKey, withoutAtributtion = false } = Astro.props
+const { bodyClass, navKey, preconnect, preload, noAttribution = false } = Astro.props
+const slug = 'space-tourism-multi-page-website'
+const projectName = 'Space tourism multi-page website'
+const body = { 'class:list': ['relative min-h-screen', bodyClass] }
+const attribution = !noAttribution ? { class: 'mx-auto pb-6 text-center text-sm text-white' } : undefined
+const description =
+  'This project is a fun collaboration with Scrimba and Kevin Powell! If you like, you can follow along and watch Kevin complete the project on Scrimba. Lots to learn!'
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <MetaTags slug="space-tourism-multi-page-website" />
-
-    <ClientRouter />
-
-    <slot name="head" />
-  </head>
-
-  <body class:list={['relative min-h-screen', bodyClass]}>
-    <Header {navKey} />
-    <slot />
-    {!withoutAtributtion ? <Atributtion class="absolute right-5 bottom-0.5 text-sm text-white" /> : null}
-  </body>
-</html>
+<BaseLayout withTransitions {slug} {body} {attribution} {projectName} {description} {preconnect} {preload}>
+  <Header {navKey} />
+  <slot />
+</BaseLayout>

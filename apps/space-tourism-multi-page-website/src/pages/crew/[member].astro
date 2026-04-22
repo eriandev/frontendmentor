@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content'
 import Icon from 'shared/components/icon.astro'
 import Link from 'shared/components/link.astro'
 import Image from 'shared/components/image.astro'
-import { basePath, crewSteps } from '@/utils/consts'
+import { basePath, crewSteps, mediaDesktop, mediaMobile, mediaTablet } from '@/utils/consts'
 import Layout from '@/app.astro'
 
 export async function getStaticPaths() {
@@ -18,9 +18,18 @@ const {
   id,
   data: { description, name, position, nextLink, prevLink },
 } = Astro.props
+
+const preload = [
+  { as: 'image', media: mediaMobile, href: `${basePath}/images/crew/bg-crew-mobile.webp` },
+  { as: 'image', media: mediaTablet, href: `${basePath}/images/crew/bg-crew-tablet.webp` },
+  { as: 'image', media: mediaDesktop, href: `${basePath}/images/crew/bg-crew-desktop.webp` },
+]
 ---
 
-<Layout navKey="crew" bodyClass="relative bg-crew-mobile bg-no-repeat bg-cover md:bg-crew-tablet lg:bg-crew-desktop">
+<Layout
+  navKey="crew"
+  bodyClass="relative bg-crew-mobile bg-no-repeat bg-cover md:bg-crew-tablet lg:bg-crew-desktop"
+>
   {
     prevLink ? (
       <Link

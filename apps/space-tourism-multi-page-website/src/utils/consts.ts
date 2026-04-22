@@ -1,4 +1,7 @@
 export const basePath = '/frontendmentor/space-tourism-multi-page-website'
+export const mediaMobile = '(max-width: 767px)'
+export const mediaTablet = '(min-width: 768px) and (max-width: 1439px)'
+export const mediaDesktop = '(min-width: 1440px)'
 export const headerNavData = [
   { to: basePath, key: 'home', label: 'Home' },
   { to: `${basePath}/destination/moon`, key: 'destination', label: 'Destination' },

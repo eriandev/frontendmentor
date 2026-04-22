@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content'
 import Link from 'shared/components/link.astro'
 import Image from 'shared/components/image.astro'
-import { technologySteps } from '@/utils/consts'
+import { basePath, mediaDesktop, mediaMobile, mediaTablet, technologySteps } from '@/utils/consts'
 import Layout from '@/app.astro'
 
 export async function getStaticPaths() {
@@ -17,9 +17,16 @@ const {
   id,
   data: { description, imageName, title },
 } = Astro.props
+
+const preload = [
+  { as: 'image', media: mediaMobile, href: `${basePath}/images/technology/bg-technology-mobile.webp` },
+  { as: 'image', media: mediaTablet, href: `${basePath}/images/technology/bg-technology-tablet.webp` },
+  { as: 'image', media: mediaDesktop, href: `${basePath}/images/technology/bg-technology-desktop.webp` },
+]
 ---
 
 <Layout
+  {preload}
   navKey="technology"
   bodyClass="bg-technology-mobile bg-no-repeat bg-cover bg-bottom-left md:bg-technology-tablet lg:bg-technology-desktop"
 >
