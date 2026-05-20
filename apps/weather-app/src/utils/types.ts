@@ -13,6 +13,12 @@ export interface Option {
   disabled?: boolean
 }
 
+export interface Section {
+  key: string
+  title: string
+  options: Option[]
+}
+
 export interface ForecastResponse {
   current?: Current
   hourly?: Hourly[]

@@ -67,24 +67,19 @@ function normalizeHourly(response: WeatherApiResponse): Hourly[] | undefined {
           weather_code: hourlyData.variables(1)?.valuesArray(),
         }
 
-  const hourlyByDay = hourlyMapped?.time.reduce(
-    (acc, time, i) => {
-      const dateKey = time.toISOString().split('T')[0]
+  const hourlyByDay = hourlyMapped?.time.reduce<Record<string, Hour[]>>((acc, time, i) => {
+    const dateKey = time.toISOString().split('T')[0]
 
-      // eslint-disable-next-line logical-assignment-operators, @typescript-eslint/no-unnecessary-condition, @typescript-eslint/strict-boolean-expressions --- Necessary
-      if (!acc[dateKey]) acc[dateKey] = []
+    if (!Array.isArray(acc[dateKey])) acc[dateKey] = []
 
-      acc[dateKey].push({
-        time,
-        code: hourlyMapped.weather_code?.[i],
-        temp: trunc(hourlyMapped.temperature_2m?.[i]),
-      })
+    acc[dateKey].push({
+      time,
+      code: hourlyMapped.weather_code?.[i],
+      temp: trunc(hourlyMapped.temperature_2m?.[i]),
+    })
 
-      return acc
-    },
-    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions --- Necessary
-    {} as Record<string, Hour[]>,
-  )
+    return acc
+  }, {})
 
   return Object.entries(hourlyByDay ?? {}).map(([date, hours]) => ({
     date,

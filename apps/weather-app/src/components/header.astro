@@ -1,13 +1,7 @@
 ---
 import Icon from 'shared/components/icon.astro'
 import GroupedSelect from '@/components/grouped-select.svelte'
-import type { Option } from '@/utils/types'
-
-type Section = {
-  key: string
-  title: string
-  options: Option[]
-}
+import type { Section } from '@/utils/types'
 
 const defaultValue = { temp: 'c', speed: 'km/h', length: 'mm' }
 const sections: Section[] = [
