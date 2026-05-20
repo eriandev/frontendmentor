@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { parseLocalDate } from '@/utils/date'
   import Select from '@/components/select.svelte'
   import { weather } from '@/logic/use-weather.svelte'
   import { formatTime, tempValue, weatherIconByCode, weekdayName } from '@/utils/format'
@@ -13,21 +14,30 @@
   const { title, data, tempKey }: Props = $props()
   const defaultHours = Array.from({ length: 10 }, () => ({}) as Hour)
 
+  let firstTime = $state(false)
   let hours = $state<Hour[]>(defaultHours)
   let options = $derived<Option[]>(
     data
-      ?.flatMap(({ date }) => (date ? [{ label: weekdayName(new Date(date)), value: date }] : []))
+      ?.flatMap(({ date }) => (date ? [{ label: weekdayName(parseLocalDate(date)), value: date }] : []))
       .sort((a, b) => {
-        const d1 = new Date(a.value)
-        const d2 = new Date(b.value)
+        const d1 = parseLocalDate(a.value)
+        const d2 = parseLocalDate(b.value)
 
-        return ((d1.getDay() + 6) % 7) - ((d2.getDay() + 6) % 7)
+        return d1.getTime() - d2.getTime()
       }) ?? [],
   )
+  let defaultValue = $derived(options[0]?.value)
 
   function onChange(option: Option) {
     hours = data?.find(({ date }) => date === option.value)?.hours ?? []
   }
+
+  $effect(() => {
+    if (!options.length || !data || firstTime) return
+
+    onChange(options[0])
+    firstTime = true
+  })
 </script>
 
 <section
@@ -35,7 +45,7 @@
 >
   <header class="grid grid-cols-[fit-content(100%)_1fr] items-center justify-between gap-x-5">
     <h4 class="text-lg">{title}</h4>
-    <Select disabled={!$weather.hourly} {options} {onChange} />
+    <Select disabled={!$weather.hourly} {options} {defaultValue} {onChange} />
   </header>
 
   <div class="scroll-container grid h-full max-h-120 gap-y-4 overflow-y-auto">

@@ -6,11 +6,11 @@
   interface Props {
     options: Option[]
     disabled?: boolean
-    defaultText?: string
+    defaultValue?: Option['value']
     onChange?: (selected: Option) => void
   }
 
-  let { defaultText = 'Select an option', disabled = false, options = [], onChange = () => {} }: Props = $props()
+  let { defaultValue, disabled = false, options = [], onChange = () => {} }: Props = $props()
 
   let open = $state(false)
   let contentRef = $state<HTMLDivElement>()
@@ -34,6 +34,10 @@
     document.addEventListener('click', handleClickOutside)
     return () => document.removeEventListener('click', handleClickOutside)
   })
+
+  $effect(() => {
+    if (defaultValue && selected === null) selected = options.find(({ value }) => defaultValue === value) ?? null
+  })
 </script>
 
 <div class={['relative flex items-center', { 'justify-self-end': disabled }]}>
@@ -52,7 +56,7 @@
     {:else if selected}
       {selected.label}
     {:else}
-      {defaultText}
+      Select an option
     {/if}
 
     <Icon name="dropdown" width={13} height={8} />
