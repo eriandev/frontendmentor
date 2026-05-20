@@ -14,8 +14,8 @@
     "format": "prettier --write src/**/*.{astro,svelte,ts,css}"
   },
   "engines": {
-    "node": ">=20",
-    "pnpm": ">=8"
+    "node": ">=24",
+    "pnpm": ">=11"
   },
   "devDependencies": {
     "@openmeteo/sdk": "1.26.0",

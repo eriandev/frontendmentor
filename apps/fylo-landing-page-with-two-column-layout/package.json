@@ -14,8 +14,8 @@
     "format": "prettier --write src/**/*.{astro,ts,css}"
   },
   "engines": {
-    "node": ">=20",
-    "pnpm": ">=8"
+    "node": ">=24",
+    "pnpm": ">=11"
   },
   "devDependencies": {
     "shared": "workspace:*"
