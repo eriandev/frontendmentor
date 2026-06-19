@@ -1,5 +1,6 @@
 # build output
 dist/
+!apps/countries-api-with-color-theme-switcher/dist/
 
 # generated types
 .astro/

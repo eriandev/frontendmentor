@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Frontend Mentor Challenges Solved | REST Countries API with color theme switcher</title><meta name="description" content="If you're wanting to test your JavaScript skills this is the challenge for you. Use whichever JS framework you prefer and pull data from the REST Countries API."><meta name="og:site_name" property="og:site_name" content="Frontend Mentor Challenges Solved | REST Countries API with color theme switcher"><meta name="og:type" property="og:type" content="website"><meta property="og:title" content="Frontend Mentor Challenges Solved | REST Countries API with color theme switcher"><meta property="og:description" content="If you're wanting to test your JavaScript skills this is the challenge for you. Use whichever JS framework you prefer and pull data from the REST Countries API."><meta property="og:image" content="https://eriandev.github.io/frontendmentor/countries-api-with-color-theme-switcher/preview.jpg"><meta property="og:url" content="https://eriandev.github.io/frontendmentor/countries-api-with-color-theme-switcher"><meta name="twitter:title" content="Frontend Mentor Challenges Solved | REST Countries API with color theme switcher"><meta name="twitter:description" content="If you're wanting to test your JavaScript skills this is the challenge for you. Use whichever JS framework you prefer and pull data from the REST Countries API."><meta name="twitter:creator" content="@eriandev"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://eriandev.github.io/frontendmentor/countries-api-with-color-theme-switcher/preview.jpg"><link rel="apple-touch-icon" type="image/png" href="https://eriandev.github.io/frontendmentor/countries-api-with-color-theme-switcher/favicon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://eriandev.github.io/frontendmentor/countries-api-with-color-theme-switcher/favicon.png"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/frontendmentor/countries-api-with-color-theme-switcher/assets/ClientRouter.astro_astro_type_script_index_0_lang.CAqDO0tx.js"></script> <script>
+      const applyTheme = () => {
+        const theme = localStorage.getItem('theme')
+        if (theme === 'dark') document.documentElement.classList.add('dark')
+        else document.documentElement.classList.remove('dark')
+      }
+
+      applyTheme()
+      document.addEventListener('astro:after-swap', applyTheme)
+    </script>  <link rel="stylesheet" href="/frontendmentor/countries-api-with-color-theme-switcher/assets/viewtransitions.GVU0reoj.css"><style>[data-astro-transition-scope="astro-4jkhzqm6-1"] { view-transition-name: card-img-NGA; }@layer astro { ::view-transition-old(card-img-NGA) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(card-img-NGA) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(card-img-NGA) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(card-img-NGA) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-4jkhzqm6-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-4jkhzqm6-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-4jkhzqm6-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-4jkhzqm6-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-4jkhzqm6-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-4jkhzqm6-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-4jkhzqm6-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-4jkhzqm6-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-ftdlz5jv-2"] { view-transition-name: card-name-NGA; }@layer astro { ::view-transition-old(card-name-NGA) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(card-name-NGA) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(card-name-NGA) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(card-name-NGA) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-ftdlz5jv-2"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-ftdlz5jv-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-ftdlz5jv-2"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-ftdlz5jv-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-ftdlz5jv-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-ftdlz5jv-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-ftdlz5jv-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-ftdlz5jv-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head> <body class="relative min-h-screen bg-light-mode font-nunito-sans text-light-mode-text dark:bg-dark-mode dark:text-white bg-white">   <header class="sticky top-0 z-20 w-full bg-white shadow dark:bg-dark-mode-elements"> <section class="mx-auto flex max-w-7xl justify-between p-6"> <h1 class="text-lg font-extrabold md:text-2xl">Where in the world?</h1> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var l=(n,t)=>{let i=async()=>{await(await n())()},e=typeof t.value=="object"?t.value:void 0,s={timeout:e==null?void 0:e.timeout};"requestIdleCallback"in window?window.requestIdleCallback(i,s):setTimeout(i,s.timeout||200)};(self.Astro||(self.Astro={})).idle=l;window.dispatchEvent(new Event("astro:idle"));})();</script><script>(()=>{var g=Object.defineProperty;var w=(c,s,d)=>s in c?g(c,s,{enumerable:!0,configurable:!0,writable:!0,value:d}):c[s]=d;var l=(c,s,d)=>w(c,typeof s!="symbol"?s+"":s,d);var E=new Set(["__proto__","constructor","prototype"]);{let c={0:t=>y(t),1:t=>d(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(d(t)),5:t=>new Set(d(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>Number.POSITIVE_INFINITY*t},s=t=>{let[p,e]=t;return p in c?c[p](e):void 0},d=t=>t.map(s),y=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([p,e])=>[p,s(e)]));class f extends HTMLElement{constructor(){super(...arguments);l(this,"Component");l(this,"hydrator");l(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let n=this.querySelectorAll("astro-slot"),r={},i=this.querySelectorAll("template[data-astro-template]");for(let o of i){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("data-astro-template")||"default"]=o.innerHTML,o.remove())}for(let o of n){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("name")||"default"]=o.innerHTML)}let u;try{u=this.hasAttribute("props")?y(JSON.parse(this.getAttribute("props"))):{}}catch(o){let a=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(a+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${a}`,this.getAttribute("props"),o),o}let h;await this.hydrator(this)(this.Component,u,r,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});l(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),n.disconnect(),this.childrenConnectedCallback()},n=new MutationObserver(()=>{var r;((r=this.lastChild)==null?void 0:r.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});n.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}getRetryImportUrl(e){let n=new URL(e,document.baseURI),r=`astro-retry=${Date.now()}`,i=n.hash.replace(/^#/,"");return n.hash=i?`${i}&${r}`:r,n.toString()}async importWithRetry(e){try{return await import(e)}catch(n){return await new Promise(r=>setTimeout(r,1e3)),import(this.getRetryImportUrl(e))}}handleHydrationError(e){let n=this.getAttribute("component-url"),r=new CustomEvent("astro:hydration-error",{cancelable:!0,bubbles:!0,composed:!0,detail:{error:e,componentUrl:n}});this.dispatchEvent(r)&&console.error(`[astro-island] Error hydrating ${n}`,e)}async start(){let e=JSON.parse(this.getAttribute("opts")),n=this.getAttribute("client");if(Astro[n]===void 0){window.addEventListener(`astro:${n}`,()=>this.start(),{once:!0});return}try{await Astro[n](async()=>{let r=this.getAttribute("renderer-url");try{let[i,{default:u}]=await Promise.all([this.importWithRetry(this.getAttribute("component-url")),r?this.importWithRetry(r):Promise.resolve({default:()=>()=>{}})]),h=this.getAttribute("component-export")||"default";if(h.includes(".")){this.Component=i;for(let m of h.split(".")){if(E.has(m)||!this.Component||typeof this.Component!="object"&&typeof this.Component!="function"||!Object.hasOwn(this.Component,m))throw new Error(`Invalid component export path: ${h}`);this.Component=this.Component[m]}}else{if(E.has(h))throw new Error(`Invalid component export path: ${h}`);this.Component=i[h]}return this.hydrator=u,this.hydrate}catch(i){return this.handleHydrationError(i),()=>{}}},e,this)}catch(r){this.handleHydrationError(r)}}attributeChangedCallback(){this.hydrate()}}l(f,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",f)}})();</script><astro-island uid="1aMzUf" component-url="/frontendmentor/countries-api-with-color-theme-switcher/assets/switch-theme.CxMY4W4C.js" component-export="default" renderer-url="/frontendmentor/countries-api-with-color-theme-switcher/assets/client.svelte.DWDt_o13.js" props="{}" ssr client="idle" opts="{&quot;name&quot;:&quot;SwitchTheme&quot;,&quot;value&quot;:true}" await-children><!--[--><button class="flex cursor-pointer items-center gap-x-3 font-semibold"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><!----><!----></svg><!----> <span>Light Mode</span></button><!--]--><!--astro:end--></astro-island> </section> </header>  <section class="w-full"> <article class="mx-auto flex max-w-7xl flex-col justify-between gap-y-12 px-6 py-20 md:flex-row"> <a href="/frontendmentor/countries-api-with-color-theme-switcher" class="flex w-max items-center gap-x-2 rounded-lg bg-white px-8 py-2 font-semibold shadow-[0_0_8px_rgba(0,0,0,0.24)] dark:bg-dark-mode-elements">  <svg width="20" height="20" data-icon="arrow-left">   <symbol id="ai:local:arrow-left" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></symbol><use href="#ai:local:arrow-left"></use>  </svg> <span>Back</span>  </a> </article> </section> <main class="mx-auto grid w-full max-w-7xl gap-24 px-6 pb-20 lg:grid-cols-2"> <img width="568" height="378" fetchpriority="high" alt="The flag of Nigeria is composed of three equal vertical bands of green, white and green." src="https://flagcdn.com/w320/ng.png" class="w-full object-cover" onerror="this.onerror=null;this.src='https://flagcdn.com/ng.svg';" data-astro-transition-scope="astro-4jkhzqm6-1"> <section class="space-y-5 self-center"> <h2 class="text-4xl font-extrabold capitalize" data-astro-transition-scope="astro-ftdlz5jv-2"> Nigeria </h2> <article class="grid gap-y-12 lg:grid-cols-2"> <ul class="space-y-1.5"> <li> <span class="font-semibold">Native Name:</span> Nigeria </li> <li><span class="font-semibold">Population:</span> 223,800,000</li> <li><span class="font-semibold">Region:</span> Africa</li> <li> <span class="font-semibold">Sub Region:</span> Western Africa </li> <li> <span class="font-semibold">Capital:</span> Abuja </li> </ul> <ul class="space-y-1.5"> <li> <span class="font-semibold">Top Level Domain:</span> .ng </li> <li><span class="font-semibold">Currencies:</span> Nigerian naira</li> <li><span class="font-semibold">Languages:</span> English</li> </ul> </article> <footer class="mt-16 flex flex-wrap items-center gap-4"> <span class="font-semibold">Border Countries:</span> <a href="/frontendmentor/countries-api-with-color-theme-switcher/country/ben" class="block rounded-sm bg-white px-8 py-2 leading-none shadow-[0_0_8px_rgba(0,0,0,0.1)] dark:bg-dark-mode-elements"> Benin </a><a href="/frontendmentor/countries-api-with-color-theme-switcher/country/cmr" class="block rounded-sm bg-white px-8 py-2 leading-none shadow-[0_0_8px_rgba(0,0,0,0.1)] dark:bg-dark-mode-elements"> Cameroon </a><a href="/frontendmentor/countries-api-with-color-theme-switcher/country/tcd" class="block rounded-sm bg-white px-8 py-2 leading-none shadow-[0_0_8px_rgba(0,0,0,0.1)] dark:bg-dark-mode-elements"> Chad </a><a href="/frontendmentor/countries-api-with-color-theme-switcher/country/ner" class="block rounded-sm bg-white px-8 py-2 leading-none shadow-[0_0_8px_rgba(0,0,0,0.1)] dark:bg-dark-mode-elements"> Niger </a> </footer> </section> </main>   <footer class="fixed right-0 bottom-0 left-0 mx-auto w-max rounded-t-lg bg-light-mode p-1 text-center text-xs font-semibold dark:bg-dark-mode">
+Challenge by
+<a rel="noopener noreferrer" target="_blank" href="https://www.frontendmentor.io/challenges" class="inline-block hover:underline" style="color:#3E54A3"> 
+Frontend Mentor
+ </a>. Coded by
+<a rel="noopener noreferrer" target="_blank" href="https://erian.dev" class="inline-block font-semibold hover:underline" style="color:#02ABB1"> 
+eriandev
+ </a> </footer> </body></html>

@@ -8,10 +8,10 @@
     "dev": "astro dev",
     "preview": "astro preview",
     "clean": "rm -rf node_modules dist",
-    "build": "pnpm check && astro build",
     "reset": "pnpm clean && rm -rf .astro",
     "check": "astro check --tsconfig tsconfig.json",
-    "format": "prettier --write src/**/*.{astro,svelte,ts,css}"
+    "format": "prettier --write src/**/*.{astro,svelte,ts,css}",
+    "build": "mkdir -p ../../dist/countries-api-with-color-theme-switcher && cp -r dist/. ../../dist/countries-api-with-color-theme-switcher/"
   },
   "engines": {
     "node": ">=24",
