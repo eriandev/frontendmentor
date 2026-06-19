@@ -1,8 +1,8 @@
 ---
 import { Picture as AstroPicture, type ImgAttributes } from 'astro:assets'
-import placeholderImage from '../assets/placeholder.webp'
+import placeholderImage from 'shared/assets/placeholder.webp'
 
-interface Props extends ImgAttributes {
+export interface PictureProps extends ImgAttributes {
   alt: string
   width: number
   height: number
@@ -20,7 +20,7 @@ const {
   fetchpriority,
   class: extraClass,
   ...restProps
-} = Astro.props
+}: PictureProps = Astro.props
 const loading = lazy ? 'lazy' : 'eager'
 
 let src: ImageMetadata

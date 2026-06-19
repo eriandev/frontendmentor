@@ -1,11 +1,22 @@
 ---
 import { ClientRouter } from 'astro:transitions'
-import Attribution from 'shared/components/attribution.astro'
 import OpenGraph from 'shared/components/open-graph.astro'
-import type { BaseLayoutProps } from 'shared/utils/types'
+import Attribution from 'shared/components/attribution.astro'
+import type { HTMLAttributes, HTMLTag } from 'astro/types'
 import '@/app.css'
 
-type Props = BaseLayoutProps
+export interface BaseLayoutProps {
+  slug?: string
+  projectName: string
+  description: string
+  themeColor?: `#${string}`
+  withTransitions?: boolean
+  body?: HTMLAttributes<'body'>
+  html?: HTMLAttributes<'html'>
+  attribution?: { as?: HTMLTag; class?: string }
+  preload?: Array<Omit<HTMLAttributes<'link'>, 'rel'>>
+  preconnect?: Array<Omit<HTMLAttributes<'link'>, 'rel'>>
+}
 
 const {
   body,
@@ -18,7 +29,7 @@ const {
   preconnect = [],
   html = { lang: 'en' },
   withTransitions = false,
-} = Astro.props
+}: BaseLayoutProps = Astro.props
 
 const projectBasePath = 'https://eriandev.github.io/frontendmentor'
 const basePath = slug ? projectBasePath + '/' + slug : projectBasePath

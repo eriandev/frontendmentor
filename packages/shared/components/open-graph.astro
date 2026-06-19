@@ -1,12 +1,12 @@
 ---
-interface Props {
+export interface OpenGraphProps {
   title: string
   preview: string
   basePath: string
   description: string
 }
 
-const { basePath, title, description, preview } = Astro.props
+const { basePath, title, description, preview }: OpenGraphProps = Astro.props
 ---
 
 <meta name="og:site_name" property="og:site_name" content={title} />

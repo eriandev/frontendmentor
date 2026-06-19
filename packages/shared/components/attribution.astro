@@ -2,12 +2,12 @@
 import type { HTMLTag } from 'astro/types'
 import Link from './link.astro'
 
-interface Props {
+export interface AttributionProps {
   as?: HTMLTag
   class?: string
 }
 
-const { as: Tag = 'footer', class: extraClass }: Props = Astro.props
+const { as: Tag = 'footer', class: extraClass }: AttributionProps = Astro.props
 ---
 
 <Tag class={extraClass}>
